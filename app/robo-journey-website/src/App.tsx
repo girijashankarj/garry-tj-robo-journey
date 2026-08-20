@@ -7,6 +7,7 @@ import { DrillPage } from "./pages/DrillPage";
 import { CheckPage } from "./pages/CheckPage";
 import { GlossaryPage } from "./pages/GlossaryPage";
 import { JargonsPage } from "./pages/JargonsPage";
+import { ChatbotPage } from "./pages/ChatbotPage";
 import { ThemeProvider } from "./theme";
 
 const MindMapPage = lazy(() => import("./pages/MindMapPage").then((m) => ({ default: m.MindMapPage })));
@@ -22,6 +23,7 @@ export default function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route index element={<HomePage />} />
+              <Route path="chatbot" element={<ChatbotPage />} />
               <Route path="topic/*" element={<TopicPage />} />
               <Route path="drill/:slug" element={<DrillPage />} />
               <Route path="check" element={<CheckPage />} />
