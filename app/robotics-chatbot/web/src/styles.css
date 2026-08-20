@@ -1,0 +1,25 @@
+:root { font-family: Inter, system-ui, sans-serif; color: #17202a; background: #f4f6f8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app-shell { width: min(1100px, 94vw); margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; padding: 32px 0 20px; }
+header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.eyebrow { margin: 0 0 6px; font-size: 12px; letter-spacing: .12em; font-weight: 700; }
+h1 { margin: 0; font-size: 34px; }
+.subtitle { color: #64707d; margin: 8px 0 0; }
+.status { border: 1px solid #c9d0d7; border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 700; }
+.context-bar { display: flex; gap: 16px; margin: 28px 0 16px; }
+label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; }
+select { min-width: 190px; padding: 10px; border: 1px solid #c9d0d7; border-radius: 8px; background: white; }
+.chat-panel { flex: 1; min-height: 500px; background: white; border: 1px solid #d8dde2; border-radius: 14px; padding: 28px; overflow: auto; }
+.empty { text-align: center; margin-top: 170px; color: #64707d; }
+.empty h2 { color: #17202a; }
+.message { max-width: 78%; margin: 0 0 20px; padding: 14px 16px; border-radius: 12px; }
+.message span { font-size: 12px; font-weight: 700; }
+.message p { margin: 7px 0 0; line-height: 1.55; white-space: pre-wrap; }
+.message.user { margin-left: auto; background: #17202a; color: white; }
+.message.assistant { background: #eef1f4; }
+.composer { display: flex; gap: 10px; margin-top: 14px; }
+textarea { flex: 1; resize: vertical; min-height: 70px; padding: 14px; border: 1px solid #c9d0d7; border-radius: 10px; font: inherit; }
+button { align-self: flex-end; border: 0; border-radius: 10px; padding: 13px 22px; background: #17202a; color: white; cursor: pointer; }
+footer { padding-top: 12px; color: #7a858f; font-size: 12px; text-align: center; }
+@media (max-width: 700px) { header, .context-bar { flex-direction: column; } .status { align-self: flex-start; } .message { max-width: 92%; } }
