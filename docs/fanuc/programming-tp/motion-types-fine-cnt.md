@@ -1,12 +1,14 @@
 # J, L, C, A — FINE and CNT
 
-> Status: draft  
+> Status: reviewed  
 > Brand: FANUC  
-> Mode: programmer, learner
+> Mode: programmer, learner  
+> Track: 01 HandlingTool  
+> Practice: `practice/fanuc/002-square-path`, `practice/fanuc/003-circular-path`
 
 ## Overview
 
-Square: Joint in, Linear around, Joint home. Circle: each Circular instruction uses a via and a destination. **FINE** stops; **CNT n** rounds the corner (n ≈ 1–100).
+Square: Joint in, Linear around, Joint home — **union** of [`motion-j.md`](motion-j.md) and [`motion-l.md`](motion-l.md). Circle: each Circular instruction uses a via and a destination. **FINE** stops; **CNT n** rounds the corner (n ≈ 1–100).
 
 ## When to use
 
@@ -48,11 +50,14 @@ First prove FINE, then introduce CNT.
 
 ## Official references
 
-- HandlingTool / operator manuals: `[OFFICIAL_URL]`
+On manuals **licensed to your site**: motion instructions, FINE/CNT, circular teaching. Do not paste OEM pages here.
 
 ## Repo references
 
+- [`motion-j.md`](motion-j.md)
+- [`motion-l.md`](motion-l.md)
 - [`offset-and-incremental.md`](offset-and-incremental.md)
+- [`../topic-map.md`](../topic-map.md)
 
 ## Rights, education, and consent
 

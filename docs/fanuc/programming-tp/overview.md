@@ -34,7 +34,7 @@ Create `SQUARE`, teach P[1]–P[5], T2 step, then compare [`002-square-path`](..
 
 ## Practice
 
-Full set: [`practice/fanuc/`](../../../practice/fanuc/).
+Lexicon: [identifiers](identifiers.md), [keywords](keywords.md). Atoms: [J](motion-j.md), [L](motion-l.md), [JMP/LBL](logic-lbl-jmp.md), [remark](remark.md), [UALM](ualm.md), [MESSAGE](message.md). Full set: [`practice/fanuc/`](../../../practice/fanuc/).
 
 ## Common mistakes
 
@@ -47,11 +47,11 @@ ASCII listings omit taught `/POS` data until you save from a real robot.
 
 ## Official references
 
-- HandlingTool / operator manuals: `[OFFICIAL_URL]`
+On manuals **licensed to your site**: the operator / HandlingTool chapter for this topic. Do not paste OEM pages here.
 
 ## Repo references
 
-- Child articles in this folder
+- Child articles in this folder; atom vs union: [`../topic-map.md`](../topic-map.md)
 
 ## Rights, education, and consent
 

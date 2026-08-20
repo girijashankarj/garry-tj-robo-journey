@@ -10,7 +10,7 @@
 - Promote accepted work into `docs/`, `practice/`, or `programs/` only
 - Ask relevant cell questions before code
 - After accepted edits: `fanuc-knowledge-sync`
-- Educational use; include `LEGAL.md` notices
+- Educational use; `LEGAL.md` + `LICENSE.md`
 
 ## Cases
 

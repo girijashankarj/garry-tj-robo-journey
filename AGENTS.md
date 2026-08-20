@@ -7,7 +7,7 @@ Config: `.cursor/config/project.json`. Handbook files may still use `{{CONFIG.se
 ## Product
 
 - **Learn:** `docs/fanuc/`
-- **Practice:** `practice/fanuc/`
+- **Practice:** `practice/fanuc/` (`code/` + `doc/guide.md`)
 - **Promote:** `programs/fanuc/tp/` or `karel/` after the user accepts a real-cell program
 - Public credit: **Garry TJ** only
 
@@ -39,10 +39,15 @@ Before generating or explaining programs, ask **only relevant** fields: model, c
 
 | Path | Purpose |
 |------|---------|
-| `docs/` | Study articles |
+| `docs/` | Study articles (`topic-map.md` = atom vs union) |
 | `practice/` | Numbered drills |
 | `programs/` | Promoted cell programs |
 | `.cursor/` | Harness |
+
+## Cursor harness (keep small)
+
+Fanuc tutors: `@fanuc-docs-agent`, `@fanuc-programmer-agent`, `@fanuc-explainer-agent`, `@fanuc-knowledge-sync`.
+Also useful: `@diagram-agent`, `@docs-agent` / `@doc-sync-agent`, `@git-agent`, `@guardrail-agent`, `@security-audit-agent`.
 
 ## After accepted updates
 

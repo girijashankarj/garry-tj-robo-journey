@@ -21,3 +21,7 @@ Documentation and example programs (including Teach Pendant `.ls` listings) are 
 **Garry TJ** and this project provide **no warranty** and accept **no liability** for injury, death, equipment damage, downtime, or any other loss.
 
 If you do not agree, do not use the content or programs.
+
+## License for original writing
+
+Garry TJ’s original markdown and study listings are licensed separately in [`LICENSE.md`](LICENSE.md). That license **does not** grant rights in FANUC trademarks, software, or manuals.

@@ -6,8 +6,9 @@
 | **Difficulty** | Easy |
 | **Tags** | motion, safety |
 | **Track** | 01 — FANUC HandlingTool |
-| **Article** | [`docs/fanuc/motion-paths-home/overview.md`](../../../docs/fanuc/motion-paths-home/overview.md) |
-| **Solution** | [`solution.ls`](solution.ls) (`HOME_SAFE`) |
+| **Article** | [`docs/fanuc/motion-paths-home/overview.md`](../../../docs/fanuc/motion-paths-home/overview.md), [`jog-and-recovery`](../../../docs/fanuc/motion-paths-home/jog-and-recovery.md) |
+| **Guide** | [`doc/guide.md`](doc/guide.md) |
+| **Solution** | [`code/solution.ls`](code/solution.ls) (`HOME_SAFE`) |
 
 ## Statement
 

@@ -48,6 +48,8 @@ New robots change LOTO, fencing, and collaborative vs industrial rules.
 
 ## Official references
 
+Industry and training-budget sources at your company; FANUC commercial material stays with FANUC. This page has no TP syntax.
+
 
 ## Repo references
 

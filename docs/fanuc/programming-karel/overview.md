@@ -15,7 +15,7 @@ Track 01 does not cover Karel. HandlingTool TP is the language for this curricul
 
 ## Definition
 
-Karel is FANUC’s compiled language (`.kl`).
+Karel is FANUC’s compiled language (`.kl`). Names and reserved words there are **not** the HandlingTool lists in [`../programming-tp/identifiers.md`](../programming-tp/identifiers.md) and [`../programming-tp/keywords.md`](../programming-tp/keywords.md).
 
 ## System
 
@@ -45,7 +45,7 @@ Karel plus TP CALL needs options you must verify on the controller.
 
 ## Official references
 
-- HandlingTool / operator manuals: `[OFFICIAL_URL]`
+On manuals **licensed to your site**: the operator / HandlingTool chapter for this topic. Do not paste OEM pages here.
 
 ## Repo references
 

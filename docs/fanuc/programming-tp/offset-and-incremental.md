@@ -46,7 +46,7 @@ Prove offset in T1 away from people.
 
 ## Official references
 
-- HandlingTool / operator manuals: `[OFFICIAL_URL]`
+On manuals **licensed to your site**: the operator / HandlingTool chapter for this topic. Do not paste OEM pages here.
 
 ## Repo references
 

@@ -7,7 +7,8 @@
 | **Tags** | io, logic |
 | **Track** | 01 — FANUC HandlingTool |
 | **Article** | [`docs/fanuc/io-frames-tools/io-classes.md`](../../../docs/fanuc/io-frames-tools/io-classes.md) |
-| **Solution** | [`solution.ls`](solution.ls) (`WAIT_GRIPPER`) |
+| **Guide** | [`doc/guide.md`](doc/guide.md) |
+| **Solution** | [`code/solution.ls`](code/solution.ls) (`WAIT_GRIPPER`) |
 
 ## Statement
 

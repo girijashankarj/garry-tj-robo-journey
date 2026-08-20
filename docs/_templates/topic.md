@@ -48,15 +48,13 @@ Short TP or pendant sequence. Link a practice id.
 
 ## Official references
 
-- HandlingTool: `[OFFICIAL_URL]`
+On manuals **licensed to your site**: the HandlingTool / operator chapter for this topic. Do not paste OEM pages here.
 
 ## Repo references
 
 - Related articles
 - Practice ids
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

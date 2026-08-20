@@ -7,7 +7,8 @@
 | **Tags** | logic |
 | **Track** | 01 — FANUC HandlingTool |
 | **Article** | [`docs/fanuc/programming-tp/registers-jumps-call.md`](../../../docs/fanuc/programming-tp/registers-jumps-call.md) |
-| **Solution** | [`solution.ls`](solution.ls) (`LOOP_CALL`) |
+| **Guide** | [`doc/guide.md`](doc/guide.md) |
+| **Solution** | [`code/solution.ls`](code/solution.ls) (`LOOP_CALL`) |
 
 ## Statement
 

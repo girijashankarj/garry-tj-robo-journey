@@ -1,8 +1,10 @@
 # Teach pendant
 
-> Status: draft  
+> Status: reviewed  
 > Brand: FANUC  
-> Mode: operator, programmer, learner
+> Mode: operator, programmer, learner  
+> Track: 01 HandlingTool  
+> Practice: `practice/fanuc/002-square-path`
 
 ## Overview
 
@@ -36,7 +38,7 @@ Hold deadman and Shift, switch Joint, jog J1, switch World, jog X, Shift+TouchUp
 
 ## Practice
 
-[`002-square-path`](../../../practice/fanuc/002-square-path/).
+[`002-square-path`](../../../practice/fanuc/002-square-path/). Jog and Hold: [`../motion-paths-home/jog-and-recovery.md`](../motion-paths-home/jog-and-recovery.md).
 
 ## Common mistakes
 
@@ -49,7 +51,7 @@ Keep override low on first touch-up.
 
 ## Official references
 
-- HandlingTool / operator manuals: `[OFFICIAL_URL]`
+On manuals **licensed to your site**: the operator / HandlingTool chapter for this topic. Do not paste OEM pages here.
 
 ## Repo references
 

@@ -2,11 +2,18 @@
 
 | Folder | Role |
 |--------|------|
-| [`tp/`](tp/) | Promoted Teach Pendant programs from a real cell |
+| [`tp/`](tp/) | Promoted Teach Pendant packages: `code/` + `doc/guide.md` |
 | [`karel/`](karel/) | Promoted Karel (empty until a Karel track) |
-| [`samples/`](samples/) | Legacy pointer; drills live in [`practice/fanuc/`](../../practice/fanuc/) |
 
-Study drills: [`practice/fanuc/README.md`](../../practice/fanuc/README.md).
+Each promoted TP program:
+
+```text
+programs/fanuc/tp/<name>/
+  code/     # .ls
+  doc/      # guide.md (flowchart, diamonds, block-by-block)
+```
+
+Study drills live only under [`practice/fanuc/`](../../practice/fanuc/). Do not duplicate drill `.ls` files here.
 
 ## Rights, education, and consent
 

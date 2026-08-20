@@ -45,7 +45,7 @@ ISO/TS-style collaborative limits must be measured on the actual tooling.
 
 ## Official references
 
-- HandlingTool / operator manuals: `[OFFICIAL_URL]`
+On manuals **licensed to your site**: the operator / HandlingTool chapter for this topic. Do not paste OEM pages here.
 
 ## Repo references
 

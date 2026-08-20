@@ -7,7 +7,8 @@
 | **Tags** | motion |
 | **Track** | 01 — FANUC HandlingTool |
 | **Article** | [`docs/fanuc/programming-tp/motion-types-fine-cnt.md`](../../../docs/fanuc/programming-tp/motion-types-fine-cnt.md) |
-| **Solution** | [`solution.ls`](solution.ls) (`SQUARE`) |
+| **Guide** | [`doc/guide.md`](doc/guide.md) |
+| **Solution** | [`code/solution.ls`](code/solution.ls) (`SQUARE`) |
 
 ## Statement
 

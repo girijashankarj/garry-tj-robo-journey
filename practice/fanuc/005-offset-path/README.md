@@ -7,7 +7,8 @@
 | **Tags** | motion, frames |
 | **Track** | 01 — FANUC HandlingTool |
 | **Article** | [`docs/fanuc/programming-tp/offset-and-incremental.md`](../../../docs/fanuc/programming-tp/offset-and-incremental.md) |
-| **Solution** | [`solution.ls`](solution.ls) (`OFFSET_SQ`) |
+| **Guide** | [`doc/guide.md`](doc/guide.md) |
+| **Solution** | [`code/solution.ls`](code/solution.ls) (`OFFSET_SQ`) |
 
 ## Statement
 
