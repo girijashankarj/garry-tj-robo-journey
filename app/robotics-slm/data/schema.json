@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Robotics SLM Training Example",
+  "type": "object",
+  "required": ["id", "domain", "task", "input", "output", "validation", "provenance"],
+  "properties": {
+    "id": {"type": "string"},
+    "domain": {"type": "string"},
+    "vendor": {"type": ["string", "null"]},
+    "robot_family": {"type": ["string", "null"]},
+    "task": {"type": "string"},
+    "difficulty": {"enum": ["basic", "intermediate", "advanced", "expert"]},
+    "input": {"type": "string"},
+    "output": {"type": "string"},
+    "reasoning_summary": {"type": ["string", "null"]},
+    "validation": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["unverified", "reviewed", "verified"]},
+        "reviewer": {"type": ["string", "null"]},
+        "notes": {"type": ["string", "null"]}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_type"],
+      "properties": {
+        "source_type": {"enum": ["repo", "manual", "vendor-doc", "synthetic", "field-data"]},
+        "source_ref": {"type": ["string", "null"]},
+        "license": {"type": ["string", "null"]}
+      }
+    },
+    "safety": {"enum": ["normal", "caution", "high-risk"]}
+  }
+}
