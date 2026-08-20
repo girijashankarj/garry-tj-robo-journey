@@ -4,6 +4,7 @@ import { Layout } from "./components/Layout";
 import { HomePage } from "./pages/HomePage";
 import { TopicPage } from "./pages/TopicPage";
 import { DrillPage } from "./pages/DrillPage";
+import { CheckPage } from "./pages/CheckPage";
 import { GlossaryPage } from "./pages/GlossaryPage";
 import { JargonsPage } from "./pages/JargonsPage";
 import { ThemeProvider } from "./theme";
@@ -23,6 +24,7 @@ export default function App() {
               <Route index element={<HomePage />} />
               <Route path="topic/*" element={<TopicPage />} />
               <Route path="drill/:slug" element={<DrillPage />} />
+              <Route path="check" element={<CheckPage />} />
               <Route path="glossary" element={<GlossaryPage />} />
               <Route path="jargons" element={<JargonsPage />} />
               <Route path="mindmap" element={<MindMapPage />} />

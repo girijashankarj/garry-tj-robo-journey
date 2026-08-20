@@ -27,7 +27,7 @@ export function Layout() {
         <Link to="/" className="mb-1 block text-[15px] font-semibold tracking-tight text-app-fg">
           Garry TJ Robo Journey
         </Link>
-        <p className="mb-6 text-xs leading-relaxed text-app-faint">FANUC HandlingTool · educational · local</p>
+        <p className="mb-6 text-xs leading-relaxed text-app-faint">FANUC HandlingTool · educational · unofficial</p>
         <Sidebar />
       </aside>
       <div className="flex min-h-0 min-w-0 flex-1 flex-col">

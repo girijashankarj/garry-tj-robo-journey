@@ -7,8 +7,8 @@ const badge: Record<Finding["severity"], string> = {
   info: "bg-app-accent-bg text-app-accent",
 };
 
-export function PendantCheck({ listing, knownPrograms }: { listing: string; knownPrograms: string[] }) {
-  const [open, setOpen] = useState(false);
+export function PendantCheck({ listing, knownPrograms, defaultOpen = false }: { listing: string; knownPrograms: string[]; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
   const findings = useMemo(() => validateLs(listing, { knownPrograms }), [listing, knownPrograms]);
   const errors = findings.filter((f) => f.severity === "error").length;
   const warnings = findings.filter((f) => f.severity === "warning").length;

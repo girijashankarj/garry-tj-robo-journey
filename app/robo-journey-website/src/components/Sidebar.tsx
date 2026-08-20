@@ -3,7 +3,8 @@ import { drills, getTopic, topics } from "../content/load";
 import type { TopicDoc } from "../content/types";
 import { drillNavLabel, kindLabel, topicGroupLabel } from "../content/labels";
 import { NavLink } from "react-router";
-import { BookOpen, Boxes, Map, Route, Waypoints } from "lucide-react";
+import { BookA, BookOpen, Boxes, ClipboardCheck, House, ListChecks, Map, MessagesSquare, Route, Waypoints } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 const groupOrder = [
   "Path",
@@ -35,38 +36,39 @@ function groupedTopics(): [string, TopicDoc[]][] {
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   `block rounded px-2 py-1 text-sm ${isActive ? "bg-app-accent-bg text-app-accent" : "text-app-muted hover:bg-app-hover hover:text-app-fg"}`;
 
+function SectionHeader({ icon: Icon, label }: { icon: LucideIcon; label: string }) {
+  return (
+    <p className="mb-2 flex items-center gap-2 font-semibold uppercase tracking-wide text-app-faint">
+      <Icon className="h-3.5 w-3.5" /> {label}
+    </p>
+  );
+}
+
+function IconLink({ to, icon: Icon, label, end }: { to: string; icon: LucideIcon; label: string; end?: boolean }) {
+  return (
+    <NavLink to={to} end={end} className={linkClass}>
+      <span className="inline-flex items-center gap-2">
+        <Icon className="h-3.5 w-3.5" /> {label}
+      </span>
+    </NavLink>
+  );
+}
+
 export function Sidebar() {
   return (
     <nav className="space-y-6 text-sm">
       <section>
-        <p className="mb-2 flex items-center gap-2 font-semibold uppercase tracking-wide text-app-faint">
-          <Route className="h-3.5 w-3.5" /> Classroom
-        </p>
-        <NavLink to="/" end className={linkClass}>
-          Home
-        </NavLink>
-        <NavLink to="/mindmap" className={linkClass}>
-          <span className="inline-flex items-center gap-2">
-            <Waypoints className="h-3.5 w-3.5" /> Mind map
-          </span>
-        </NavLink>
-        <NavLink to="/plan" className={linkClass}>
-          <span className="inline-flex items-center gap-2">
-            <Boxes className="h-3.5 w-3.5" /> Path board
-          </span>
-        </NavLink>
-        <NavLink to="/glossary" className={linkClass}>
-          Glossary
-        </NavLink>
-        <NavLink to="/jargons" className={linkClass}>
-          Jargons
-        </NavLink>
+        <SectionHeader icon={Route} label="Classroom" />
+        <IconLink to="/" icon={House} label="Home" end />
+        <IconLink to="/check" icon={ClipboardCheck} label="Pendant check" />
+        <IconLink to="/plan" icon={Boxes} label="Path board" />
+        <IconLink to="/mindmap" icon={Waypoints} label="Mind map" />
+        <IconLink to="/glossary" icon={BookA} label="Glossary" />
+        <IconLink to="/jargons" icon={MessagesSquare} label="Jargons" />
       </section>
 
       <section>
-        <p className="mb-2 flex items-center gap-2 font-semibold uppercase tracking-wide text-app-faint">
-          <Map className="h-3.5 w-3.5" /> Learning path
-        </p>
+        <SectionHeader icon={Map} label="Learning path" />
         {LEARNING_STEPS.map((step) => (
           <div key={step.label} className="mb-3">
             <p className="px-2 text-xs font-medium text-app-faint">{step.label}</p>
@@ -83,9 +85,7 @@ export function Sidebar() {
       </section>
 
       <section>
-        <p className="mb-2 flex items-center gap-2 font-semibold uppercase tracking-wide text-app-faint">
-          <BookOpen className="h-3.5 w-3.5" /> All topics
-        </p>
+        <SectionHeader icon={BookOpen} label="All topics" />
         {groupedTopics().map(([group, list]) => (
           <details key={group} className="mb-1">
             <summary className="cursor-pointer px-2 py-1 text-app-faint hover:text-app-fg">{topicGroupLabel(group)}</summary>
@@ -99,7 +99,7 @@ export function Sidebar() {
       </section>
 
       <section>
-        <p className="mb-2 font-semibold uppercase tracking-wide text-app-faint">Drills</p>
+        <SectionHeader icon={ListChecks} label="Drills" />
         {drills.map((d) => {
           const kind = kindLabel(d.kind);
           return (
