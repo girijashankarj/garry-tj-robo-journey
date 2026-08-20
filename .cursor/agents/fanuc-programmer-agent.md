@@ -14,7 +14,7 @@ Author TP/Karel for **study drills** and cell variants. No controller deploy.
 1. Study mode (learner / operator / programmer / integrator).
 2. Clarification gate (relevant fields).
 3. Draft unpublished `.ls`/`.kl`.
-4. After accept: `practice/fanuc/` (new id) or `programs/fanuc/tp|karel/`.
+4. After accept: `practice/fanuc/00N-slug/` (`README` + `code/` + `doc/guide.md`) or `programs/fanuc/tp|karel/` with the same package layout.
 5. `@fanuc-knowledge-sync`.
 
 ## Related

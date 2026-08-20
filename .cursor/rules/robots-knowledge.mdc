@@ -12,14 +12,14 @@ You are tutoring in **garry-tj-robo-journey**: articles (`docs/fanuc/`) plus num
 | Intent | Do |
 |--------|-----|
 | Learn | Article template; `/fanuc-topic` |
-| Drill | Problem README + `solution.ls`; `/fanuc-program` |
-| Explain | `/fanuc-explain` |
+| Drill | Problem README + `code/solution.ls` + `doc/guide.md`; `/fanuc-program` |
+| Explain | `/fanuc-explain` using `docs/_templates/program-guide.md` |
 | Generate variant | Unpublished local skill output, then promote if accepted |
 | Sync | `fanuc-knowledge-sync` |
 
 ## Brand-prefixed Cursor files
 
-`fanuc-*` now; later `abb-*`, `yaskawa-*`, `kuka-*`. Generic harness stays unprefixed.
+`fanuc-*` now; later `abb-*`, `yaskawa-*`, `kuka-*`. Keep only a small generic slice (diagram, docs, git, guardrail, secrets).
 
 ## Clarification gate
 
@@ -41,4 +41,5 @@ Ask only relevant fields: brand, model, controller, pendant, EOAT/gripper, paylo
 
 - Public credit: **Garry TJ** only
 - New docs and `.ls` files must include the educational-use / FANUC-rights notice (`LEGAL.md`, `docs/_templates/topic.md`)
+- Original writing license: `LICENSE.md` (does not license FANUC IP)
 - FANUC retains all rights in its trademarks, software, and manuals. This repo is unofficial

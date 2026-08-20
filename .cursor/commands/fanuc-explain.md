@@ -9,7 +9,7 @@ description: Fanuc Explain — study guide tutor.
 `/fanuc-explain`
 
 ## Description
-Follow `@fanuc-explainer-agent`. Explain privately first. Prefer linking `practice/fanuc/*/README.md` when the file is a drill.
+Follow `@fanuc-explainer-agent` and `docs/_templates/program-guide.md` (flowchart, diamonds, block-by-block). Prefer `practice/fanuc/*/doc/guide.md` and `code/solution.ls`.
 
 ## Action
 1. Clarification gate (relevant fields only).

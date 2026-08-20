@@ -12,7 +12,7 @@ New FANUC code, or a variant of `practice/fanuc/00N-*/`.
 1. Clarification (relevant fields only).
 2. Draft unpublished `.ls`/`.kl` plus assumptions. Match study-guide tone.
 3. User accept.
-4. Promote: new drill under `practice/fanuc/` **or** cell program under `programs/fanuc/tp/` or `karel/`.
+4. Promote: `practice/fanuc/00N-slug/` with `README.md`, `code/solution.ls`, and `doc/guide.md` (see `docs/_templates/program-guide.md`), **or** the same `code/` + `doc/` under `programs/fanuc/tp/<name>/`.
 5. `fanuc-knowledge-sync`.
 
 ## Rules

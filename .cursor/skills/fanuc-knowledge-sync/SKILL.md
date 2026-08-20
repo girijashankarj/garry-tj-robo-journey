@@ -15,8 +15,12 @@ List paths.
 
 ### 2. Checklist
 - [ ] `docs/fanuc/README.md`
-- [ ] Topic practice links
+- [ ] `docs/fanuc/learning-path.md` if modules or drills changed
+- [ ] `docs/fanuc/topic-map.md` if atoms or unions changed
+- [ ] `docs/glossary.md` / `docs/jargons.md` if new terms were introduced
 - [ ] `practice/fanuc/README.md`
+- [ ] Each drill has `code/solution.ls` and `doc/guide.md` (flowchart + diamonds + blocks)
+- [ ] No `docs/grossary.md`
 - [ ] `programs/fanuc/README.md` if `tp/` or `karel/` changed
 - [ ] Root `README.md` / `CHANGELOG.md`
 - [ ] `AGENTS.md` if conventions changed
