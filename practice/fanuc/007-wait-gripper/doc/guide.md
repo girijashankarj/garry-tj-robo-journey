@@ -49,7 +49,7 @@ flowchart TB
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
-   1:  ! RI/RO numbers are PLACEHOLDERS. Map on cell.
+   1:  ! RI/RO numbers are PLACEHOLDERS. Map on cell. ;
    2:  RO[1]=ON ;
    3:  WAIT RI[1]=ON TIMEOUT,LBL[20] ;
    4:  JMP LBL[30] ;

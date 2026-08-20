@@ -21,7 +21,7 @@ CONTROL_CODE	= 00000000 00000000;
 /APPL
 /MN
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
-   1:  ! Teach PR[1] as the shift. Not valid on INC lines.
+   1:  ! Teach PR[1] as the shift. Not valid on INC lines. ;
    2:  UFRAME_NUM=1 ;
    3:  UTOOL_NUM=1 ;
    4:  J P[1] 100% FINE    ;
@@ -32,13 +32,13 @@ CONTROL_CODE	= 00000000 00000000;
    9:  L P[2] 500mm/sec FINE    ;
    10:  J P[1] 100% FINE    ;
    11:  OFFSET CONDITION PR[1]    ;
-   12:  J P[1] 100% FINE OFFSET    ;
-   13:  J P[2] 100% FINE OFFSET    ;
-   14:  L P[3] 500mm/sec FINE OFFSET    ;
-   15:  L P[4] 500mm/sec FINE OFFSET    ;
-   16:  L P[5] 500mm/sec FINE OFFSET    ;
-   17:  L P[2] 500mm/sec FINE OFFSET    ;
-   18:  J P[1] 100% FINE OFFSET    ;
+   12:  J P[1] 100% FINE Offset    ;
+   13:  J P[2] 100% FINE Offset    ;
+   14:  L P[3] 500mm/sec FINE Offset    ;
+   15:  L P[4] 500mm/sec FINE Offset    ;
+   16:  L P[5] 500mm/sec FINE Offset    ;
+   17:  L P[2] 500mm/sec FINE Offset    ;
+   18:  J P[1] 100% FINE Offset    ;
    19:  END ;
 /POS
 /END

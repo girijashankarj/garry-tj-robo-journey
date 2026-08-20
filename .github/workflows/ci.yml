@@ -28,4 +28,6 @@ jobs:
           cache: npm
           cache-dependency-path: app/robo-journey-website/package-lock.json
       - run: npm ci
+      - name: Pendant-style TP listing validation
+        run: npm run validate:ls
       - run: npm run build

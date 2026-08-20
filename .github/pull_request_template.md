@@ -8,4 +8,5 @@
 - [ ] Poses, I/O, and frames in listings are placeholders, not a real cell's values
 - [ ] New/changed pages follow the template shape ([`CONTRIBUTING.md`](../CONTRIBUTING.md))
 - [ ] Relative links checked (`bash .cursor/hooks/check-links.sh`)
+- [ ] Listings pass the pendant check (`cd app/robo-journey-website && npm run validate:ls`)
 - [ ] New articles are linked from the relevant index / learning path

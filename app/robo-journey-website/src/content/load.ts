@@ -111,6 +111,11 @@ export const drills: DrillDoc[] = (() => {
 
 const drillBySlug = new Map(drills.map((d) => [d.slug, d]));
 
+/** /PROG names across all drill listings (for CALL cross-checks). */
+export const programNames: string[] = drills
+  .map((d) => d.listing.match(/^\/PROG\s+(\S+)/m)?.[1])
+  .filter((n): n is string => n !== undefined);
+
 export function getDrill(slug: string): DrillDoc | undefined {
   return drillBySlug.get(slug);
 }

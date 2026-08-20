@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router";
-import { getDrill, neighborDrills } from "../content/load";
+import { getDrill, neighborDrills, programNames } from "../content/load";
 import { drillNavLabel, drillTitle, kindLabel } from "../content/labels";
 import { MarkdownView } from "../components/MarkdownView";
 import { CodeBlock } from "../components/CodeBlock";
+import { PendantCheck } from "../components/PendantCheck";
 import { DocMeasure, headingsFromMarkdown } from "../components/DocChrome";
 
 type Tab = "statement" | "listing" | "guide";
@@ -42,7 +43,12 @@ export function DrillPage() {
       <div className="mt-6">
         {tab === "statement" ? <MarkdownView markdown={drill.statement} fromDir={`practice/fanuc/${drill.slug}`} /> : null}
         {tab === "guide" ? <MarkdownView markdown={drill.guide} fromDir={`practice/fanuc/${drill.slug}/doc`} /> : null}
-        {tab === "listing" ? <CodeBlock code={drill.listing} language="plaintext" /> : null}
+        {tab === "listing" ? (
+          <>
+            <PendantCheck listing={drill.listing} knownPrograms={programNames} />
+            <CodeBlock code={drill.listing} language="plaintext" />
+          </>
+        ) : null}
       </div>
       <nav className="mt-12 flex justify-between border-t border-app-border pt-6 text-sm">
         {prev ? (

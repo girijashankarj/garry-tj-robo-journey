@@ -60,7 +60,7 @@ flowchart TB
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
-   1:  ! Study drill. Teach all P[] / PR[] on the cell.
+   1:  ! Study drill. Teach all P[] / PR[] on the cell. ;
    2:  UFRAME_NUM=1 ;
    3:  UTOOL_NUM=1 ;
    4:  J P[1] 100% FINE    ;

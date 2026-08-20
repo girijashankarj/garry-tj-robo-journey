@@ -49,7 +49,7 @@ flowchart TB
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
-   1:  ! Pair with SUB100 on controller. Data via R[] only.
+   1:  ! Pair with SUB100 on controller. Data via R[] only. ;
    2:  R[1]=0    ;
    3:  R[2]=5    ;
    4:  LBL[50] ;

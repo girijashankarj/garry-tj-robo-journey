@@ -21,7 +21,7 @@ CONTROL_CODE	= 00000000 00000000;
 /APPL
 /MN
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
-   1:  ! After INC, edit position index XYZWPR (example 200mm).
+   1:  ! After INC, edit position index XYZWPR (example 200mm). ;
    2:  UFRAME_NUM=1 ;
    3:  UTOOL_NUM=1 ;
    4:  J P[1] 100% FINE    ;

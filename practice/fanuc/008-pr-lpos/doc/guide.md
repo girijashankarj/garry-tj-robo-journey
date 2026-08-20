@@ -33,13 +33,15 @@ flowchart LR
 flowchart TB
   start(["start"])
   rem("L0-1 element remark")
-  ap["L2-3 J to work"]
-  snap["L4 PR1=LPOS"]
-  walk["L5-12 nudge XY then L"]
-  jh["L13 J return"]
-  endn(["L14 END"])
+  frames["L2-3 UFRAME UTOOL"]
+  ap["L4-5 J to work"]
+  snap["L6 PR1=LPOS"]
+  walk["L7-14 nudge XY then L"]
+  jh["L15 J return"]
+  endn(["L16 END"])
   start -.-> rem
-  rem --> ap
+  rem --> frames
+  frames --> ap
   ap ==> snap
   snap ==> walk
   walk ==> jh
@@ -53,7 +55,7 @@ flowchart TB
   classDef note fill:#FFFFFF,stroke:#999999,stroke-dasharray: 5 5
   class start,endn term
   class rem note
-  class ap,snap,walk,jh proc
+  class frames,ap,snap,walk,jh proc
 ```
 
 ## Listing (`/MN`)
@@ -62,20 +64,22 @@ flowchart TB
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
-   1:  ! PR[1,1]=X PR[1,2]=Y. Distances are class examples.
-   2:  J P[1] 100% FINE    ;
-   3:  J P[2] 100% FINE    ;
-   4:  PR[1]=LPOS    ;
-   5:  PR[1,1]=PR[1,1]+300    ;
-   6:  L PR[1] 800mm/sec FINE    ;
-   7:  PR[1,2]=PR[1,2]+300    ;
+   1:  ! PR[1,1]=X PR[1,2]=Y. Distances are class examples. ;
+   2:  UFRAME_NUM=1 ;
+   3:  UTOOL_NUM=1 ;
+   4:  J P[1] 100% FINE    ;
+   5:  J P[2] 100% FINE    ;
+   6:  PR[1]=LPOS    ;
+   7:  PR[1,1]=PR[1,1]+300    ;
    8:  L PR[1] 800mm/sec FINE    ;
-   9:  PR[1,1]=PR[1,1]-300    ;
-   10:  L PR[1] 800mm/sec FINE    ;
-   11:  PR[1,2]=PR[1,2]-300    ;
-   12:  L PR[1] 800mm/sec FINE    ;
-   13:  J P[1] 100% FINE    ;
-   14:  END ;
+   9:  PR[1,2]=PR[1,2]+300    ;
+  10:  L PR[1] 800mm/sec FINE    ;
+  11:  PR[1,1]=PR[1,1]-300    ;
+  12:  L PR[1] 800mm/sec FINE    ;
+  13:  PR[1,2]=PR[1,2]-300    ;
+  14:  L PR[1] 800mm/sec FINE    ;
+  15:  J P[1] 100% FINE    ;
+  16:  END ;
 ```
 
 ## Block-by-block
@@ -85,11 +89,12 @@ How to read this chart: [`how-to-read-a-guide.md`](../../../../docs/fanuc/how-to
 | Lines | What | Atom |
 |-------|------|------|
 | 0–1 | LEGAL + element remark | [Remark](../../../../docs/fanuc/programming-tp/remark.md) |
-| 2–3 | Joint to work | [J](../../../../docs/fanuc/programming-tp/motion-j.md) |
-| 4 | PR[1]=LPOS | [PR](../../../../docs/fanuc/io-frames-tools/pr-vs-r.md) / [LPOS](../../../../docs/fanuc/io-frames-tools/pr-vs-r.md) |
-| 5–12 | ±X / ±Y then Linear to PR | [PR](../../../../docs/fanuc/io-frames-tools/pr-vs-r.md) + [L](../../../../docs/fanuc/programming-tp/motion-l.md) |
-| 13 | Joint return | [J](../../../../docs/fanuc/programming-tp/motion-j.md) |
-| 14 | END | [END](../../../../docs/glossary.md) |
+| 2–3 | UFRAME / UTOOL before Cartesian | [Frames](../../../../docs/fanuc/io-frames-tools/frames.md) |
+| 4–5 | Joint to work | [J](../../../../docs/fanuc/programming-tp/motion-j.md) |
+| 6 | PR[1]=LPOS | [PR](../../../../docs/fanuc/io-frames-tools/pr-vs-r.md) / [LPOS](../../../../docs/fanuc/io-frames-tools/pr-vs-r.md) |
+| 7–14 | ±X / ±Y then Linear to PR | [PR](../../../../docs/fanuc/io-frames-tools/pr-vs-r.md) + [L](../../../../docs/fanuc/programming-tp/motion-l.md) |
+| 15 | Joint return | [J](../../../../docs/fanuc/programming-tp/motion-j.md) |
+| 16 | END | [END](../../../../docs/glossary.md) |
 
 ## Safety
 

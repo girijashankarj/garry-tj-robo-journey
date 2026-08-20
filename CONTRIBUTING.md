@@ -23,6 +23,7 @@ Guides use [`docs/fanuc/how-to-read-a-guide.md`](docs/fanuc/how-to-read-a-guide.
 2. Placeholder I/O, frames, and poses only.
 3. Index row in [`practice/fanuc/README.md`](practice/fanuc/README.md).
 4. ATTR size fields may stay zero — these are study listings, not backups.
+5. Run the pendant check: `cd app/robo-journey-website && npm run validate:ls` (CI runs it too; the drill's Listing tab in the study UI shows the same findings).
 
 Inner pages may use the short LEGAL pointer from the templates. Keep the full notice on `LEGAL.md` and the root README.
 

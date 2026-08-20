@@ -60,7 +60,7 @@ flowchart TB
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
-   1:  ! C via,dest. Prefer CNT near a round path; FINE to stop.
+   1:  ! C via,dest. Prefer CNT near a round path; FINE to stop. ;
    2:  UFRAME_NUM=1 ;
    3:  UTOOL_NUM=1 ;
    4:  J P[1] 100% FINE    ;

@@ -21,19 +21,21 @@ CONTROL_CODE	= 00000000 00000000;
 /APPL
 /MN
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
-   1:  ! PR[1,1]=X PR[1,2]=Y. Distances are class examples.
-   2:  J P[1] 100% FINE    ;
-   3:  J P[2] 100% FINE    ;
-   4:  PR[1]=LPOS    ;
-   5:  PR[1,1]=PR[1,1]+300    ;
-   6:  L PR[1] 800mm/sec FINE    ;
-   7:  PR[1,2]=PR[1,2]+300    ;
+   1:  ! PR[1,1]=X PR[1,2]=Y. Distances are class examples. ;
+   2:  UFRAME_NUM=1 ;
+   3:  UTOOL_NUM=1 ;
+   4:  J P[1] 100% FINE    ;
+   5:  J P[2] 100% FINE    ;
+   6:  PR[1]=LPOS    ;
+   7:  PR[1,1]=PR[1,1]+300    ;
    8:  L PR[1] 800mm/sec FINE    ;
-   9:  PR[1,1]=PR[1,1]-300    ;
-   10:  L PR[1] 800mm/sec FINE    ;
-   11:  PR[1,2]=PR[1,2]-300    ;
-   12:  L PR[1] 800mm/sec FINE    ;
-   13:  J P[1] 100% FINE    ;
-   14:  END ;
+   9:  PR[1,2]=PR[1,2]+300    ;
+  10:  L PR[1] 800mm/sec FINE    ;
+  11:  PR[1,1]=PR[1,1]-300    ;
+  12:  L PR[1] 800mm/sec FINE    ;
+  13:  PR[1,2]=PR[1,2]-300    ;
+  14:  L PR[1] 800mm/sec FINE    ;
+  15:  J P[1] 100% FINE    ;
+  16:  END ;
 /POS
 /END
