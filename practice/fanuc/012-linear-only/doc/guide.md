@@ -9,6 +9,28 @@ In plain English: only **straight-line** moves between taught points, then back 
 
 On the pendant: **L** **P[1]**–**P[3]**–**P[1]**, **FINE**, **mm/sec**. Atom for [Linear](../../../../docs/fanuc/programming-tp/motion-l.md).
 
+## Path / origin
+
+Study sketch in **UFRAME**. Not millimetres. Teach on the cell.
+
+Straight TCP lines through three taught points and back to the first — every leg is **Linear**, FINE stop at each corner (compare the joint sweeps in [`011-joint-only`](../../011-joint-only/)).
+
+```mermaid
+flowchart LR
+  p1["P[1]"]
+  p2["P[2]"]
+  p3["P[3]"]
+  p1 ==>|"L 100mm/sec"| p2
+  p2 ==>|"L 100mm/sec"| p3
+  p3 ==>|"L 100mm/sec"| p1
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef io fill:#D5E8D4,stroke:#82B366
+  class p1,p2,p3 proc
+```
+
 ## Program flow
 
 ```mermaid
@@ -36,7 +58,7 @@ flowchart TB
 
 ## Listing (`/MN`)
 
-`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls). Step it yourself: the **Run** tab on this drill's page in the study UI (FWD like T2, toggle I/O, watch registers).
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;

@@ -9,6 +9,30 @@ In plain English: write **notes** at the top (who / cell / placeholders), then o
 
 On the pendant: stacked **!** lines (no block comments). The ATTR **COMMENT** field is **not** a TP remark. Atom: [remark](../../../../docs/fanuc/programming-tp/remark.md).
 
+## Path / origin
+
+Study sketch in **UFRAME**. Not millimetres. Teach on the cell.
+
+**Remarks never move the TCP.** Five comment lines execute as nothing; the path is a single Joint sweep home.
+
+```mermaid
+flowchart LR
+  rem["L0-4 remarks — no motion"]
+  cur["current pose"]
+  home(["PR[1:Home]"])
+  rem -.-> cur
+  cur -.->|"J 15% FINE"| home
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef io fill:#D5E8D4,stroke:#82B366
+  classDef note fill:#FFFFFF,stroke:#999999,stroke-dasharray: 5 5
+  class rem note
+  class cur proc
+  class home term
+```
+
 ## Program flow
 
 ```mermaid
@@ -36,7 +60,7 @@ flowchart TB
 
 ## Listing (`/MN`)
 
-`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls). Step it yourself: the **Run** tab on this drill's page in the study UI (FWD like T2, toggle I/O, watch registers).
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;

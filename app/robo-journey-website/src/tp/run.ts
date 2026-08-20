@@ -64,10 +64,18 @@ function condText(c: Cond): string {
   return c.type === "io" ? `${c.signal}=${c.on ? "ON" : "OFF"}` : `${c.lhs}${c.cmp}${c.rhs}`;
 }
 
+/** Every R index and I/O signal the listing mentions anywhere (for panels). */
+export function collectRefs(source: string): { rIndices: number[]; signals: string[] } {
+  const rIndices = [...new Set([...source.matchAll(/R\[(\d+)\]/g)].map((m) => Number(m[1])))].sort((a, b) => a - b);
+  const signals = [...new Set([...source.matchAll(/\b(RI|RO|DI|DO|GI|GO|SI|UI)\[(\d+)\]/g)].map((m) => `${m[1]}[${m[2]}]`))].sort();
+  return { rIndices, signals };
+}
+
 export class Machine {
   program: Program;
   layout: Map<string, { x: number; y: number; ref: PosRef }>;
   state: MachineState;
+  refs: { rIndices: number[]; signals: string[] };
   private pc = 0;
   private labels = new Map<number, number>();
   private offsetPR: number | null = null;
@@ -77,6 +85,7 @@ export class Machine {
 
   constructor(source: string) {
     this.program = parseProgram(source);
+    this.refs = collectRefs(source);
     this.layout = layoutPositions(this.program);
     this.program.instrs.forEach((ins, i) => {
       if (ins.op === "lbl") this.labels.set(ins.label, i);
@@ -86,16 +95,13 @@ export class Machine {
 
   private freshState(): MachineState {
     const io: Record<string, boolean> = {};
-    for (const ins of this.program.instrs) {
-      if (ins.op === "wait" && ins.cond.type === "io") io[ins.cond.signal] = false;
-      if (ins.op === "if" && ins.cond.type === "io") io[ins.cond.signal] = false;
-      if (ins.op === "skipcond" && ins.cond.type === "io") io[ins.cond.signal] = false;
-      if (ins.op === "ioset") io[ins.signal] = false;
-    }
+    for (const s of this.refs.signals) io[s] = false;
+    const R: Record<number, number> = {};
+    for (const i of this.refs.rIndices) R[i] = 0;
     return {
       status: "idle",
       line: this.program.instrs[0]?.n ?? null,
-      R: {},
+      R,
       PR: {},
       io,
       pos: { x: 30, y: CANVAS.h - 30 },
@@ -121,8 +127,16 @@ export class Machine {
 
   toggleInput(signal: string): void {
     this.state.io[signal] = !this.state.io[signal];
-    this.log(`input ${signal} → ${this.state.io[signal] ? "ON" : "OFF"}`);
+    const forced = /^(RO|DO|GO)\[/.test(signal) ? "output forced (I/O Force)" : "input";
+    this.log(`${forced} ${signal} → ${this.state.io[signal] ? "ON" : "OFF"}`);
     // waiting is re-evaluated on the next FWD step, like pressing FWD again in T2
+  }
+
+  /** Set a numeric register by hand (like DATA → Registers on the pendant). */
+  setR(index: number, value: number): void {
+    if (!Number.isFinite(value)) return;
+    this.state.R[index] = value;
+    this.log(`R[${index}]=${value} (set by you)`);
   }
 
   resetAlarm(): void {

@@ -38,7 +38,7 @@ flowchart TB
 
 ## Listing (`/MN`)
 
-`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls). Step it yourself: the **Run** tab on this drill's page in the study UI (FWD like T2, toggle I/O, watch registers).
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;

@@ -113,21 +113,32 @@ export function StepRunner({ listing }: { listing: string }) {
                   {k} {s.io[k] ? "ON" : "OFF"}
                 </button>
               ))}
-              <p className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-app-faint">Outputs</p>
+              <p className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-app-faint">Outputs (click to force)</p>
               {outputs.length === 0 ? <p className="text-xs text-app-faint">none</p> : null}
               {outputs.map((k) => (
-                <span key={k} className={`mb-1 mr-1 inline-block rounded-lg px-2 py-1 font-mono text-xs ${s.io[k] ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" : "border border-app-border text-app-faint"}`}>
+                <button
+                  key={k}
+                  type="button"
+                  onClick={() => act(() => machine.toggleInput(k))}
+                  className={`mb-1 mr-1 rounded-lg px-2 py-1 font-mono text-xs ${s.io[k] ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" : "border border-app-border text-app-faint"}`}
+                >
                   {k} {s.io[k] ? "ON" : "OFF"}
-                </span>
+                </button>
               ))}
             </div>
             <div className="rounded-xl border border-app-border p-3">
-              <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-app-faint">Registers</p>
-              {rIdx.length === 0 && prIdx.length === 0 ? <p className="text-xs text-app-faint">none set yet</p> : null}
+              <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-app-faint">Registers (editable)</p>
+              {rIdx.length === 0 && prIdx.length === 0 ? <p className="text-xs text-app-faint">none referenced</p> : null}
               {rIdx.map((i) => (
-                <p key={i} className="font-mono text-xs text-app-muted">
-                  R[{i}] = {Number.isInteger(s.R[i]) ? s.R[i] : s.R[i].toFixed(1)}
-                </p>
+                <label key={i} className="mb-1 flex items-center gap-2 font-mono text-xs text-app-muted">
+                  R[{i}] =
+                  <input
+                    type="number"
+                    value={s.R[i]}
+                    onChange={(e) => act(() => machine.setR(i, Number(e.target.value)))}
+                    className="w-20 rounded border border-app-border bg-app-surface px-1.5 py-0.5 font-mono text-xs text-app-fg focus:border-app-accent focus:outline-none"
+                  />
+                </label>
               ))}
               {prIdx.map((i) => (
                 <p key={i} className="font-mono text-xs text-app-muted">

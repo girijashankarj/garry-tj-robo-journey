@@ -9,6 +9,26 @@ In plain English: **after** you understand why it faulted, send the arm **slowly
 
 On the pendant: **J** **PR[1:Home]** at low percent, **FINE**. This is not a substitute for finding the cause. ATTR sizes may be zero (study ASCII).
 
+## Path / origin
+
+Study sketch in **UFRAME**. Not millimetres. Teach on the cell.
+
+Recovery move: from wherever the fault stopped the arm, one **slow Joint** sweep home — and only after the cause is understood and the path is clear.
+
+```mermaid
+flowchart LR
+  stopd["stopped after fault"]
+  home(["PR[1:Home]"])
+  stopd -.->|"J 10% FINE"| home
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef io fill:#D5E8D4,stroke:#82B366
+  class stopd fault
+  class home term
+```
+
 ## Program flow
 
 ```mermaid
@@ -36,7 +56,7 @@ flowchart TB
 
 ## Listing (`/MN`)
 
-`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls). Step it yourself: the **Run** tab on this drill's page in the study UI (FWD like T2, toggle I/O, watch registers).
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;

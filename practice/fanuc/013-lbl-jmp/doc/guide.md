@@ -9,6 +9,28 @@ In plain English: **jump over** some remarks, then Joint home. HandlingTool does
 
 On the pendant: **JMP LBL[10]**, skipped remarks, **LBL[10]**, **J** home. Atom: [JMP/LBL](../../../../docs/fanuc/programming-tp/logic-lbl-jmp.md).
 
+## Path / origin
+
+Study sketch in **UFRAME**. Not millimetres. Teach on the cell.
+
+**JMP changes which lines run, not where the TCP goes.** The jump lands past the skipped remarks; the only motion is one Joint sweep home.
+
+```mermaid
+flowchart LR
+  jmp(["JMP LBL[10]"])
+  lbl["LBL[10]"]
+  home(["PR[1:Home]"])
+  jmp ==>|"skips L5-6"| lbl
+  lbl -.->|"J 15% FINE"| home
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef io fill:#D5E8D4,stroke:#82B366
+  class jmp,lbl origin
+  class home term
+```
+
 ## Program flow
 
 ```mermaid
@@ -43,7 +65,7 @@ flowchart TB
 
 ## Listing (`/MN`)
 
-`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls). Step it yourself: the **Run** tab on this drill's page in the study UI (FWD like T2, toggle I/O, watch registers).
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;

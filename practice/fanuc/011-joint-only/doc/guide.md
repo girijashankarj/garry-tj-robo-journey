@@ -9,6 +9,28 @@ In plain English: two Joint moves only — no straight-line Cartesian path.
 
 On the pendant: **J** to **PR[1]** then **PR[2]**, **FINE**, feed in **percent**. Teach both PRs on the cell. Atom for [Joint](../../../../docs/fanuc/programming-tp/motion-j.md).
 
+## Path / origin
+
+Study sketch in **UFRAME**. Not millimetres. Teach on the cell.
+
+Two Joint targets, FINE stop at each. Both sweeps are axis space — neither leg is a straight TCP line (compare [`012-linear-only`](../../012-linear-only/)).
+
+```mermaid
+flowchart LR
+  cur["current pose"]
+  p1["PR[1]"]
+  p2(["PR[2]"])
+  cur -.->|"J 15% FINE"| p1
+  p1 -.->|"J 15% FINE"| p2
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef io fill:#D5E8D4,stroke:#82B366
+  class cur,p1 proc
+  class p2 term
+```
+
 ## Program flow
 
 ```mermaid
@@ -38,7 +60,7 @@ flowchart TB
 
 ## Listing (`/MN`)
 
-`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls). Step it yourself: the **Run** tab on this drill's page in the study UI (FWD like T2, toggle I/O, watch registers).
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;

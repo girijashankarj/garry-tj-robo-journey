@@ -9,6 +9,26 @@ In plain English: show a **message** on the pendant, then Joint home. This is **
 
 On the pendant: **MESSAGE[1]**, then **J**. Confirm the instruction name on your software. Atom: [MESSAGE](../../../../docs/fanuc/programming-tp/message.md).
 
+## Path / origin
+
+Study sketch in **UFRAME**. Not millimetres. Teach on the cell.
+
+**MESSAGE does not halt** (unlike [`020-user-alarm`](../../020-user-alarm/)). The text posts and the Joint sweep home runs immediately.
+
+```mermaid
+flowchart LR
+  msg["MESSAGE[1] — no halt"]
+  home(["PR[1:Home]"])
+  msg -.->|"J 15% FINE"| home
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef io fill:#D5E8D4,stroke:#82B366
+  class msg io
+  class home term
+```
+
 ## Program flow
 
 ```mermaid
@@ -39,7 +59,7 @@ flowchart TB
 
 ## Listing (`/MN`)
 
-`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls). Step it yourself: the **Run** tab on this drill's page in the study UI (FWD like T2, toggle I/O, watch registers).
 
 ```
    0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
