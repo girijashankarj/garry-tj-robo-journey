@@ -9,6 +9,7 @@ Finish **only** if every box is true. Otherwise stop and say what is missing.
 - [ ] Program-flow Mermaid is **not** the stub `start → END` with no `L#`
 - [ ] If any **J / L / C / OFFSET / INC** exists: path/origin is **not** the stub `1 → 2`; if no TCP motion, say so in one sentence (do not paste a fake square)
 - [ ] `04-design.md` control-flow chart has the same branches as `01` (timeout, skip, abort, END)
+- [ ] `code/as-received.ls` ran through the pendant check (from `app/robo-journey-website/`: `npm run validate:ls -- <path>`); unexplained errors are noted in `01-analysis.md`
 
 ## Missing callees (hard stop before a full 04 architecture)
 

@@ -32,7 +32,7 @@ Before calling the pack done, complete [QUALITY.md](../../templates/listing-revi
 1. **Intake gate.** If required fields are empty, ask and **stop**. Do not invent I/O or millimetres. Required: org slug, program name, this pass (understand / fault-find / refactor-plan), listing source, controller/version if known, symptom if any.
 2. **Cell surroundings.** Fill the intake table (EOAT, peripherals, I/O, frames/home, R/PR/P[], PNS/RSR/macros, backups SRAM/FROM/MD/USB/auto backup, T1/DCS). Unknown is valid — record **Asked, not provided**. Do not stop the first pack if only the listing exists.
 3. Fill `doc/00-before.md` (inventory, CALL tree, **Cell vs listing**).
-4. Fill `doc/01-analysis.md`. Every JMP, LBL, IF, WAIT, SKIP, UALM, CALL in `/MN` must appear. Program-flow Mermaid (`mermaid-program-flow`). Path/origin Mermaid if the TCP moves (`fanuc-path-diagram`).
+4. Fill `doc/01-analysis.md`. Every JMP, LBL, IF, WAIT, SKIP, UALM, CALL in `/MN` must appear. Program-flow Mermaid (`mermaid-program-flow`). Path/origin Mermaid if the TCP moves (`fanuc-path-diagram`). Run the pendant check on the as-received listing (from `app/robo-journey-website/`: `npm run validate:ls -- ../../temp/clients/<org>/<program>/code/as-received.ls`) and note unexplained errors in the analysis.
 5. Fill `doc/02-verdict.md` (severity table; fact vs assumption). Unknown gripper/I/O/backup may be P2 **assumption**.
 6. Fill `doc/03-suggestions.md` (numbered, effort S/M/L, ranked). Do not implement.
 7. Fill `doc/04-design.md` last. Standalone. Include **Cell surroundings** (facts only) and **Asked, not provided**. Relative links only (no `practice/`).

@@ -1,6 +1,9 @@
-// CLI: pendant-style validation of every .ls study listing in the repo.
-// Run from app/robo-journey-website: npm run validate:ls
-// Exit 1 if any listing has errors (warnings and infos do not fail CI).
+// CLI: pendant-style validation of .ls listings.
+// No args: every study listing under practice/ and programs/ (CI mode).
+// With args: just those files (paths relative to the current directory), e.g.
+//   npm run validate:ls -- ../../temp/clients/org-a/prog/code/as-received.ls
+// CALL targets are cross-checked against all repo /PROG names either way.
+// Exit 1 if any checked listing has errors (warnings and infos do not fail).
 
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
@@ -25,14 +28,26 @@ function findLs(dir: string): string[] {
   return out;
 }
 
-const files = [...findLs(join(repoRoot, "practice")), ...findLs(join(repoRoot, "programs"))].sort();
+const repoFiles = [...findLs(join(repoRoot, "practice")), ...findLs(join(repoRoot, "programs"))].sort();
+const args = process.argv.slice(2);
+const files = args.length > 0 ? args.map((a) => resolve(process.cwd(), a)) : repoFiles;
 if (files.length === 0) {
   console.error("no .ls files found under practice/ or programs/");
   process.exit(1);
 }
 
-const sources = new Map(files.map((f) => [f, readFileSync(f, "utf8")]));
-const knownPrograms = [...sources.values()].map(programName).filter((n): n is string => n !== null);
+function readOrDie(f: string): string {
+  try {
+    return readFileSync(f, "utf8");
+  } catch {
+    console.error(`cannot read ${f}`);
+    process.exit(1);
+  }
+}
+
+const sources = new Map(files.map((f) => [f, readOrDie(f)]));
+const knownSources = new Map([...repoFiles.map((f) => [f, readOrDie(f)] as const), ...sources]);
+const knownPrograms = [...knownSources.values()].map(programName).filter((n): n is string => n !== null);
 
 const icon: Record<Finding["severity"], string> = { error: "✖", warning: "⚠", info: "ℹ" };
 let errors = 0;

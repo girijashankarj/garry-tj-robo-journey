@@ -6,6 +6,11 @@ All notable changes to this project are documented in this file.
 
 ### Added
 
+- Live study site on GitHub Pages (deploys from `main`); CI runs the markdown link check, the listing pendant check, and the app build
+- Pendant check: static validation of `.ls` study listings (`npm run validate:ls`, and a panel on each drill's Listing tab)
+- Run tab on each drill: pendant-style FWD step with registers, I/O toggles, WAIT/timeout, alarms, and a study-plane TCP trace
+- Community files: code of conduct, issue templates, PR checklist
+
 - Local classroom UI in [`app/robo-journey-website/`](app/robo-journey-website/) (Garry TJ Robo Journey; light/dark; path board; in-app markdown links; `npm run dev`)
 - Path / origin Mermaid: OFFSET 1-2-3-4 then 1'-2'-3'-4', INC, frames, pallet, pick/place, skip; skill `fanuc-path-diagram`; rule mermaid-path-origin
 - [`docs/fanuc/how-to-read-a-guide.md`](docs/fanuc/how-to-read-a-guide.md): chart legend for GitHub readers (no `.cursor` required)

@@ -11,6 +11,7 @@
 - Ask relevant cell questions before code
 - After accepted edits: `fanuc-knowledge-sync`
 - Educational use; `LEGAL.md` + `LICENSE.md`
+- Commits: no co-author trailers; public credit Garry TJ only
 
 ## Cases
 
