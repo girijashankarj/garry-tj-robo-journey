@@ -1,0 +1,59 @@
+{
+  "version": "0.1.0",
+  "principle": "concept-first-syntax-second",
+  "common_domains": [
+    "robot-fundamentals",
+    "kinematics-and-coordinate-systems",
+    "motion-and-trajectory",
+    "programming-and-controllers",
+    "io-and-sequencing",
+    "industrial-integration",
+    "end-of-arm-tooling",
+    "machine-vision",
+    "applications",
+    "commissioning",
+    "troubleshooting-and-maintenance",
+    "simulation-and-offline-programming",
+    "safety",
+    "manufacturing-cell"
+  ],
+  "vendors": [
+    "fanuc",
+    "abb",
+    "kuka",
+    "yaskawa",
+    "universal-robots",
+    "kawasaki",
+    "staubli",
+    "denso",
+    "epson",
+    "omron"
+  ],
+  "applications": [
+    "machine-tending",
+    "press-stamping",
+    "pick-and-place",
+    "palletising",
+    "welding",
+    "assembly",
+    "dispensing",
+    "packaging",
+    "material-handling",
+    "inspection"
+  ],
+  "task_types": [
+    "explain",
+    "classify",
+    "compare",
+    "configure",
+    "program",
+    "debug",
+    "diagnose",
+    "sequence",
+    "calculate",
+    "review",
+    "refuse-unsafe-request"
+  ],
+  "difficulty": ["basic", "intermediate", "advanced", "expert"],
+  "safety": ["normal", "caution", "high-risk"]
+}
