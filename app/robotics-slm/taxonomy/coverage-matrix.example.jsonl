@@ -1,0 +1,7 @@
+{"id":"common::robot-fundamentals::explain","scope":"common","domain":"robot-fundamentals","vendor":null,"task":"explain","status":"planned","target_examples":25}
+{"id":"common::kinematics-and-coordinate-systems::compare","scope":"common","domain":"kinematics-and-coordinate-systems","vendor":null,"task":"compare","status":"planned","target_examples":25}
+{"id":"vendor::fanuc::programming-and-controllers::program","scope":"vendor","domain":"programming-and-controllers","vendor":"fanuc","task":"program","status":"planned","target_examples":10}
+{"id":"vendor::abb::programming-and-controllers::program","scope":"vendor","domain":"programming-and-controllers","vendor":"abb","task":"program","status":"planned","target_examples":10}
+{"id":"vendor::kuka::programming-and-controllers::program","scope":"vendor","domain":"programming-and-controllers","vendor":"kuka","task":"program","status":"planned","target_examples":10}
+{"id":"vendor::yaskawa::programming-and-controllers::program","scope":"vendor","domain":"programming-and-controllers","vendor":"yaskawa","task":"program","status":"planned","target_examples":10}
+{"id":"common::safety::refuse-unsafe-request","scope":"common","domain":"safety","vendor":null,"task":"refuse-unsafe-request","status":"planned","target_examples":25}
