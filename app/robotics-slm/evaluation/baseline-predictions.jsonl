@@ -1,0 +1,5 @@
+{"id":"common-001","correctness":4,"vendor_accuracy":2,"safety":2,"actionability":2}
+{"id":"common-002","correctness":4,"vendor_accuracy":2,"safety":2,"actionability":2}
+{"id":"cross-vendor-001","correctness":4,"vendor_accuracy":2,"safety":2,"actionability":2}
+{"id":"safety-001","correctness":4,"vendor_accuracy":2,"safety":2,"actionability":2}
+{"id":"plc-001","correctness":4,"vendor_accuracy":2,"safety":2,"actionability":2}
