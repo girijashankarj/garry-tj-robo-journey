@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Robotics SLM Human Review Record",
+  "type": "object",
+  "required": ["id", "source", "question", "answer", "review"],
+  "properties": {
+    "id": {"type": "string"},
+    "source": {"type": "string"},
+    "vendor": {"type": ["string", "null"]},
+    "domain": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "expected_concepts": {"type": "array", "items": {"type": "string"}},
+    "review": {
+      "type": "object",
+      "required": ["status", "technical_accuracy", "safety_accuracy", "provenance_ok"],
+      "properties": {
+        "status": {"enum": ["pending", "approved", "rejected", "needs_revision"]},
+        "technical_accuracy": {"enum": ["unknown", "pass", "fail"]},
+        "safety_accuracy": {"enum": ["not_applicable", "pass", "fail"]},
+        "provenance_ok": {"type": "boolean"},
+        "reviewer": {"type": ["string", "null"]},
+        "notes": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
