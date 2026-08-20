@@ -9,7 +9,8 @@
       { "command": ".cursor/hooks/auto-format.sh" }
     ],
     "beforeShellExecution": [
-      { "command": ".cursor/hooks/shell-guard.sh" }
+      { "command": ".cursor/hooks/shell-guard.sh" },
+      { "command": ".cursor/hooks/pre-commit-check.sh" }
     ]
   }
 }

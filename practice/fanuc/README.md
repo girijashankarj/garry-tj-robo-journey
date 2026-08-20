@@ -1,6 +1,6 @@
 # Practice — FANUC HandlingTool
 
-Each drill folder: `README.md` (statement), `code/solution.ls`, `doc/guide.md`. First time: [`how-to-read-a-guide.md`](../../docs/fanuc/how-to-read-a-guide.md). Explain with `/fanuc-explain`. Local UI: [`../../app/robo-journey-website/`](../../app/robo-journey-website/).
+Each drill folder: `README.md` (statement), `code/solution.ls`, `doc/guide.md`. First time: [`how-to-read-a-guide.md`](../../docs/fanuc/how-to-read-a-guide.md). Explain with `/fanuc-explain`. Local UI: [`../../app/robo-journey-website/`](../../app/robo-journey-website/) — each drill has a **Pendant check** (static validation) and a **Run** tab (step the listing like T2: FWD, I/O toggles, alarms; study plane, not a cell simulation).
 
 `code/solution.ls` files are **study listings**, not controller backups. `/ATTR` fields such as `PROG_SIZE` and `LINE_COUNT` may be **zero**. All poses and I/O are placeholders.
 

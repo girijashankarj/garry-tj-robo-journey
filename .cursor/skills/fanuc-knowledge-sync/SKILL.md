@@ -21,6 +21,7 @@ List paths.
 - [ ] `docs/glossary.md` / `docs/jargons.md` if new terms were introduced
 - [ ] `practice/fanuc/README.md`
 - [ ] Each drill has `code/solution.ls` and `doc/guide.md` (one mermaid program flow + block table)
+- [ ] Listings pass the pendant check: `cd app/robo-journey-website && npm run validate:ls`
 - [ ] Motion/frame/OFFSET/pallet/pick/skip pages have Path / origin Mermaid (1-2-3-4 vs 1'-2'-3'-4' where OFFSET)
 - [ ] No `docs/grossary.md`
 - [ ] `programs/fanuc/README.md` if `tp/` or `karel/` changed

@@ -5,9 +5,10 @@ import { drillNavLabel, drillTitle, kindLabel } from "../content/labels";
 import { MarkdownView } from "../components/MarkdownView";
 import { CodeBlock } from "../components/CodeBlock";
 import { PendantCheck } from "../components/PendantCheck";
+import { StepRunner } from "../components/StepRunner";
 import { DocMeasure, headingsFromMarkdown } from "../components/DocChrome";
 
-type Tab = "statement" | "listing" | "guide";
+type Tab = "statement" | "listing" | "guide" | "run";
 
 export function DrillPage() {
   const { slug } = useParams();
@@ -29,14 +30,14 @@ export function DrillPage() {
       </p>
       <h1 className="mt-1 text-3xl font-semibold tracking-tight">{drillTitle(drill)}</h1>
       <div className="mt-5 flex gap-2">
-        {(["statement", "listing", "guide"] as const).map((t) => (
+        {(["statement", "listing", "guide", "run"] as const).map((t) => (
           <button
             key={t}
             type="button"
             onClick={() => setTab(t)}
             className={`rounded-lg px-3 py-1.5 text-sm ${tab === t ? "bg-app-accent-bg text-app-accent" : "border border-app-border text-app-muted"}`}
           >
-            {t === "listing" ? "Listing" : t === "statement" ? "Statement" : "Guide"}
+            {t === "listing" ? "Listing" : t === "statement" ? "Statement" : t === "run" ? "Run" : "Guide"}
           </button>
         ))}
       </div>
@@ -49,6 +50,7 @@ export function DrillPage() {
             <CodeBlock code={drill.listing} language="plaintext" />
           </>
         ) : null}
+        {tab === "run" ? <StepRunner listing={drill.listing} /> : null}
       </div>
       <nav className="mt-12 flex justify-between border-t border-app-border pt-6 text-sm">
         {prev ? (
