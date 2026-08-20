@@ -36,11 +36,11 @@ flowchart LR
 
 ## Worked example
 
-Deadman + Shift, teach in T1, T2 step [`002-square-path`](../../practice/fanuc/002-square-path/), Auto only with the fence closed (industrial) or collaborative limits enabled (cobot). Recovery: [`../motion-paths-home/jog-and-recovery.md`](../motion-paths-home/jog-and-recovery.md).
+Deadman + Shift, teach in T1, T2 step [`002-square-path`](../../../practice/fanuc/002-square-path/), Auto only with the fence closed (industrial) or collaborative limits enabled (cobot). Recovery: [`../motion-paths-home/jog-and-recovery.md`](../motion-paths-home/jog-and-recovery.md).
 
 ## Practice
 
-[`001-home-safe`](../../practice/fanuc/001-home-safe/) at low joint override. After a understood stop: [`../../practice/fanuc/009-fault-home/`](../../practice/fanuc/009-fault-home/).
+[`001-home-safe`](../../../practice/fanuc/001-home-safe/) at low joint override. After a understood stop: [`../../../practice/fanuc/009-fault-home/`](../../../practice/fanuc/009-fault-home/).
 
 ## Common mistakes
 

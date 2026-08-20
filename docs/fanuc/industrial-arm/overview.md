@@ -35,7 +35,7 @@ Integrator worksheet: application (handling vs weld), payload (EOAT + part), rea
 
 ## Practice
 
-Motion drills assume an industrial trainer cell: [`practice/fanuc/002-square-path/`](../../practice/fanuc/002-square-path/).
+Motion drills assume an industrial trainer cell: [`practice/fanuc/002-square-path/`](../../../practice/fanuc/002-square-path/).
 
 ## Common mistakes
 

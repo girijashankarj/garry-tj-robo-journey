@@ -40,6 +40,15 @@ if echo "$STAGED_FILES" | grep -q "\.env"; then
   SECRETS_FOUND=true
 fi
 
+# Check markdown links when .md files are staged
+if echo "$STAGED_FILES" | grep -q "\.md$"; then
+  HOOK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+  if ! bash "$HOOK_DIR/check-links.sh"; then
+    echo "🛑 Broken markdown links detected. Fix them before committing."
+    [ "$WARN_ONLY" = "1" ] || exit 1
+  fi
+fi
+
 if [ "$SECRETS_FOUND" = true ]; then
   echo ""
   echo "⚠️  Potential secrets detected in staged files."

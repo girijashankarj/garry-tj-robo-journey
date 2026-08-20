@@ -33,7 +33,7 @@ If the cell is fenced industrial, use T1/T2/Auto and fence interlocks ([modes](.
 
 ## Practice
 
-No cobot-specific drill yet. Use industrial motion set: [`practice/fanuc/`](../../practice/fanuc/).
+No cobot-specific drill yet. Use industrial motion set: [`practice/fanuc/`](../../../practice/fanuc/).
 
 ## Common mistakes
 

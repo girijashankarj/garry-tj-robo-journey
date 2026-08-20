@@ -9,7 +9,7 @@ description: Draft a Conventional Commit message from staged or described change
 `/commit-message`
 
 ## Description
-Produce a **Conventional Commits** message aligned with this repo’s [CONTRIBUTING.md](CONTRIBUTING.md): `type(scope): description` (imperative, lowercase subject, no trailing period in subject).
+Produce a **Conventional Commits** message aligned with this repo’s [CONTRIBUTING.md](../../../CONTRIBUTING.md): `type(scope): description` (imperative, lowercase subject, no trailing period in subject).
 
 ## Action
 1. If the user has **staged changes**, infer `type`, `scope`, and summary from `git diff --cached --stat` and optionally `git diff --cached` for key renames or intent.

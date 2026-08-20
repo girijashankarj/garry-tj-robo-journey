@@ -9,7 +9,7 @@ description: Draft a pull request title and description with test plan and risks
 `/pr-description`
 
 ## Description
-Generate a PR **title** and **body** suitable for GitHub/GitLab: summary, motivation, scope, test plan, rollout risk, and linked issues. Align with [CONTRIBUTING.md](CONTRIBUTING.md) and your team’s PR template if one exists.
+Generate a PR **title** and **body** suitable for GitHub/GitLab: summary, motivation, scope, test plan, rollout risk, and linked issues. Align with [CONTRIBUTING.md](../../../CONTRIBUTING.md) and your team’s PR template if one exists.
 
 ## Action
 1. Gather context: branch name, commit range vs base (`main`/`develop`), file summary, and user goals.

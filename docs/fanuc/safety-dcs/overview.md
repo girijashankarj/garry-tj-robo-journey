@@ -35,7 +35,7 @@ Lockout, confirm D7 LED off, then maintenance. Programming drills stay motion/I/
 
 ## Practice
 
-[`001-home-safe`](../../practice/fanuc/001-home-safe/).
+[`001-home-safe`](../../../practice/fanuc/001-home-safe/).
 
 ## Common mistakes
 
