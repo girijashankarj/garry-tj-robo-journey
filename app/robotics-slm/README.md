@@ -90,23 +90,98 @@ The parent Robo Journey website remains a learning project and is currently FANU
 7. Compare the SLM against RAG and general-purpose model baselines.
 8. Keep the first model small enough to develop and evaluate economically.
 
-## Data domains
+## Current status
 
-See `data/` for the canonical domain boundaries and schema.
+**Phase 0 - Foundation: IN PROGRESS**
 
-## Planned milestones
+The repository structure, canonical schema, taxonomy, inventory pipeline, dataset builder, evaluation benchmark and human review workflow are in place.
 
-- [x] Define initial multi-vendor project structure
+The first FANUC-derived examples are **review candidates only**. They are not yet approved training data.
+
+## Next steps
+
+### Phase 0 - Foundation
+
+- [x] Create multi-vendor SLM project structure
 - [x] Define canonical training-example schema
-- [ ] Inventory existing Robo Journey content
-- [ ] Build multi-vendor source ingestion pipeline
-- [ ] Create instruction/response dataset
-- [ ] Create robotics evaluation benchmark
-- [ ] Establish small baseline model
-- [ ] Train first SLM prototype
-- [ ] Compare SLM vs RAG vs general LLM
-- [ ] Package inference API
-- [ ] Validate commercial use cases
+- [x] Define cross-vendor robotics taxonomy
+- [x] Create taxonomy coverage matrix generator
+- [x] Create repository inventory pipeline
+- [x] Create conservative dataset builder
+- [x] Create initial evaluation benchmark
+- [x] Create human review workflow
+- [ ] Review and approve first FANUC candidate dataset
+- [ ] Generate first coverage/gap report
+
+### Phase 1 - Dataset v0.1
+
+- [ ] Extract additional approved knowledge from Robo Journey
+- [ ] Create common robotics examples independent of vendor
+- [ ] Add ABB dataset candidates
+- [ ] Add KUKA dataset candidates
+- [ ] Add Yaskawa/Motoman dataset candidates
+- [ ] Add Universal Robots dataset candidates
+- [ ] Add Kawasaki/Stäubli/DENSO/Epson/Omron candidates where authoritative data is available
+- [ ] Add machine-tending examples
+- [ ] Add press/stamping examples
+- [ ] Add welding examples
+- [ ] Add vision examples
+- [ ] Add PLC/integration examples
+- [ ] Add commissioning and troubleshooting examples
+- [ ] Balance dataset by vendor/domain/task/difficulty/safety
+- [ ] Validate licensing and provenance for every source
+- [ ] Create train/validation/test split with leakage checks
+
+### Phase 2 - Baselines
+
+- [ ] Build deterministic/rules baseline for selected tasks
+- [ ] Build RAG baseline over approved robotics corpus
+- [ ] Select a small open-weight baseline model
+- [ ] Run the benchmark against all baselines
+- [ ] Define minimum quality and safety gates
+
+### Phase 3 - First Robotics SLM
+
+- [ ] Select model architecture and parameter budget
+- [ ] Build tokenizer/data pipeline if training from scratch
+- [ ] Establish M1 development baseline
+- [ ] Train first small prototype
+- [ ] Instruction-tune on approved dataset
+- [ ] Evaluate against benchmark and baselines
+- [ ] Quantize and measure local inference
+- [ ] Measure latency, memory and cost
+
+### Phase 4 - Product Prototype
+
+- [ ] Build inference API
+- [ ] Build vendor-aware routing/context layer
+- [ ] Add citations/provenance to model responses
+- [ ] Add confidence and unknown-answer behaviour
+- [ ] Add safety guardrails
+- [ ] Build evaluation regression pipeline
+- [ ] Test with real industrial workflows
+
+### Phase 5 - Commercial Validation
+
+- [ ] Identify the highest-value robotics use cases
+- [ ] Interview potential industrial customers/integrators
+- [ ] Quantify time/cost saved per workflow
+- [ ] Compare against general LLM + RAG solutions
+- [ ] Define deployment model: local, edge, private cloud or API
+- [ ] Validate willingness to pay
+- [ ] Decide whether the SLM itself is the product or an embedded component
+
+## Definition of done for v0.1
+
+We do **not** call the model commercially viable merely because it can generate fluent robotics answers.
+
+v0.1 must demonstrate:
+
+1. Strong performance on the robotics benchmark.
+2. Correct separation of common vs vendor-specific knowledge.
+3. Safe behaviour on high-risk requests.
+4. Traceable provenance for factual answers.
+5. Measurable advantage in latency, cost, privacy or deployment over a general model + RAG baseline.
 
 ## Safety
 
