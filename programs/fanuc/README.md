@@ -1,17 +1,15 @@
 # FANUC programs
 
-| Folder | Contents |
-|--------|----------|
-| [`tp/`](tp/) | Teach Pendant programs (`.ls` documentation form) |
-| [`karel/`](karel/) | Karel sources (`.kl`) |
-| [`samples/`](samples/) | Generic examples, not a real cell |
+| Folder | Role |
+|--------|------|
+| [`tp/`](tp/) | Promoted Teach Pendant programs from a real cell |
+| [`karel/`](karel/) | Promoted Karel (empty until a Karel track) |
+| [`samples/`](samples/) | Legacy pointer; drills live in [`practice/fanuc/`](../../practice/fanuc/) |
 
-Drafts belong in `temp/fanuc-program-author/` until accepted. Then list new files here and on `docs/fanuc/README.md` via `fanuc-knowledge-sync`.
+Study drills: [`practice/fanuc/README.md`](../../practice/fanuc/README.md).
 
-## Index
+## Rights, education, and consent
 
-| File | Purpose | Status |
-|------|---------|--------|
-| [`samples/HOME_SAFE.ls`](samples/HOME_SAFE.ls) | Commented home/safe pose skeleton | sample |
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
 
-Keep [`tp/.gitkeep`](tp/.gitkeep) and [`karel/.gitkeep`](karel/.gitkeep) until real programs land.
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

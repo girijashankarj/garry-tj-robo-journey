@@ -1,23 +1,23 @@
 ---
 name: fanuc-explain
-description: FANUC explain — FANUC-first robot knowledge workflow.
+description: Fanuc Explain — study guide tutor.
 ---
 
-# Command: FANUC explain
+# Command: fanuc-explain
 
 ## Invocation
 `/fanuc-explain`
 
 ## Description
-Follow `@fanuc-explainer-agent`. Write `temp/fanuc-program-explain/`.
+Follow `@fanuc-explainer-agent`. Explain privately first. Prefer linking `practice/fanuc/*/README.md` when the file is a drill.
 
 ## Action
-1. Apply clarification gate (relevant cell fields only).
-2. Follow skill `fanuc-program-explain`.
-3. After user accepts a promote, run skill `fanuc-knowledge-sync`.
+1. Clarification gate (relevant fields only).
+2. Matching `fanuc-*` skill.
+3. After accept, `fanuc-knowledge-sync`.
 
-## When to Use
-FANUC queries, code, explanations, or topic docs.
+## Rights, education, and consent
 
-## Expected Output
-Scratch files under `temp/<skill-name>/`, then optional promote to `docs/` or `programs/`.
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

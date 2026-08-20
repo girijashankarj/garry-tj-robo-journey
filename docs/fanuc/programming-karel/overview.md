@@ -1,71 +1,58 @@
-# Karel programming
+# Karel
 
 > Status: stub  
 > Brand: FANUC  
-> Personas: student, operator, programmer, integrator  
-> Related programs: `programs/fanuc/samples/`
+> Mode: programmer, learner
 
 ## Overview
 
-Karel is FANUC’s Pascal-like language for more structured logic, file I/O, and utilities. Many cells mix Karel utilities with TP motion. Stubs only until a real `.kl` sample is accepted.
+Track 01 does not cover Karel. HandlingTool TP is the language for this curriculum.
+
+## When to use
+
+- After a Karel course or controller option is confirmed
+- Not as a default for Track 01 drills
 
 ## Definition
 
-**Karel**: compiled robot language (`.kl` source). Use when TP is not enough; still ask controller software options before generating.
+Karel is FANUC’s compiled language (`.kl`).
 
 ## System
 
 ```mermaid
 flowchart LR
-  operator[Operator]
-  pendant[TeachPendant]
-  controller[Controller]
-  robot[Robot]
-  eot[EOAT]
-  operator --> pendant --> controller --> robot --> eot
+  tp[TeachPendant]
+  karel[Karel]
+  tp --> cell[HandlingCell]
+  karel -.-> cell
 ```
 
-## Use cases
+## Worked example
 
-```mermaid
-flowchart TD
-  actor[Persona]
-  uc1[LearnConcept]
-  uc2[ApplyInCell]
-  actor --> uc1
-  actor --> uc2
-```
+Use [`practice/fanuc/`](../../../practice/fanuc/) TP solutions until a Karel track exists.
 
-## Sequence
+## Practice
 
-```mermaid
-sequenceDiagram
-  participant Operator
-  participant Pendant
-  participant Controller
-  participant Robot
-  Operator->>Pendant: Select procedure
-  Pendant->>Controller: Command
-  Controller->>Robot: MotionOrIO
-  Robot-->>Operator: Status
-```
+None in Track 01.
+
+## Common mistakes
+
+- Generating Karel as if it were required for Track 01 drills
 
 ## Safety notes
 
-- OEM manuals and site rules override this stub.
-- Validate on a teach pendant in a controlled cell.
+Karel plus TP CALL needs options you must verify on the controller.
 
 ## Official references
 
-- FANUC handling tool / operator manual: `[OFFICIAL_URL]`
-- Software version: `[CONTROLLER_SOFT_VERSION]`
+- HandlingTool / operator manuals: `[OFFICIAL_URL]`
 
 ## Repo references
 
-- Index: [`../README.md`](../README.md)
-- Template: [`../../_templates/topic.md`](../../_templates/topic.md)
-- Sample program: [`../../../programs/fanuc/samples/HOME_SAFE.ls`](../../../programs/fanuc/samples/HOME_SAFE.ls)
+- [`../programming-tp/overview.md`](../programming-tp/overview.md)
 
-## TODO
+## Rights, education, and consent
 
-- Expand from reviewed notes in `inbox/pdf/` and licensed manuals (link, do not paste).
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

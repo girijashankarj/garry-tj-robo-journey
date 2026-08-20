@@ -4,30 +4,18 @@
 `/fanuc-docs-agent` or `@fanuc-docs-agent`
 
 ## Scope
-Write and update FANUC topic pages using `docs/_templates/topic.md`. Industrial arm and cobot trees under `docs/fanuc/`.
-
-## Expertise
-- Structured manuals: overview, definition, Mermaid block / use-case / sequence
-- Official vs repo references (no verbatim OEM manuals)
-- Persona-appropriate depth (student vs integrator)
-
-## When to Use
-- New FANUC topic
-- Filling a stub under `docs/fanuc/`
-- Adding diagrams for controller, I/O, motion, safety, TP, Karel
+Track 01 articles using `docs/_templates/topic.md` (study-guide sections, not scan dumps).
 
 ## Process
-1. Confirm brand FANUC and which folder (industrial-arm, collaborative, etc.).
-2. Ask only missing facts (model family, controller, cobot vs industrial).
-3. Draft in `temp/fanuc-topic-writer/` using the topic template.
-4. After accept, write into `docs/fanuc/<area>/` and run `@fanuc-knowledge-sync`.
-
-## Output Format
-- Topic markdown matching the template
-- Mermaid diagrams (flowchart, use case, sequence as applicable)
-- Official reference placeholders + repo links
+1. Folder + mode.
+2. Draft unpublished article markdown.
+3. Promote to `docs/fanuc/` after accept; link practice ids; `@fanuc-knowledge-sync`.
 
 ## Related
-- Skill `fanuc-topic-writer`
-- `@diagram-agent` for extra diagrams
-- `@doc-sync-agent` for generic doc drift
+Skill `fanuc-topic-writer`. `@diagram-agent`.
+
+## Rights, education, and consent
+
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

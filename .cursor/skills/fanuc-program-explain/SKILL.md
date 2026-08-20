@@ -1,37 +1,21 @@
 ---
 name: fanuc-program-explain
-description: Explain existing FANUC TP or Karel programs with annotations. Use when the user pastes FANUC code or asks what a program in programs/fanuc does.
+description: Explain FANUC TP or Karel (paste, practice solution, or programs/fanuc). Use when the user asks what a program does.
 ---
 
 # Skill: FANUC program explain
 
 ## Trigger
-User provides FANUC source (paste, path, or screenshot transcription) and wants an explanation.
-
-## Prerequisites
-- [ ] Source text available
-- [ ] Relevant cell questions asked if I/O or frames are unnamed
+Pasted TP/Karel, or a path under `practice/fanuc/` or `programs/fanuc/`.
 
 ## Steps
-
-### 1. Context
-Ask only missing: model, controller, pendant, EOAT, frames, I/O meaning, home.
-
-### 2. Explain
-Write `temp/fanuc-program-explain/explanation.md`:
-- Purpose summary
-- Step sequence
-- Block annotations
-- Unknowns vs confirmed facts
-- Safety notes
-- Links to `docs/fanuc/` topics
-
-### 3. Optional promote
-If the user wants this as a lasting doc, use `fanuc-topic-writer` after accept.
+1. Missing cell context only.
+2. Write an unpublished explanation (summary, sequence, table, safety, links to `docs/fanuc/`).
+3. Optional: promote to an article via `fanuc-topic-writer` after accept.
 
 ## Rules
-- **NEVER** guess I/O device names as fact; label as assumption.
-- Prefer tables for registers and I/O.
+- Label unknown I/O as assumption.
+- Prefer the matching practice README if the file is a drill solution.
 
-## Completion
-Annotated explanation in `temp/fanuc-program-explain/`.
+## Rights
+Include `LEGAL.md` notices on promoted docs and programs. FANUC retains all rights. Educational use; user consent and risk. Public credit: Garry TJ only.

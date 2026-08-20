@@ -1,23 +1,23 @@
 ---
 name: fanuc-program
-description: FANUC program — FANUC-first robot knowledge workflow.
+description: Fanuc Program — study guide tutor.
 ---
 
-# Command: FANUC program
+# Command: fanuc-program
 
 ## Invocation
 `/fanuc-program`
 
 ## Description
-Follow `@fanuc-programmer-agent`. Draft under `temp/fanuc-program-author/`.
+Follow `@fanuc-programmer-agent`. Draft privately, then promote to `practice/fanuc/` (new drill) or `programs/fanuc/tp/`.
 
 ## Action
-1. Apply clarification gate (relevant cell fields only).
-2. Follow skill `fanuc-program-author`.
-3. After user accepts a promote, run skill `fanuc-knowledge-sync`.
+1. Clarification gate (relevant fields only).
+2. Matching `fanuc-*` skill.
+3. After accept, `fanuc-knowledge-sync`.
 
-## When to Use
-FANUC queries, code, explanations, or topic docs.
+## Rights, education, and consent
 
-## Expected Output
-Scratch files under `temp/<skill-name>/`, then optional promote to `docs/` or `programs/`.
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

@@ -1,35 +1,43 @@
 # garry-tj-robo-journey
 
-A shared go-through repo for **multiple personas** learning and working with industrial robots. **FANUC first** (six-axis arms and collaborative robots). Later brands: ABB, Yaskawa, KUKA.
+Study guide by **Garry TJ** for industrial robots, with **Cursor as the tutor**. FANUC HandlingTool first (six-axis arms and collaborative robots). Later tracks: ABB, Yaskawa, KUKA.
 
-## What lives here
+Educational material only. See [`LEGAL.md`](LEGAL.md) for FANUC rights and use at your own consent and risk.
 
-| Path | Purpose |
-|------|---------|
-| [`docs/`](docs/) | Topic manuals: overview, definitions, Mermaid diagrams, official and repo references |
-| [`programs/`](programs/) | Teach Pendant, Karel, and sample programs (by brand) |
-| [`temp/`](temp/) | Skill scratch output (`temp/<skill-name>/`). Not promoted until accepted |
-| [`inbox/pdf/`](inbox/pdf/) | Future notes ingest (your/friend PDFs). Not processed in this cut |
-| [`.cursor/`](.cursor/) | Rules, agents, skills, commands, hooks, guardrails |
+## Learning path
 
-Brand-specific Cursor files use a prefix: `fanuc-*` now; later `abb-*`, `yaskawa-*`, `kuka-*`.
+1. Pick a **mode**: operator, programmer, integrator, or learner — [`docs/personas.md`](docs/personas.md)
+2. Read articles in [`docs/fanuc/`](docs/fanuc/) (order: [`learning-path.md`](docs/fanuc/learning-path.md))
+3. Solve drills in [`practice/fanuc/`](practice/fanuc/) (statement → your attempt → `solution.ls`)
+4. Use Cursor for the case you are in (table below)
 
-## Personas
+## Cursor cases
 
-See [`docs/personas.md`](docs/personas.md): operator, programmer, integrator, student/learner, notes-reviewer.
+| You want to | Command / agent |
+|-------------|-----------------|
+| Study a concept | `/fanuc-topic` or `@fanuc-docs-agent` |
+| Solve or vary a drill | `/fanuc-program` or `@fanuc-programmer-agent` |
+| Explain pasted TP / Karel | `/fanuc-explain` or `@fanuc-explainer-agent` |
+| After an accepted edit, fix indexes | `@fanuc-knowledge-sync` |
 
-## How to work in Cursor
+Agents ask only the **cell fields that matter** (model, controller, pendant, EOAT, I/O, frames, home). Promote accepted work into `docs/`, `practice/`, or `programs/`.
 
-1. Open this folder as the workspace.
-2. Restart Cursor so `.cursor/` rules, agents, skills, and hooks load.
-3. For FANUC program or explanation work, use `@fanuc-programmer-agent`, `@fanuc-explainer-agent`, or `/fanuc-program` / `/fanuc-explain`.
-4. Agents ask **only relevant** cell details (model, controller, pendant, EOAT, I/O, home path, and so on) before generating or explaining code.
-5. After accepted topic/program/doc changes, run `@fanuc-knowledge-sync` (or `/fanuc-topic` then sync) so indexes and cross-links stay current.
+## Layout
+
+| Path | Role |
+|------|------|
+| [`docs/fanuc/`](docs/fanuc/) | Topic articles |
+| [`practice/fanuc/`](practice/fanuc/) | Numbered problems + `solution.ls` |
+| [`programs/fanuc/`](programs/fanuc/) | Cell programs you promote (`tp/`, `karel/`) |
+| [`.cursor/`](.cursor/) | Rules, `fanuc-*` agents/skills, hooks |
+| [`LEGAL.md`](LEGAL.md) | FANUC rights + educational use / own consent |
 
 ## Safety
 
-Robot motion and I/O in this repo are **documentation and examples**, not a substitute for OEM manuals, DCS setup, or site safety procedures. Validate on a teach pendant in a controlled cell.
+Examples are study material, not a commissioned cell. Prove in T1, then T2 step, then Auto. Site SOP and OEM manuals override this repo.
 
-## License / manuals
+## Rights, education, and consent
 
-Do not commit copyrighted OEM manuals verbatim. Link official references; keep original notes in `inbox/` until reviewed.
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

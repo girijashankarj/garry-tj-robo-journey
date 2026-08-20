@@ -1,75 +1,62 @@
 # {Topic title}
 
-> Status: stub | draft | reviewed  
+> Status: stub \| draft \| reviewed  
 > Brand: FANUC  
-> Personas: operator | programmer | integrator | student | notes-reviewer  
-> Related programs: `programs/fanuc/...`
+> Mode: learner \| operator \| programmer \| integrator  
+> Track: 01 HandlingTool  
+> Practice: `practice/fanuc/...`
 
 ## Overview
 
-One short paragraph: what this topic is and why it matters in a cell.
+What this is and why it matters.
+
+## When to use
+
+Bullet list of situations (and when not to).
 
 ## Definition
 
-Precise terms. Distinguish industrial arm vs collaborative robot when relevant.
+Precise terms.
 
 ## System
-
-Block diagram of components and data/motion flow.
 
 ```mermaid
 flowchart LR
   operator[Operator]
   pendant[TeachPendant]
   controller[Controller]
-  robot[RobotArmOrCobot]
+  robot[Robot]
   eot[EOAT]
   operator --> pendant --> controller --> robot --> eot
 ```
 
-## Use cases
+## Worked example
 
-```mermaid
-flowchart TD
-  actor[Persona]
-  uc1[UseCase1]
-  uc2[UseCase2]
-  actor --> uc1
-  actor --> uc2
-```
+Short TP or pendant sequence. Link a practice id.
 
-## Sequence
+## Practice
 
-Use when the topic is a procedure (teach, recover, cycle).
+- [`practice/fanuc/00N-slug/`](../../practice/fanuc/00N-slug/)
 
-```mermaid
-sequenceDiagram
-  participant Operator
-  participant Pendant
-  participant Controller
-  participant Robot
-  Operator->>Pendant: Request
-  Pendant->>Controller: Command
-  Controller->>Robot: MotionOrIO
-  Robot-->>Controller: Status
-```
+## Common mistakes
+
+- ...
 
 ## Safety notes
 
-- Site procedures and OEM manuals override this page.
-- Collaborative and industrial cells have different force, speed, and fencing rules.
+- Site SOP and OEM manuals override this page.
 
 ## Official references
 
-- FANUC operator / handling tool / DCS manuals (link only; do not paste copyrighted text): `[OFFICIAL_URL]`
-- Controller software version: `[CONTROLLER_SOFT_VERSION]`
+- HandlingTool: `[OFFICIAL_URL]`
 
 ## Repo references
 
-- Docs: `docs/fanuc/...`
-- Programs: `programs/fanuc/...`
-- Temp drafts: `temp/<skill-name>/`
+- Related articles
+- Practice ids
 
-## TODO
+## Rights, education, and consent
 
-- Fill from reviewed notes in `inbox/pdf/` when available.
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

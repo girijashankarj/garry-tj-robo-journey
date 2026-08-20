@@ -1,38 +1,20 @@
 ---
 name: fanuc-topic-writer
-description: Write FANUC topic pages from docs/_templates/topic.md with Mermaid diagrams and official/repo references. Use when adding or filling FANUC documentation topics.
+description: Write FANUC study articles from docs/_templates/topic.md. Use when adding or filling Track 01 documentation.
 ---
 
 # Skill: FANUC topic writer
 
 ## Trigger
-New or stub FANUC topic under `docs/fanuc/`.
-
-## Prerequisites
-- [ ] Template `docs/_templates/topic.md` exists
-- [ ] Target folder chosen (industrial-arm, collaborative, controller-pendant, etc.)
+New or updated `docs/fanuc/` article.
 
 ## Steps
-
-### 1. Scope
-Confirm topic title, persona depth, cobot vs industrial if relevant.
-
-### 2. Draft
-Copy template structure into `temp/fanuc-topic-writer/<slug>.md`. Fill:
-- Overview, definition
-- System block diagram (Mermaid flowchart)
-- Use case diagram (Mermaid)
-- Sequence diagram (Mermaid) when a procedure exists
-- Safety notes
-- Official references (URLs/placeholders — no verbatim manuals)
-- Repo references (`docs/…`, `programs/…`)
-
-### 3. Promote after accept
-Write to `docs/fanuc/<area>/<slug>.md`. Run `fanuc-knowledge-sync`.
+1. Confirm folder and study mode.
+2. Draft unpublished markdown from the template (When to use, Worked example, Practice links, Common mistakes).
+3. Promote after accept. Run `fanuc-knowledge-sync`.
 
 ## Rules
-- **NEVER** scrape or paste copyrighted OEM manual text.
-- Keep stubs honest: mark TODO where PDFs/notes are still pending.
+- Curriculum voice. **NEVER** paste OEM manuals. Do not present this as an official FANUC course agenda.
 
-## Completion
-Topic draft in temp, then promoted page + index update.
+## Rights
+Include `LEGAL.md` notices on promoted docs and programs. FANUC retains all rights. Educational use; user consent and risk. Public credit: Garry TJ only.

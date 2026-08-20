@@ -1,40 +1,25 @@
 ---
 name: fanuc-program-author
-description: Draft FANUC Teach Pendant or Karel programs after a cell clarification gate. Use when the user asks for FANUC code, a robot program, pick/place, path, or I/O handshake.
+description: Draft FANUC TP or Karel for study drills or cell variants after a clarification gate. Use for new programs, pick/place, path, I/O handshake, or practice variants.
 ---
 
 # Skill: FANUC program author
 
 ## Trigger
-User wants new FANUC TP or Karel code (arm or cobot).
-
-## Prerequisites
-- [ ] Brand is FANUC (or user confirmed)
-- [ ] Clarification gate completed or assumptions listed
-- [ ] Output dir `temp/fanuc-program-author/` exists (create if needed)
+New FANUC code, or a variant of `practice/fanuc/00N-*/`.
 
 ## Steps
-
-### 1. Clarification (relevant only)
-Ask as needed: model, controller, teach pendant, EOAT/gripper, payload, UTOOL/UFRAME, I/O, DCS/collaborative vs industrial, home/recovery, envelope/tour size, TP vs Karel.
-
-### 2. Draft
-- Create `temp/fanuc-program-author/` files (`.ls` or `.kl` plus a short `.md` assumptions note).
-- Comment the program for the active persona.
-- Do **not** write into `programs/` yet.
-
-### 3. Review with user
-- Show assumptions, I/O map, motion outline.
-- Wait for accept.
-
-### 4. Promote (only after accept)
-- Copy to `programs/fanuc/tp/` or `programs/fanuc/karel/`.
-- Run skill `fanuc-knowledge-sync`.
+1. Clarification (relevant fields only).
+2. Draft unpublished `.ls`/`.kl` plus assumptions. Match study-guide tone.
+3. User accept.
+4. Promote: new drill under `practice/fanuc/` **or** cell program under `programs/fanuc/tp/` or `karel/`.
+5. `fanuc-knowledge-sync`.
 
 ## Rules
-- **NEVER** invent plant I/O numbers as if they were measured on a real cell.
-- **NEVER** treat drafts as verified motion.
-- **ALWAYS** state home/safe pose if motion is included.
+- **NEVER** invent measured plant I/O.
+- **NEVER** paste OEM manuals into the published guide.
+- **ALWAYS** state home/safe if there is motion.
+- **ALWAYS** put a FANUC-rights + educational / own-consent comment in `.ls` (see `LEGAL.md`).
 
-## Completion
-Draft in `temp/fanuc-program-author/` with assumptions; promoted only after accept.
+## Rights
+Include `LEGAL.md` notices on promoted docs and programs. FANUC retains all rights. Educational use; user consent and risk. Public credit: Garry TJ only.

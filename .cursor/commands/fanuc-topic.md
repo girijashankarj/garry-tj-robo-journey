@@ -1,23 +1,23 @@
 ---
 name: fanuc-topic
-description: FANUC topic — FANUC-first robot knowledge workflow.
+description: Fanuc Topic — study guide tutor.
 ---
 
-# Command: FANUC topic
+# Command: fanuc-topic
 
 ## Invocation
 `/fanuc-topic`
 
 ## Description
-Follow `@fanuc-docs-agent` and template `docs/_templates/topic.md`.
+Follow `@fanuc-docs-agent` and `docs/_templates/topic.md`. Curriculum voice; educational, not an official FANUC agenda.
 
 ## Action
-1. Apply clarification gate (relevant cell fields only).
-2. Follow skill `fanuc-topic-writer`.
-3. After user accepts a promote, run skill `fanuc-knowledge-sync`.
+1. Clarification gate (relevant fields only).
+2. Matching `fanuc-*` skill.
+3. After accept, `fanuc-knowledge-sync`.
 
-## When to Use
-FANUC queries, code, explanations, or topic docs.
+## Rights, education, and consent
 
-## Expected Output
-Scratch files under `temp/<skill-name>/`, then optional promote to `docs/` or `programs/`.
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

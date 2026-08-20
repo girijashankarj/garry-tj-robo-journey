@@ -1,75 +1,68 @@
 # AGENTS.md — Instructions for AI Agents
 
-> Instructions for agents working in **garry-tj-robo-journey**, a multi-persona FANUC-first robot knowledge repo (industrial arms and cobots). Later brands: ABB, Yaskawa, KUKA.
+**garry-tj-robo-journey** is a **study guide plus Cursor tutor** (articles + practice drills), FANUC-first. Later: ABB, Yaskawa, KUKA. Author: **Garry TJ**. Educational use only (`LEGAL.md`).
 
-## Project overview
+Config: `.cursor/config/project.json`. Handbook files may still use `{{CONFIG.section.key}}`.
 
-This is a **docs + robot-programs** repo (no application package.json). Knowledge lives in `docs/`; Teach Pendant, Karel, and sample programs live in `programs/`. Cursor configuration lives in `.cursor/`.
+## Product
 
-Configuration: `.cursor/config/project.json`. Handbook components still use `{{CONFIG.section.key}}` placeholders that resolve from that file.
+- **Learn:** `docs/fanuc/`
+- **Practice:** `practice/fanuc/`
+- **Promote:** `programs/fanuc/tp/` or `karel/` after the user accepts a real-cell program
+- Public credit: **Garry TJ** only
 
-## Personas (go-through)
+## Study modes
 
-Work for the persona in context. See `docs/personas.md`.
+See `docs/personas.md`.
 
-| Persona | Focus |
-|---------|--------|
-| **Operator** | Safe teach, jogging, production recovery, pendant UI — not cell redesign |
-| **Programmer** | TP / Karel structure, registers, motion, I/O mapping, comments |
-| **Integrator** | Cell layout, EOAT, safety (DCS), PLC/HMI, commissioning |
-| **Student / learner** | Definitions, diagrams, small examples; no assumed plant jargon |
-| **Notes-reviewer** | Inbox notes vs original wording; promote only after review |
+## Cursor cases
+
+| Intent | Use |
+|--------|-----|
+| Learn | `/fanuc-topic`, `@fanuc-docs-agent` |
+| Drill / generate | `/fanuc-program`, `@fanuc-programmer-agent` |
+| Explain code | `/fanuc-explain`, `@fanuc-explainer-agent` |
+| Sync indexes | `@fanuc-knowledge-sync` |
+
+Promote accepted work into `docs/`, `practice/`, or `programs/`.
 
 ## Brand convention
 
-- **FANUC first.** Do not invent ABB / Yaskawa / KUKA content until those trees exist.
-- Brand-specific Cursor files **must** use a prefix: `fanuc-*` now; later `abb-*`, `yaskawa-*`, `kuka-*`.
-- Prefer `@fanuc-programmer-agent`, `@fanuc-explainer-agent`, `/fanuc-program`, `/fanuc-explain` when those exist.
+- Default OEM: FANUC. Do not invent ABB / Yaskawa / KUKA trees yet.
+- Brand-specific Cursor files: `fanuc-*` (later `abb-*`, `yaskawa-*`, `kuka-*`).
 
-## Cell questions (required)
+## Clarification gate
 
-Before generating or explaining programs, ask **only relevant** cell details, for example:
-
-- Robot model and payload
-- Controller (e.g. R-30iB Plus) and software options (iRVision, DCS, etc.)
-- Teach pendant type
-- EOAT, I/O, home / safe path, frame usage
-
-Do not dump a full questionnaire when the user already supplied the facts.
+Before generating or explaining programs, ask **only relevant** fields: model, controller, pendant, EOAT/gripper, payload, UTOOL/UFRAME, I/O, DCS vs industrial, home/recovery, envelope, TP vs Karel.
 
 ## Paths
 
 | Path | Purpose |
 |------|---------|
-| `docs/` | Topic manuals: overview, definitions, diagrams, references |
-| `programs/` | Robot programs by brand |
-| `temp/<skill-name>/` | Skill scratch only — not promoted until accepted |
-| `inbox/` | Incoming notes/PDFs; not processed until reviewed |
-| `.cursor/` | Rules, agents, skills, commands, hooks |
+| `docs/` | Study articles |
+| `practice/` | Numbered drills |
+| `programs/` | Promoted cell programs |
+| `.cursor/` | Harness |
 
 ## After accepted updates
 
-When docs or programs are accepted, check **cross-links and indexes** (`@fanuc-knowledge-sync` / `/fanuc-topic` then sync). Do not leave orphan topics or programs.
+Run `fanuc-knowledge-sync`: docs index, practice index, programs README, CHANGELOG, AGENTS if conventions changed.
 
 ## Safety and legal
 
-- Examples here are **not** a substitute for OEM manuals, DCS, or site safety.
-- **NEVER** hardcode secrets, API keys, passwords, or tokens.
-- **NEVER** log PII (names, emails, phone numbers, badges).
-- **NEVER** commit copyrighted OEM manuals verbatim. Link official references; keep originals in `inbox/` until reviewed.
-- Use placeholders for infrastructure: `[ACCOUNT_ID]`, `[RESOURCE_NAME]`.
+- Not a substitute for OEM manuals or site safety
+- **NEVER** hardcode secrets or log PII
+- **NEVER** commit or paste copyrighted manuals
+- Placeholders: `[ACCOUNT_ID]`, `[RESOURCE_NAME]`
+- Do not present this material as an official FANUC course or agenda
 
 ## Token efficiency
 
-- **NEVER** auto-run full test suites (there is no app test suite; do not invent one).
-- **NEVER** auto-run full lint.
-- Prefer targeted file reads and type-check / skipped commands from `project.json`.
-- Require confirmation before 50K+ token operations.
+- No full test suite or full lint
+- Confirm before 50K+ token operations
 
-## Component map
+## Rights, education, and consent
 
-- **Rules**: `.cursor/rules/*.mdc`
-- **Agents**: `.cursor/agents/*.md`
-- **Skills**: `.cursor/skills/*/SKILL.md`
-- **Commands**: `.cursor/commands/*.md`
-- **Hooks**: `.cursor/hooks/*.sh`
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

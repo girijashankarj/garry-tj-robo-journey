@@ -2,19 +2,49 @@
   "$schema": "./project-schema.json",
   "project": {
     "name": "garry-tj-robo-journey",
-    "description": "Multi-persona FANUC-first robot knowledge repo (industrial arms and cobots); later ABB, Yaskawa, KUKA",
+    "description": "FANUC-first robot study guide with Cursor tutor (articles + practice drills); later ABB, Yaskawa, KUKA",
     "version": "1.0.0",
     "repository": "https://github.com/girijashankarj/garry-tj-robo-journey"
   },
   "cursor": {
     "include": {
-      "patterns": ["docs/**", "programs/**", ".cursor/**"],
-      "priorityFiles": ["README.md", "AGENTS.md", "docs/personas.md", "docs/fanuc/README.md"]
+      "patterns": [
+        "docs/**",
+        "practice/**",
+        "programs/**",
+        ".cursor/**"
+      ],
+      "priorityFiles": [
+        "README.md",
+        "AGENTS.md",
+        "docs/personas.md",
+        "docs/fanuc/README.md",
+        "practice/fanuc/README.md"
+      ]
     },
     "exclude": {
-      "patterns": ["temp/**", "inbox/**", ".git/**", "node_modules/**", "dist/**", "build/**", "coverage/**"],
-      "largeFiles": ["*.lock", "*.map", "*.min.js", "*.min.css", "*.pdf"],
-      "secrets": [".env", ".env.*", "*.pem", "*.key", "credentials.*"]
+      "patterns": [
+        "inbox/**",
+        ".git/**",
+        "node_modules/**",
+        "dist/**",
+        "build/**",
+        "coverage/**"
+      ],
+      "largeFiles": [
+        "*.lock",
+        "*.map",
+        "*.min.js",
+        "*.min.css",
+        "*.pdf"
+      ],
+      "secrets": [
+        ".env",
+        ".env.*",
+        "*.pem",
+        "*.key",
+        "credentials.*"
+      ]
     },
     "tokenOptimization": {
       "maxRuleLines": 300,
@@ -35,7 +65,7 @@
     }
   },
   "paths": {
-    "source": "programs/",
+    "source": "practice/",
     "apiPath": "n/a",
     "handlerBasePath": "n/a",
     "commonPath": "docs/",
@@ -43,7 +73,14 @@
     "configPath": ".cursor/config/"
   },
   "domain": {
-    "entities": ["Robot", "Controller", "TeachPendant", "Program", "Topic", "Cell"],
+    "entities": [
+      "Robot",
+      "Controller",
+      "TeachPendant",
+      "Program",
+      "Topic",
+      "Cell"
+    ],
     "lifecycles": {
       "Program": "draft,reviewed,accepted,synced",
       "Topic": "draft,reviewed,accepted,synced"

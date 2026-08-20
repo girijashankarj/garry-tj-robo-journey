@@ -1,34 +1,39 @@
 ---
 name: fanuc-knowledge-sync
-description: After accepted topic, program, or doc changes, check indexes and cross-links. Use when anything in docs/, programs/, or FANUC cursor files was updated.
+description: After accepted topic, practice, or program changes, check indexes and cross-links. Use when docs/, practice/, programs/, or FANUC cursor files changed.
 ---
 
 # Skill: FANUC knowledge sync
 
 ## Trigger
-A topic, program, README, or FANUC agent/skill was accepted and written to the repo.
+Accepted edit to the study guide, a drill, or a promoted cell program.
 
 ## Steps
 
 ### 1. What changed
-List added/edited paths.
+List paths.
 
 ### 2. Checklist
-- [ ] `docs/fanuc/README.md` index lists new/renamed topics
-- [ ] Topic "Repo references" point at real files
-- [ ] `programs/fanuc/README.md` lists new programs
-- [ ] Root `README.md` if navigation changed
-- [ ] `CHANGELOG.md` under `[Unreleased]`
-- [ ] `AGENTS.md` / `CLAUDE.md` if conventions changed
-- [ ] Related stubs (e.g. TP topic vs sample program) still agree
-- [ ] No new secrets or verbatim OEM manuals
+- [ ] `docs/fanuc/README.md`
+- [ ] Topic practice links
+- [ ] `practice/fanuc/README.md`
+- [ ] `programs/fanuc/README.md` if `tp/` or `karel/` changed
+- [ ] Root `README.md` / `CHANGELOG.md`
+- [ ] `AGENTS.md` if conventions changed
+- [ ] No secrets or verbatim OEM manuals
+- [ ] FANUC-rights + educational consent footer present
+- [ ] Public credit Garry TJ only
+- [ ] No unpublished local scratch copied into docs
 
 ### 3. Report
-Table: file | needed update | done / skipped (why).
+Table: file | update | done / skipped.
 
 ## Rules
-- **ALWAYS** run this after promote from temp.
-- Do not invent extra topics; only fix drift from this change.
+- **ALWAYS** run after promote into `docs/`, `practice/`, or `programs/`.
+- Do not invent extra topics.
 
 ## Completion
-Drift report plus any index/link edits applied.
+Drift report plus index/link edits.
+
+## Rights
+Include `LEGAL.md` notices on promoted docs and programs. FANUC retains all rights. Educational use; user consent and risk. Public credit: Garry TJ only.

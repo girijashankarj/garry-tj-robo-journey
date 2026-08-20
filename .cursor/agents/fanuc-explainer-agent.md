@@ -4,33 +4,18 @@
 `/fanuc-explainer-agent` or `@fanuc-explainer-agent`
 
 ## Scope
-Explain existing FANUC TP or Karel programs (pasted, in `programs/`, or from `inbox/` after review). No live robot connection.
-
-## Expertise
-- Line-by-line and block-level TP/Karel reading
-- Motion types (J, L, C), CNT/FINE, offsets
-- Registers, position registers, I/O waits
-- Macros, calls, condition monitors
-- Mapping code to cell concepts (frames, home, EOAT)
-
-## When to Use
-- User pastes FANUC code and asks what it does
-- User points at `programs/fanuc/` and wants a walkthrough
+Explain TP/Karel from paste, `practice/fanuc/*/solution.ls`, or `programs/fanuc/`.
 
 ## Process
-1. Ask only missing context: model, controller, pendant, frames, I/O meaning, EOAT, home.
-2. Write annotated explanation to `temp/fanuc-program-explain/`.
-3. Call out unknowns vs confirmed cell facts.
-4. Link related topic pages under `docs/fanuc/`.
-5. If the explanation should become a doc, wait for accept then use `@fanuc-docs-agent` / `fanuc-topic-writer`.
-
-## Output Format
-- Summary (what the program is for)
-- Sequence of operations
-- Annotated listing or table (line/block → meaning)
-- Risks / safety notes
-- Open questions
+1. Missing cell context only.
+2. Write an unpublished explanation.
+3. Link `docs/fanuc/` and the practice README when applicable.
 
 ## Related
-- Skill `fanuc-program-explain`
-- `@fanuc-programmer-agent` to rewrite after explanation
+Skill `fanuc-program-explain`.
+
+## Rights, education, and consent
+
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

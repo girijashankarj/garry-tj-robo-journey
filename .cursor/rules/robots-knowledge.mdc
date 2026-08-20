@@ -1,59 +1,44 @@
 ---
-description: Multi-persona robot knowledge repo — FANUC first, cell questions, temp paths, cross-update
+description: FANUC-first study guide — Cursor cases, cell questions, promote to docs/practice/programs
 alwaysApply: true
 ---
 
-# Robot knowledge repo
+# Robot study guide
 
-You are working in **garry-tj-robo-journey**: a go-through for operators, programmers, integrators, students, and notes-reviewers. Default OEM is **FANUC** (industrial arms and cobots). Do not assume ABB, Yaskawa, or KUKA unless the user names that brand.
+You are tutoring in **garry-tj-robo-journey**: articles (`docs/fanuc/`) plus numbered drills (`practice/fanuc/`). Default OEM is **FANUC**. Do not assume ABB, Yaskawa, or KUKA unless named. Author: **Garry TJ**. Educational only — not an official FANUC course.
+
+## Cases
+
+| Intent | Do |
+|--------|-----|
+| Learn | Article template; `/fanuc-topic` |
+| Drill | Problem README + `solution.ls`; `/fanuc-program` |
+| Explain | `/fanuc-explain` |
+| Generate variant | Unpublished local skill output, then promote if accepted |
+| Sync | `fanuc-knowledge-sync` |
 
 ## Brand-prefixed Cursor files
 
-Brand-specific agents, skills, and commands **MUST** use a filename prefix:
+`fanuc-*` now; later `abb-*`, `yaskawa-*`, `kuka-*`. Generic harness stays unprefixed.
 
-- FANUC: `fanuc-*` (this repo today)
-- Later: `abb-*`, `yaskawa-*`, `kuka-*`
+## Clarification gate
 
-Generic harness (guardrails, hooks, doc-sync) stays unprefixed.
+Ask only relevant fields: brand, model, controller, pendant, EOAT/gripper, payload, frames, I/O, DCS vs industrial, home/recovery, envelope, TP vs Karel.
 
-## Clarification gate (program generate or explain)
+## Published vs unpublished
 
-Ask **only fields that matter** for the current question. Skip anything already answered in the thread.
-
-Typical fields (pick relevant subset):
-
-- Brand (default FANUC)
-- Robot **model** (arm vs cobot, e.g. LR Mate, M-20, CRX)
-- **Controller** (e.g. R-30iB, R-30iB Plus)
-- **Teach pendant** (iPendant / type)
-- EOAT / gripper (user may say "grill")
-- Payload, tool frame, user frame
-- I/O: DI/DO, GI/GO, RI/RO, AI/AO as needed
-- Safety: industrial vs collaborative, DCS
-- Home / recovery path, work envelope / tour size
-- Language: Teach Pendant vs Karel
-
-If the user refuses details, state assumptions explicitly in the draft.
-
-## Temp vs promoted files
-
-- Skill scratch: `temp/<skill-name>/` as markdown, `.ls`, `.kl`, or text
-- **NEVER** write drafts into `docs/` or `programs/` until the user accepts
-- After accept: promote, then run the cross-update checklist (skill `fanuc-knowledge-sync`)
-
-## Cross-update checklist
-
-When a topic, program, or doc is accepted:
-
-- [ ] `docs/fanuc/README.md` index
-- [ ] Related topic stubs and repo references
-- [ ] `programs/fanuc/README.md` if a program was added
-- [ ] Root `README.md` / `CHANGELOG.md` if the convention changed
-- [ ] `AGENTS.md` only if agent/skill conventions changed
-- [ ] Official vs repo reference links still valid
+- Readers only see `docs/`, `practice/`, and `programs/`.
+- Draft privately, then promote after accept. **NEVER** paste OEM manuals into `docs/`.
+- Then run `fanuc-knowledge-sync`.
 
 ## Safety and copyright
 
-- Examples are documentation, not live motion recipes
-- **NEVER** paste copyrighted OEM manuals verbatim
-- **NEVER** invent plant-specific I/O or frames as if they were real cell data
+- Study drills, not commissioned motion
+- **NEVER** invent plant I/O as measured fact
+- Do not cite OEM course codes or training calendars as if this repo were that agenda
+
+## Rights and consent
+
+- Public credit: **Garry TJ** only
+- New docs and `.ls` files must include the educational-use / FANUC-rights notice (`LEGAL.md`, `docs/_templates/topic.md`)
+- FANUC retains all rights in its trademarks, software, and manuals. This repo is unofficial

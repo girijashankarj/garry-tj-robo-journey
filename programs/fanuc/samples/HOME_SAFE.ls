@@ -1,7 +1,7 @@
 /PROG HOME_SAFE
 /ATTR
 OWNER		= MNEDITOR;
-COMMENT		= "Sample home/safe pose - NOT a real cell";
+COMMENT		= "Study drill. FANUC rights. Educational; own risk.";
 PROG_SIZE	= 0;
 CREATE		= DATE 26-08-20  TIME 20:00:00;
 MODIFIED	= DATE 26-08-20  TIME 20:00:00;
@@ -20,6 +20,7 @@ DEFAULT_GROUP	= 1,*,*,*,*;
 CONTROL_CODE	= 00000000 00000000;
 /APPL
 /MN
+   0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
    1:  ! SAMPLE ONLY - replace frames I/O home with cell data ;
    2:  ! Ask: model controller pendant EOAT UTOOL UFRAME home ;
    3:  UFRAME_NUM=1 ;

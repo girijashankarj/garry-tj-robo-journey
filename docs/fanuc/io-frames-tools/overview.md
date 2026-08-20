@@ -1,71 +1,61 @@
 # I/O, frames, and tools
 
-> Status: stub  
+> Status: draft  
 > Brand: FANUC  
-> Personas: student, operator, programmer, integrator  
-> Related programs: `programs/fanuc/samples/`
+> Mode: programmer, integrator, learner
 
 ## Overview
 
-Digital/group/robot I/O handshake with PLC or EOAT. User tool (UTOOL) and user frame (UFRAME) locate TCP and work coordinates. Gripper/EOAT (sometimes called grill) must be in the payload and tool frame.
+Frames locate the work and TCP. I/O talks to PLC and EOAT. Payload includes gripper, fixture, and part.
+
+## When to use
+
+- Any path that is not World-origin
+- Any gripper or fixture handshake
 
 ## Definition
 
-**DI/DO**: discrete I/O. **GI/GO**: group I/O. **RI/RO**: robot I/O on the arm. **UTOOL**: tool frame. **UFRAME**: user/work frame.
+EOAT may sit on RI/RO or general DI/DO depending on the trainer.
 
 ## System
 
 ```mermaid
 flowchart LR
-  operator[Operator]
-  pendant[TeachPendant]
-  controller[Controller]
-  robot[Robot]
-  eot[EOAT]
-  operator --> pendant --> controller --> robot --> eot
+  uf[UFRAME]
+  ut[UTOOL]
+  io[DI_RI_UOP]
+  uf --> path[Path]
+  ut --> path
+  io --> handshake[Handshake]
 ```
 
-## Use cases
+## Worked example
 
-```mermaid
-flowchart TD
-  actor[Persona]
-  uc1[LearnConcept]
-  uc2[ApplyInCell]
-  actor --> uc1
-  actor --> uc2
-```
+Set UFRAME and UTOOL, then a square drill, then a wait-on-gripper sub.
 
-## Sequence
+## Practice
 
-```mermaid
-sequenceDiagram
-  participant Operator
-  participant Pendant
-  participant Controller
-  participant Robot
-  Operator->>Pendant: Select procedure
-  Pendant->>Controller: Command
-  Controller->>Robot: MotionOrIO
-  Robot-->>Operator: Status
-```
+[`002-square-path`](../../../practice/fanuc/002-square-path/), [`007-wait-gripper`](../../../practice/fanuc/007-wait-gripper/).
+
+## Common mistakes
+
+- Welding analog examples copied onto a handling gripper
 
 ## Safety notes
 
-- OEM manuals and site rules override this stub.
-- Validate on a teach pendant in a controlled cell.
+Confirm rack comments on the real I/O screen.
 
 ## Official references
 
-- FANUC handling tool / operator manual: `[OFFICIAL_URL]`
-- Software version: `[CONTROLLER_SOFT_VERSION]`
+- HandlingTool / operator manuals: `[OFFICIAL_URL]`
 
 ## Repo references
 
-- Index: [`../README.md`](../README.md)
-- Template: [`../../_templates/topic.md`](../../_templates/topic.md)
-- Sample program: [`../../../programs/fanuc/samples/HOME_SAFE.ls`](../../../programs/fanuc/samples/HOME_SAFE.ls)
+- [`frames.md`](frames.md)
+- [`io-classes.md`](io-classes.md)
 
-## TODO
+## Rights, education, and consent
 
-- Expand from reviewed notes in `inbox/pdf/` and licensed manuals (link, do not paste).
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

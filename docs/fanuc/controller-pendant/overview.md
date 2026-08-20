@@ -1,71 +1,66 @@
-# Controller and teach pendant
+# Controller and pendant
 
-> Status: stub  
+> Status: draft  
 > Brand: FANUC  
-> Personas: student, operator, programmer, integrator  
-> Related programs: `programs/fanuc/samples/`
+> Mode: operator, programmer, maintenance
 
 ## Overview
 
-The controller (for example R-30iB Plus) runs the motion kernel, I/O, and programs. The teach pendant (iPendant) is the operator/programmer interface for jog, teach, and fault recovery.
+The controller executes TP, I/O, and motion. The pendant is the teach/test HMI. SRAM holds user data; FROM/image holds system software.
+
+## When to use
+
+- Explaining backup vs image
+- Start modes: hot, cold, controlled (restore/maintenance)
 
 ## Definition
 
-**Controller**: cabinet that executes TP/Karel. **Teach pendant**: handheld HMI with deadman, mode switch (T1/T2/Auto as applicable), and editors.
+**SRAM** — programs, variables, macros, mastering (battery-backed). **FROM / IMAGE** — system software.
 
 ## System
 
 ```mermaid
 flowchart LR
-  operator[Operator]
-  pendant[TeachPendant]
-  controller[Controller]
-  robot[Robot]
-  eot[EOAT]
-  operator --> pendant --> controller --> robot --> eot
+  pendant[Pendant]
+  sram[SRAM]
+  from[FROM]
+  pendant --> ctrl[Controller]
+  ctrl --> sram
+  ctrl --> from
 ```
 
-## Use cases
+## Worked example
 
-```mermaid
-flowchart TD
-  actor[Persona]
-  uc1[LearnConcept]
-  uc2[ApplyInCell]
-  actor --> uc1
-  actor --> uc2
-```
+Before a software change: SRAM backup, then IMAGE backup. Restore SRAM from controlled start.
 
-## Sequence
+## Practice
 
-```mermaid
-sequenceDiagram
-  participant Operator
-  participant Pendant
-  participant Controller
-  participant Robot
-  Operator->>Pendant: Select procedure
-  Pendant->>Controller: Command
-  Controller->>Robot: MotionOrIO
-  Robot-->>Operator: Status
-```
+No dedicated backup drill. See article [`backup-restore.md`](backup-restore.md).
+
+## Common mistakes
+
+- Formatting media that still holds the only backup
+- Pulling batteries and jogging production before remastering
 
 ## Safety notes
 
-- OEM manuals and site rules override this stub.
-- Validate on a teach pendant in a controlled cell.
+Follow the cabinet sticker. Controller-specific restore key sequences vary by software.
+
+### Verify on controller
+
+Any numeric “system variable” remembered from class must be confirmed in the maintenance manual for *this* CPU version.
 
 ## Official references
 
-- FANUC handling tool / operator manual: `[OFFICIAL_URL]`
-- Software version: `[CONTROLLER_SOFT_VERSION]`
+- HandlingTool / operator manuals: `[OFFICIAL_URL]`
 
 ## Repo references
 
-- Index: [`../README.md`](../README.md)
-- Template: [`../../_templates/topic.md`](../../_templates/topic.md)
-- Sample program: [`../../../programs/fanuc/samples/HOME_SAFE.ls`](../../../programs/fanuc/samples/HOME_SAFE.ls)
+- [`teach-pendant.md`](teach-pendant.md)
+- [`backup-restore.md`](backup-restore.md)
 
-## TODO
+## Rights, education, and consent
 
-- Expand from reviewed notes in `inbox/pdf/` and licensed manuals (link, do not paste).
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

@@ -1,71 +1,60 @@
 # Safety and DCS
 
-> Status: stub  
+> Status: draft  
 > Brand: FANUC  
-> Personas: student, operator, programmer, integrator  
-> Related programs: `programs/fanuc/samples/`
+> Mode: integrator, operator, programmer
 
 ## Overview
 
-Dual Check Safety (DCS) and collaborative limits restrict position, speed, and tool zones. Industrial cells usually add fencing and e-stops. This page does not replace a safety PLC or risk assessment.
+Track 01 covers fence, interlock, e-stop, T1 speed, and deadman. **DCS** (Dual Check Safety) is a separate topic.
+
+## When to use
+
+- Cell safeguarding design
+- Before copying any “safety numbers” from samples (never do that)
 
 ## Definition
 
-**DCS**: FANUC safety software that monitors position/speed/zones. **Collaborative limits**: power and force related settings on cobots. Both must be commissioned, not copied from samples.
+DCS monitors position, speed, and zones in the safety channel. Collaborative force limits are another commissioning path.
 
 ## System
 
 ```mermaid
 flowchart LR
-  operator[Operator]
-  pendant[TeachPendant]
-  controller[Controller]
-  robot[Robot]
-  eot[EOAT]
-  operator --> pendant --> controller --> robot --> eot
+  fence[FenceEstop]
+  dcs[DCS]
+  cobot[CollaborativeLimits]
+  fence --> cell[Cell]
+  dcs --> cell
+  cobot --> cell
 ```
 
-## Use cases
+## Worked example
 
-```mermaid
-flowchart TD
-  actor[Persona]
-  uc1[LearnConcept]
-  uc2[ApplyInCell]
-  actor --> uc1
-  actor --> uc2
-```
+Lockout, confirm D7 LED off, then maintenance. Programming drills stay motion/I/O only.
 
-## Sequence
+## Practice
 
-```mermaid
-sequenceDiagram
-  participant Operator
-  participant Pendant
-  participant Controller
-  participant Robot
-  Operator->>Pendant: Select procedure
-  Pendant->>Controller: Command
-  Controller->>Robot: MotionOrIO
-  Robot-->>Operator: Status
-```
+[`001-home-safe`](../../practice/fanuc/001-home-safe/).
+
+## Common mistakes
+
+- Pasting DCS parameters from a study repo into production
 
 ## Safety notes
 
-- OEM manuals and site rules override this stub.
-- Never copy DCS parameters from a sample into a production cell.
+Samples contain **no** DCS data.
 
 ## Official references
 
-- FANUC handling tool / operator manual: `[OFFICIAL_URL]`
-- Software version: `[CONTROLLER_SOFT_VERSION]`
+- HandlingTool / operator manuals: `[OFFICIAL_URL]`
 
 ## Repo references
 
-- Index: [`../README.md`](../README.md)
-- Template: [`../../_templates/topic.md`](../../_templates/topic.md)
-- Sample program: [`../../../programs/fanuc/samples/HOME_SAFE.ls`](../../../programs/fanuc/samples/HOME_SAFE.ls)
+- [`modes-t1-t2-auto.md`](modes-t1-t2-auto.md)
 
-## TODO
+## Rights, education, and consent
 
-- Expand from reviewed notes in `inbox/pdf/` and licensed manuals (link, do not paste).
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

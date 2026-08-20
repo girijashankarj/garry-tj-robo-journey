@@ -1,71 +1,60 @@
 # Teach Pendant programming
 
-> Status: stub  
+> Status: draft  
 > Brand: FANUC  
-> Personas: student, operator, programmer, integrator  
-> Related programs: `programs/fanuc/samples/`
+> Mode: programmer, learner
 
 ## Overview
 
-TP (Teach Pendant) programs are the usual production language: motion lines, registers, I/O, calls, condition handlers. ASCII `.ls` in this repo is a documentation form, not a guaranteed controller load file.
+Create: Select → F2 Create → uppercase name → Edit. EDCMD covers insert, delete, one-level undo, paste position / position ID / logic, renumber, replace, remark.
+
+## When to use
+
+- Production handling logic on HandlingTool
+- Class drills in `practice/fanuc/`
 
 ## Definition
 
-**TP program**: sequenced instructions taught or typed on the pendant. Related sample: `programs/fanuc/samples/HOME_SAFE.ls`.
+**Paste position** — points into another program. **Paste position ID** — same `P[]` numbers in the same program. **Paste logic** — instructions; you assign numbers. Git `.ls` is documentation, not a guaranteed load file.
 
 ## System
 
 ```mermaid
-flowchart LR
-  operator[Operator]
-  pendant[TeachPendant]
-  controller[Controller]
-  robot[Robot]
-  eot[EOAT]
-  operator --> pendant --> controller --> robot --> eot
+flowchart TB
+  create[CreateTP]
+  teach[TouchUp]
+  test[T2_Step]
+  auto[Auto]
+  create --> teach --> test --> auto
 ```
 
-## Use cases
+## Worked example
 
-```mermaid
-flowchart TD
-  actor[Persona]
-  uc1[LearnConcept]
-  uc2[ApplyInCell]
-  actor --> uc1
-  actor --> uc2
-```
+Create `SQUARE`, teach P[1]–P[5], T2 step, then compare [`002-square-path`](../../../practice/fanuc/002-square-path/).
 
-## Sequence
+## Practice
 
-```mermaid
-sequenceDiagram
-  participant Operator
-  participant Pendant
-  participant Controller
-  participant Robot
-  Operator->>Pendant: Select procedure
-  Pendant->>Controller: Command
-  Controller->>Robot: MotionOrIO
-  Robot-->>Operator: Status
-```
+Full set: [`practice/fanuc/`](../../../practice/fanuc/).
+
+## Common mistakes
+
+- Assuming more than one undo
+- CALL without agreeing register maps between MAIN and SUB
 
 ## Safety notes
 
-- OEM manuals and site rules override this stub.
-- Validate on a teach pendant in a controlled cell.
+ASCII listings omit taught `/POS` data until you save from a real robot.
 
 ## Official references
 
-- FANUC handling tool / operator manual: `[OFFICIAL_URL]`
-- Software version: `[CONTROLLER_SOFT_VERSION]`
+- HandlingTool / operator manuals: `[OFFICIAL_URL]`
 
 ## Repo references
 
-- Index: [`../README.md`](../README.md)
-- Template: [`../../_templates/topic.md`](../../_templates/topic.md)
-- Sample program: [`../../../programs/fanuc/samples/HOME_SAFE.ls`](../../../programs/fanuc/samples/HOME_SAFE.ls)
+- Child articles in this folder
 
-## TODO
+## Rights, education, and consent
 
-- Expand from reviewed notes in `inbox/pdf/` and licensed manuals (link, do not paste).
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

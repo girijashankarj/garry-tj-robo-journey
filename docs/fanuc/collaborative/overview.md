@@ -1,71 +1,59 @@
-# Collaborative robots (FANUC CRX class)
+# Collaborative robots
 
-> Status: stub  
+> Status: draft  
 > Brand: FANUC  
-> Personas: student, operator, programmer, integrator  
-> Related programs: `programs/fanuc/samples/`
+> Mode: learner, integrator
 
 ## Overview
 
-FANUC collaborative robots (CRX and related) work with reduced force/speed options and different cell design than fenced industrial arms. Still programmed from the teach pendant and controller.
+Collaborative applications use assessed speed, force, and zones. Do not copy CRX DCS settings from study pages onto a live cell.
+
+## When to use
+
+- Comparing fenced arm vs cobot cell design
+- After dedicated DCS / cobot commissioning training
 
 ## Definition
 
-A **collaborative robot** is designed for selected collaborative applications under ISO/TS 15066-style limits. Collaboration mode is not a substitute for risk assessment or DCS.
+Collaboration is a **commissioned mode**, not a nickname for a model family.
 
 ## System
 
 ```mermaid
 flowchart LR
-  operator[Operator]
-  pendant[TeachPendant]
-  controller[Controller]
-  robot[Robot]
-  eot[EOAT]
-  operator --> pendant --> controller --> robot --> eot
+  risk[RiskAssessment]
+  limits[SpeedForceZones]
+  cell[Cell]
+  risk --> limits --> cell
 ```
 
-## Use cases
+## Worked example
 
-```mermaid
-flowchart TD
-  actor[Persona]
-  uc1[LearnConcept]
-  uc2[ApplyInCell]
-  actor --> uc1
-  actor --> uc2
-```
+If the cell is fenced industrial, use T1/T2/Auto and fence interlocks ([modes](../safety-dcs/modes-t1-t2-auto.md)), not “stop on touch” as a substitute.
 
-## Sequence
+## Practice
 
-```mermaid
-sequenceDiagram
-  participant Operator
-  participant Pendant
-  participant Controller
-  participant Robot
-  Operator->>Pendant: Select procedure
-  Pendant->>Controller: Command
-  Controller->>Robot: MotionOrIO
-  Robot-->>Operator: Status
-```
+No cobot-specific drill yet. Use industrial motion set: [`practice/fanuc/`](../../practice/fanuc/).
+
+## Common mistakes
+
+- Equating “cobot” with “no risk assessment”
 
 ## Safety notes
 
-- OEM manuals and site rules override this stub.
-- Collaborative mode, payload, and tooling change stopping performance. Confirm on the actual model.
+ISO/TS-style collaborative limits must be measured on the actual tooling.
 
 ## Official references
 
-- FANUC handling tool / operator manual: `[OFFICIAL_URL]`
-- Software version: `[CONTROLLER_SOFT_VERSION]`
+- HandlingTool / operator manuals: `[OFFICIAL_URL]`
 
 ## Repo references
 
-- Index: [`../README.md`](../README.md)
-- Template: [`../../_templates/topic.md`](../../_templates/topic.md)
-- Sample program: [`../../../programs/fanuc/samples/HOME_SAFE.ls`](../../../programs/fanuc/samples/HOME_SAFE.ls)
+- [`../industrial-arm/overview.md`](../industrial-arm/overview.md)
+- [`../safety-dcs/overview.md`](../safety-dcs/overview.md)
 
-## TODO
+## Rights, education, and consent
 
-- Expand from reviewed notes in `inbox/pdf/` and licensed manuals (link, do not paste).
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

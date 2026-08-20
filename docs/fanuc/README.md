@@ -1,16 +1,14 @@
-# FANUC topics
+# Track 01 — FANUC HandlingTool
 
-Index for industrial six-axis arms and collaborative robots (CRX class). Stubs: fill from manuals and later `inbox/pdf/` notes. Do not paste copyrighted OEM text.
+Articles plus a [practice set](../../practice/fanuc/). Map: [learning path](learning-path.md).
 
 ```mermaid
 flowchart TB
-  subgraph cell [Cell]
-    pendant[TeachPendant]
-    ctrl[Controller]
-    arm[IndustrialArm]
-    cobot[CollaborativeRobot]
-    eot[EOAT]
-  end
+  pendant[TeachPendant]
+  ctrl[Controller]
+  arm[IndustrialArm]
+  cobot[CollaborativeRobot]
+  eot[EOAT]
   pendant --> ctrl
   ctrl --> arm
   ctrl --> cobot
@@ -18,19 +16,30 @@ flowchart TB
   cobot --> eot
 ```
 
-## Topic tree
+## Articles
 
-| Area | Page | Status |
-|------|------|--------|
-| Industrial arm | [Overview](industrial-arm/overview.md) | stub |
-| Collaborative | [Overview](collaborative/overview.md) | stub |
-| Controller and pendant | [Overview](controller-pendant/overview.md) | stub |
-| I/O, frames, tools | [Overview](io-frames-tools/overview.md) | stub |
-| Motion, paths, home | [Overview](motion-paths-home/overview.md) | stub |
-| Safety and DCS | [Overview](safety-dcs/overview.md) | stub |
-| Programming TP | [Overview](programming-tp/overview.md) | stub |
-| Programming Karel | [Overview](programming-karel/overview.md) | stub |
+| Area | Pages |
+|------|--------|
+| Course | [Learning path](learning-path.md) |
+| Arm | [Industrial](industrial-arm/overview.md) |
+| Cobot | [Collaborative](collaborative/overview.md) |
+| Controller | [Overview](controller-pendant/overview.md), [pendant](controller-pendant/teach-pendant.md), [backup](controller-pendant/backup-restore.md) |
+| Frames / I/O | [Overview](io-frames-tools/overview.md), [frames](io-frames-tools/frames.md), [I/O](io-frames-tools/io-classes.md) |
+| Motion | [Overview](motion-paths-home/overview.md) |
+| Safety | [Overview](safety-dcs/overview.md), [T1 T2 Auto](safety-dcs/modes-t1-t2-auto.md) |
+| TP | [Overview](programming-tp/overview.md), [J/L/C](programming-tp/motion-types-fine-cnt.md), [offset/INC](programming-tp/offset-and-incremental.md), [logic](programming-tp/registers-jumps-call.md) |
+| Karel | [Overview](programming-karel/overview.md) (optional later) |
 
-## Programs
+## Practice
 
-See [`../../programs/fanuc/`](../../programs/fanuc/).
+[`practice/fanuc/`](../../practice/fanuc/) — problems `001`–`008`.
+
+## Sources
+
+[`../sources.md`](../sources.md)
+
+## Rights, education, and consent
+
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

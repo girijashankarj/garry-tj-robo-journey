@@ -1,18 +1,25 @@
-# Personas
+# Study modes
 
-This repo is a **go-through** for several roles. Match language and depth to the persona in the prompt.
+This study guide is published by **Garry TJ**. Pick a mode (or say it in the prompt). Cursor agents should match depth.
 
-| Persona | Typical questions | Depth | Avoid |
-|---------|-------------------|-------|--------|
-| **Operator** | How do I jog, recover, start a cycle, use the pendant? | Pendant steps, lamps, faults | Redesigning the cell |
-| **Programmer** | Write or explain TP/Karel; registers; I/O wait | Code, comments, maps | Fake plant I/O as fact |
-| **Integrator** | Frames, EOAT, DCS, PLC handshake, commissioning | System diagrams, I/O lists | Skipping safety |
-| **Student / learner** | What is a cobot vs arm? What is UFRAME? | Definitions + simple mermaid | Unexplained jargon |
-| **Notes-reviewer** | Friend/my PDFs vs repo | Diff original wording vs promoted docs | Committing copyrighted manuals |
+| Mode | Typical ask | Depth |
+|------|-------------|--------|
+| **Learner** | What is UFRAME? Why FINE vs CNT? | Definitions, diagrams, one drill |
+| **Operator** | How do I jog, recover, use Fwd/Step/Hold? | Pendant steps, T1/T2/Auto |
+| **Programmer** | Write or explain TP | Registers, motion, I/O, comments |
+| **Integrator** | Frames, EOAT, PNS/RSR, backup | System diagrams, placeholders not fake plant maps |
 
-## How agents should behave
+## Cursor cases
 
-- If persona is unclear, default to **student** for topics and **programmer** for code.
-- Operators get numbered pendant-oriented steps.
-- Programmers get files under `temp/` then `programs/`.
-- Notes-reviewer work waits for files in `inbox/pdf/` (ingest is later).
+| Case | Entry |
+|------|--------|
+| Study an article | `/fanuc-topic` |
+| Solve or fork a drill | `/fanuc-program` |
+| Explain existing `.ls` | `/fanuc-explain` |
+| Refresh indexes | `@fanuc-knowledge-sync` |
+
+## Rights, education, and consent
+
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.

@@ -1,71 +1,61 @@
 # Motion, paths, and home
 
-> Status: stub  
+> Status: draft  
 > Brand: FANUC  
-> Personas: student, operator, programmer, integrator  
-> Related programs: `programs/fanuc/samples/`
+> Mode: programmer, operator, learner
 
 ## Overview
 
-Joint vs linear vs circular motion, CNT vs FINE, position registers, and a defined **home / recovery** path so the arm can leave a nest safely. Work envelope / tour size constrains taught points.
+Motion types **J / L / C / A**. Termination **FINE** vs **CNT n**. Home should be a taught reference (PR), not assumed mechanical zero.
+
+## When to use
+
+- Designing approach, process, and retreat
+- Recovery to a known pose
 
 ## Definition
 
-**Home** is a known safe pose (not always mechanical zero). A **recovery path** is a taught or PR-based route that avoids fixtures.
+Joint feed is percent; linear is typically mm/s. Mastering (zero / single-axis) is maintenance — use the OEM chapter, not this article, to remaster.
 
 ## System
 
 ```mermaid
 flowchart LR
-  operator[Operator]
-  pendant[TeachPendant]
-  controller[Controller]
-  robot[Robot]
-  eot[EOAT]
-  operator --> pendant --> controller --> robot --> eot
+  j[Joint]
+  l[Linear]
+  c[Circular]
+  j --> path[Path]
+  l --> path
+  c --> path
 ```
 
-## Use cases
+## Worked example
 
-```mermaid
-flowchart TD
-  actor[Persona]
-  uc1[LearnConcept]
-  uc2[ApplyInCell]
-  actor --> uc1
-  actor --> uc2
-```
+Joint fly-over to P[1], Linear process, Joint back to home PR — [`001`](../../../practice/fanuc/001-home-safe/) and [`002`](../../../practice/fanuc/002-square-path/).
 
-## Sequence
+## Practice
 
-```mermaid
-sequenceDiagram
-  participant Operator
-  participant Pendant
-  participant Controller
-  participant Robot
-  Operator->>Pendant: Select procedure
-  Pendant->>Controller: Command
-  Controller->>Robot: MotionOrIO
-  Robot-->>Operator: Status
-```
+[`001-home-safe`](../../../practice/fanuc/001-home-safe/), [`002-square-path`](../../../practice/fanuc/002-square-path/), [`003-circular-path`](../../../practice/fanuc/003-circular-path/).
+
+## Common mistakes
+
+- Linear through a fixture because Joint was not used for the fly-over
+- CNT 100 at full override beside a clamp
 
 ## Safety notes
 
-- OEM manuals and site rules override this stub.
-- Validate on a teach pendant in a controlled cell.
+Do not jog production after battery work until mastering is confirmed.
 
 ## Official references
 
-- FANUC handling tool / operator manual: `[OFFICIAL_URL]`
-- Software version: `[CONTROLLER_SOFT_VERSION]`
+- HandlingTool / operator manuals: `[OFFICIAL_URL]`
 
 ## Repo references
 
-- Index: [`../README.md`](../README.md)
-- Template: [`../../_templates/topic.md`](../../_templates/topic.md)
-- Sample program: [`../../../programs/fanuc/samples/HOME_SAFE.ls`](../../../programs/fanuc/samples/HOME_SAFE.ls)
+- [`../programming-tp/motion-types-fine-cnt.md`](../programming-tp/motion-types-fine-cnt.md)
 
-## TODO
+## Rights, education, and consent
 
-- Expand from reviewed notes in `inbox/pdf/` and licensed manuals (link, do not paste).
+FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
+
+This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
