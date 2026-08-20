@@ -2,14 +2,16 @@
 
 Study guide by **Garry TJ** for industrial robots, with **Cursor as the tutor**. **Track 01 is FANUC HandlingTool** (six-axis and collaborative). ABB, Yaskawa, and KUKA are future tracks — **no pages yet**.
 
-Educational material only. See [`LEGAL.md`](LEGAL.md) for FANUC rights and use at your own consent and risk. Original writing: [`LICENSE.md`](LICENSE.md). How to add pages: [`CONTRIBUTING.md`](CONTRIBUTING.md).
+**📖 Read it live: <https://girijashankarj.github.io/garry-tj-robo-journey/>** — articles, drills, glossary, and mind map in the study UI. Free for anyone to use and share with credit ([`LICENSE.md`](LICENSE.md)).
+
+Educational material only. See [`LEGAL.md`](LEGAL.md) for FANUC rights and use at your own consent and risk. How to add pages: [`CONTRIBUTING.md`](CONTRIBUTING.md). Community standards: [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
 ## Learning path
 
 1. Pick a **mode**: operator, programmer, integrator, or learner — [`docs/personas.md`](docs/personas.md)
 2. Read articles in [`docs/fanuc/`](docs/fanuc/) (order: [`learning-path.md`](docs/fanuc/learning-path.md)). Terms: [`docs/glossary.md`](docs/glossary.md), shop talk: [`docs/jargons.md`](docs/jargons.md)
 3. Solve drills in [`practice/fanuc/`](practice/fanuc/). Start at [`001-home-safe`](practice/fanuc/001-home-safe/) after [how to read a program guide](docs/fanuc/how-to-read-a-guide.md). Path sketches (OFFSET 1-2-3-4 then 1'-2'-3'-4') are in [offset/INC](docs/fanuc/programming-tp/offset-and-incremental.md) and drill `doc/guide.md` files.
-4. Optional local study UI: [`app/robo-journey-website/`](app/robo-journey-website/) (`cd app/robo-journey-website && npm install && npm run dev`). Relative links between articles, drills, glossary, and jargons open in the UI (same targets as GitHub).
+4. Study UI: use the [live site](https://girijashankarj.github.io/garry-tj-robo-journey/), or run it locally from [`app/robo-journey-website/`](app/robo-journey-website/) (`cd app/robo-journey-website && npm install && npm run dev`). Relative links between articles, drills, glossary, and jargons open in the UI (same targets as GitHub).
 5. Use Cursor for the case you are in (table below)
 
 ## Cursor cases

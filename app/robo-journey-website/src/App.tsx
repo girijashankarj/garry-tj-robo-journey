@@ -11,10 +11,12 @@ import { ThemeProvider } from "./theme";
 const MindMapPage = lazy(() => import("./pages/MindMapPage").then((m) => ({ default: m.MindMapPage })));
 const PlanPage = lazy(() => import("./pages/PlanPage").then((m) => ({ default: m.PlanPage })));
 
+const basename = import.meta.env.BASE_URL === "/" ? "/" : import.meta.env.BASE_URL.replace(/\/$/, "");
+
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Suspense fallback={<div className="bg-app-bg p-8 text-app-muted">Loading…</div>}>
           <Routes>
             <Route element={<Layout />}>

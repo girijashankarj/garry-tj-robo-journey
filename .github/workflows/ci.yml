@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  links:
+    name: Markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check relative markdown links
+        run: bash .cursor/hooks/check-links.sh
+
+  build:
+    name: Study UI build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/robo-journey-website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: app/robo-journey-website/package-lock.json
+      - run: npm ci
+      - run: npm run build
