@@ -19,6 +19,30 @@ Square: Joint in, Linear around, Joint home — **union** of [`motion-j.md`](mot
 
 **INC** on a motion treats the recorded pose as an increment after you edit the index. Wrist W/P/R apply in World.
 
+## Path / origin
+
+Study sketch. Square union: **J** into the work, **L** around **1-2-3-4** FINE, **J** home. Circular: each **C** needs a **via** and a **dest**.
+
+```mermaid
+flowchart LR
+  subgraph sq["Square FINE"]
+    direction TB
+    s1["1"] --> s2["2"]
+    s2 --> s3["3"]
+    s3 --> s4["4"]
+    s4 --> s1
+  end
+  subgraph cir["Circular pair"]
+    direction LR
+    st["start"] --> via["via"]
+    via --> dest["dest"]
+  end
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  class s1,s2,s3,s4,st proc
+  class via,dest origin
+```
+
 ## System
 
 ```mermaid

@@ -12,6 +12,7 @@ Suggested **study order** for this educational track (not an official FANUC outl
 ## When to use
 
 - Planning what to read in `docs/fanuc/`
+- How to read a drill guide (shapes, `L#`, colors): [`how-to-read-a-guide.md`](how-to-read-a-guide.md)
 - Pairing articles with `practice/fanuc/` drills
 - Looking up a word: [`glossary.md`](../glossary.md), shop talk: [`jargons.md`](../jargons.md)
 - Atom vs combined programs: [`topic-map.md`](topic-map.md)
@@ -34,7 +35,7 @@ flowchart TB
 
 | Step | Read | Drill |
 |------|------|-------|
-| 1 | [T1/T2/Auto](safety-dcs/modes-t1-t2-auto.md), [pendant](controller-pendant/teach-pendant.md), [jog/recovery](motion-paths-home/jog-and-recovery.md), [motion](motion-paths-home/overview.md) | [001](../../practice/fanuc/001-home-safe/), [002](../../practice/fanuc/002-square-path/) |
+| 1 | [How to read a guide](how-to-read-a-guide.md), [T1/T2/Auto](safety-dcs/modes-t1-t2-auto.md), [pendant](controller-pendant/teach-pendant.md), [jog/recovery](motion-paths-home/jog-and-recovery.md), [motion](motion-paths-home/overview.md) | [001](../../practice/fanuc/001-home-safe/), [002](../../practice/fanuc/002-square-path/) |
 | 2 | [Frames](io-frames-tools/frames.md), [identifiers](programming-tp/identifiers.md), [keywords](programming-tp/keywords.md), [J/L/C](programming-tp/motion-types-fine-cnt.md), [offset/INC](programming-tp/offset-and-incremental.md) | [003](../../practice/fanuc/003-circular-path/), [004](../../practice/fanuc/004-incremental-box/), [005](../../practice/fanuc/005-offset-path/), [008](../../practice/fanuc/008-pr-lpos/) |
 | 3 | [I/O](io-frames-tools/io-classes.md), [CALL](programming-tp/registers-jumps-call.md) | [006](../../practice/fanuc/006-loop-call/), [007](../../practice/fanuc/007-wait-gripper/), [010](../../practice/fanuc/010-main-call/) |
 | 4 | [Backup](controller-pendant/backup-restore.md) | Procedure (no TP drill) |

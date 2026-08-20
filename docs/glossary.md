@@ -23,6 +23,7 @@ Study definitions for this guide. Confirm wording on **your** pendant and softwa
 | **Deadman** | Enable switch on the pendant; release stops motion in teach. | [Jog](fanuc/motion-paths-home/jog-and-recovery.md) |
 | **DI / DO** | General digital input / output (often PLC). | [I/O](fanuc/io-frames-tools/io-classes.md) |
 | **EOAT** | End of arm tooling (gripper, tool, torch, etc.). | [I/O overview](fanuc/io-frames-tools/overview.md) |
+| **END** | Last instruction in the TP listing; the program stops here on a normal finish. | [001](../practice/fanuc/001-home-safe/) |
 | **FINE** | Termination that stops the TCP before the next instruction. | [J/L/C](fanuc/programming-tp/motion-types-fine-cnt.md) |
 | **FROM / image** | System software image on the controller (vs user SRAM data). | [Backup](fanuc/controller-pendant/backup-restore.md) |
 | **GI / GO** | Group I/O: several bits packed as an integer. | [I/O](fanuc/io-frames-tools/io-classes.md) |

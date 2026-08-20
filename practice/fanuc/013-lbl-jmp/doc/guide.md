@@ -1,52 +1,79 @@
-# LBL / JMP — guide
+# JMP LBL — guide
 
 > Drill: `013-lbl-jmp`  
 > Code: [`code/solution.ls`](../code/solution.ls)
 
 ## Purpose
 
-**JMP LBL** skips a block of remarks, then Joint home. There is **no GOTO** on HandlingTool.
+In plain English: **jump over** some remarks, then Joint home. HandlingTool does **not** use BASIC `GOTO`.
 
-## Flowchart
+On the pendant: **JMP LBL[10]**, skipped remarks, **LBL[10]**, **J** home. Atom: [JMP/LBL](../../../../docs/fanuc/programming-tp/logic-lbl-jmp.md).
+
+## Program flow
 
 ```mermaid
 flowchart TB
-  jmp[JMP_LBL10]
-  skip[Skipped_remarks]
-  lbl[LBL10]
-  home[J_home]
-  jmp --> lbl --> home
+  start(["start"])
+  rem("L0-1 not GOTO")
+  fr["L2-3 UFRAME UTOOL"]
+  jmp["L4 JMP LBL10"]
+  skip("L5-6 skipped remarks")
+  lbl["L7 LBL10"]
+  j["L8 J home"]
+  endn(["L9 END"])
+  start -.-> rem
+  rem --> fr
+  fr ==> jmp
+  jmp ==> lbl
   jmp -.-> skip
+  skip -.-> lbl
+  lbl ==> j
+  j ==> endn
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef dec fill:#FFF2CC,stroke:#D6B656
+  classDef io fill:#D5E8D4,stroke:#82B366
+  classDef call fill:#E1D5E7,stroke:#9673A6
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef note fill:#FFFFFF,stroke:#999999,stroke-dasharray: 5 5
+  class start,endn term
+  class rem,skip note
+  class fr,jmp,lbl,j proc
 ```
 
-## Decisions (diamond)
+## Listing (`/MN`)
 
-Unconditional JMP (always skip the remarks).
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
 
-```mermaid
-flowchart TD
-  q{Always}
-  skip[Never_run_remark_block]
-  go[LBL10_then_Joint]
-  q -->|JMP| go
-  q -.-> skip
+```
+   0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
+   1:  ! Atom: JMP LBL, not GOTO. ;
+   2:  UFRAME_NUM=1 ;
+   3:  UTOOL_NUM=1 ;
+   4:  JMP LBL[10] ;
+   5:  ! skipped remarks ;
+   6:  ! do not run this block ;
+   7:  LBL[10] ;
+   8:  J PR[1:Home] 15% FINE    ;
+   9:  END ;
 ```
 
 ## Block-by-block
 
-| Line | What | Atom |
-|------|------|------|
-| 0–1 | LEGAL + “not GOTO” | Remark |
-| 2–3 | Frames | Frame |
-| 4 | JMP LBL[10] | JMP |
-| 5–6 | Remarks that do not run | Remark |
-| 7 | Landing label | LBL |
-| 8 | Joint home | J |
-| 9 | END | END |
+How to read this chart: [`how-to-read-a-guide.md`](../../../../docs/fanuc/how-to-read-a-guide.md). Atoms (J, L, WAIT, …): [`glossary.md`](../../../../docs/glossary.md).
+
+| Lines | What | Atom |
+|-------|------|------|
+| 0–1 | LEGAL + JMP not GOTO | [Remark](../../../../docs/fanuc/programming-tp/remark.md) |
+| 2–3 | Frame select | [Frame](../../../../docs/fanuc/io-frames-tools/frames.md) |
+| 4 | JMP LBL[10] | [JMP](../../../../docs/fanuc/programming-tp/logic-lbl-jmp.md) |
+| 5–6 | Skipped remarks | [Remark](../../../../docs/fanuc/programming-tp/remark.md) |
+| 7–8 | Label then Joint home | [LBL](../../../../docs/fanuc/programming-tp/logic-lbl-jmp.md) / [J](../../../../docs/fanuc/programming-tp/motion-j.md) |
+| 9 | END | [END](../../../../docs/glossary.md) |
 
 ## Safety
 
-Prove in T1. Site SOP and OEM manuals override this page.
+Prove in T1, then T2 step, then Auto. Placeholders only. Site SOP and OEM manuals override this page.
 
 ## Rights
 

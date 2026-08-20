@@ -9,8 +9,9 @@ When you do promote:
 ```text
 programs/fanuc/tp/<name>/
   code/     # controller listing (.ls)
-  doc/      # guide.md — flowchart, diamonds, block-by-block
-            # template: docs/_templates/program-guide.md
+  doc/      # guide.md — same shape as practice: Purpose (plain English), one flowchart, `/MN` listing, block table
+            # readers: docs/fanuc/how-to-read-a-guide.md
+            # authors: docs/_templates/program-guide.md
 ```
 
 ATTR size fields on a real backup may be non-zero; study drills often show zeros.

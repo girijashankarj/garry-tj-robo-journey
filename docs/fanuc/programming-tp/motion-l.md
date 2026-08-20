@@ -20,6 +20,22 @@
 
 `L P[2] 200mm/sec FINE` — Linear to P[2]. Wrong UTOOL/UFRAME puts the line in the wrong place.
 
+## Path / origin
+
+Study sketch in **UFRAME**. **L** is a straight TCP segment. Corners **1-2-3-4** stop **FINE** before the next side.
+
+```mermaid
+flowchart TB
+  p1["1"] --> p2["2"]
+  p2 --> p3["3"]
+  p3 --> p4["4"]
+  p4 --> p1
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  class p1,p2,p3,p4 proc
+```
+
+Joint fly-in to this square: [`002`](../../../practice/fanuc/002-square-path/). OFFSET of this square: [`005`](../../../practice/fanuc/005-offset-path/) (then **1'-2'-3'-4'**).
+
 ## System
 
 ```mermaid

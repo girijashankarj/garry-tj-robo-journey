@@ -1,0 +1,77 @@
+---
+description: Spatial path/origin Mermaid for OFFSET, INC, frames, pallet, pick/place
+globs: "docs/fanuc/**/*.md,**/doc/guide.md,docs/_templates/**"
+alwaysApply: false
+---
+
+# Path / origin diagrams
+
+When a topic **moves the TCP in space** (OFFSET, INC, frames, square, pallet, pick/place, skip, contour), add a **Path / origin** Mermaid **in addition to** the program-flow chart.
+
+This sketch is **not** millimetres and **not** a cell map. Caption every diagram: study sketch in **UFRAME**; teach on the cell.
+
+GitHub-safe classic syntax only. Do **not** use `@{ shape: }`. Do **not** name a node `io` or `end`.
+
+## When it is required
+
+| Topic | Sketch |
+|-------|--------|
+| OFFSET | Taught **1-2-3-4**, then same points **1'-2'-3'-4'** after OFFSET CONDITION |
+| INC | One taught corner, then **+X / +Y / −X / −Y** deltas (not new named poses) |
+| User frame | **World** origin vs **UFRAME** origin on the fixture |
+| Square / plot | Corners **1-2-3-4** (FINE stops at each) |
+| Pallet | Grid **(row,col)** cells, not twenty copied P[] |
+| Pick / place | Home → approach → pick → place → home (heights) |
+| Skip | Linear toward dest; leave early at skip fire |
+| Circular | Start → **via** → **dest** |
+
+Program flow (L# / diamonds) stays in mermaid-program-flow. **Never** replace a spatial sketch with only a CALL/WAIT flowchart.
+
+## OFFSET (canonical)
+
+```mermaid
+flowchart LR
+  subgraph taught["Taught 1-2-3-4"]
+    direction TB
+    p1["1"] --> p2["2"]
+    p2 --> p3["3"]
+    p3 --> p4["4"]
+    p4 --> p1
+  end
+  shift(["OFFSET PR"])
+  subgraph off["Same P[] as 1'-2'-3'-4'"]
+    direction TB
+    q1["1'"] --> q2["2'"]
+    q2 --> q3["3'"]
+    q3 --> q4["4'"]
+    q4 --> q1
+  end
+  taught ==> shift
+  shift ==> off
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef shiftc fill:#E1D5E7,stroke:#9673A6
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  class p1,p2,p3,p4 proc
+  class q1,q2,q3,q4 shiftc
+  class shift origin
+```
+
+## Colors
+
+| Class | Fill | Meaning |
+|-------|------|---------|
+| `proc` | blue | Taught / first pass |
+| `shiftc` | purple | Shifted / primed points |
+| `origin` | yellow | Frame origin or OFFSET PR |
+| `term` | gray | Home / END pose |
+
+Copy `classDef` from mermaid-program-flow when the same page has a program flowchart.
+
+## NEVER
+
+- Fake plant millimetres as measured fact
+- Mix INC arrows onto the OFFSET primed square
+- OEM screenshot paste
+- One diagram trying to be both L# program flow and a floor sketch
+
+Skill: `fanuc-path-diagram`. Template: `docs/_templates/topic.md` section Path / origin.

@@ -31,13 +31,20 @@ DI[1] is a **placeholder**. Map on the cell. After skip, you are at the pose whe
 ## System
 
 ```mermaid
-flowchart LR
-  skip[SKIP_CONDITION]
-  l[L_motion]
-  lbl[LBL]
-  skip --> l
-  l -->|condition| lbl
-  l -->|arrived| next[NextLine]
+flowchart TB
+  arm[/"SKIP CONDITION DI"/]
+  lin{"L Skip LBL?"}
+  lbl["LBL"]
+  nxt["next"]
+  arm ==> lin
+  lin -->|condition| lbl
+  lin ==>|arrived| nxt
+  classDef io fill:#D5E8D4,stroke:#82B366
+  classDef dec fill:#FFF2CC,stroke:#D6B656
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  class arm io
+  class lin dec
+  class lbl,nxt proc
 ```
 
 ## Worked example

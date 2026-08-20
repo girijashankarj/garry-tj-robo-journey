@@ -19,16 +19,60 @@ A handling cycle **unions** Joint fly-over, Linear to the part, EOAT I/O, retrea
 
 Typical skeleton: J approach → L pick → RO/WAIT RI → L retreat → J to place approach → L place → release → retreat → J home. All indexes are placeholders.
 
+## Path / origin
+
+Study sketch. Heights: fly **approach**, Linear **down** to pick/place, retreat, then the other nest. Not millimetres.
+
+```mermaid
+flowchart TB
+  hm(["home"])
+  pka["pick approach"]
+  pk["pick"]
+  pla["place approach"]
+  pl["place"]
+  hm ==> pka
+  pka ==> pk
+  pk ==> pka
+  pka ==> pla
+  pla ==> pl
+  pl ==> pla
+  pla ==> hm
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  class hm term
+  class pka,pla origin
+  class pk,pl proc
+```
+
 ## System
 
 ```mermaid
-flowchart LR
-  home[Home_J]
-  ap[Approach_J]
-  pk[Pick_L]
-  io[RO_WAIT_RI]
-  pl[Place_L]
-  home --> ap --> pk --> io --> pl --> home
+flowchart TB
+  home(["J home"])
+  ap["J approach"]
+  pk["L pick"]
+  grip[/"RO WAIT RI"/]
+  wait{"RI ON?"}
+  pl["L place"]
+  ualm["UALM"]
+  home ==> ap
+  ap ==> pk
+  pk --> grip
+  grip ==> wait
+  wait -->|yes| pl
+  wait -.->|TIMEOUT| ualm
+  pl ==> home
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef io fill:#D5E8D4,stroke:#82B366
+  classDef dec fill:#FFF2CC,stroke:#D6B656
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef term fill:#F5F5F5,stroke:#666666
+  class home term
+  class ap,pk,pl proc
+  class grip io
+  class wait dec
+  class ualm fault
 ```
 
 ## Worked example

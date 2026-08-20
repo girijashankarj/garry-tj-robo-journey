@@ -6,6 +6,10 @@ All notable changes to this project are documented in this file.
 
 ### Added
 
+- Incoming listing review pack (`/fanuc-review`): unpublished `temp/clients/…`; copy folder (`SHARE.md`); cell surroundings + asked-not-provided; regenerate when answers arrive
+- Path / origin Mermaid: OFFSET 1-2-3-4 then 1'-2'-3'-4', INC, frames, pallet, pick/place, skip; skill `fanuc-path-diagram`; rule mermaid-path-origin
+- [`docs/fanuc/how-to-read-a-guide.md`](docs/fanuc/how-to-read-a-guide.md): chart legend for GitHub readers (no `.cursor` required)
+- Mermaid program-flow rule: shapes (diamond, parallelogram, stadium, CALL), `L#` labels, `classDef` colors; one flowchart per guide
 - Drills `009`–`021`; every drill is `README` + `code/solution.ls` + `doc/guide.md`
 - TP atoms: J, L, JMP/LBL, SKIP, remark, UALM, MESSAGE, OVERRIDE, R[]; applications pick/place, pallet, skip/contour
 - Pallet row/col matrix math; remarks single-line vs stacked
@@ -20,13 +24,16 @@ All notable changes to this project are documented in this file.
 
 ### Changed
 
-- Root README: drill step points at a real `doc/guide.md` plus the template
+- Root README: learner path starts at 001 after how-to-read; template is for authors
+- Drill guides: plain-English Purpose, `/MN` listing next to the chart, Atom column links to articles; 018/016/017 say not to start there
+- Drill guides: how-to-read + glossary under Block-by-block; 001 Purpose in plain English first
 - Practice index: ATTR size fields called out as study ASCII, not backups
 - Article/guide templates: short LEGAL pointer instead of a duplicated paragraph
 - README brand scope: FANUC track only; other OEMs named as future, not present
 - Cursor harness trimmed to Fanuc tutors plus a small docs/git/security slice
 - `programs/fanuc/samples/` no longer duplicates practice listings
 - Topic map: atoms vs unions
+- Program guides: one mermaid flow with shapes, colors, and `/MN` line numbers
 
 ### Removed
 

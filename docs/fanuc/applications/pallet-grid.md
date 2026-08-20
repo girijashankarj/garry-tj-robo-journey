@@ -29,17 +29,43 @@ Z = Z0 + layer * dz    (optional)
 index = row * nCols + col
 ```
 
-Write X/Y into a **PR** (element numbers: confirm X=1, Y=2 on your software) then OFFSET CONDITION or Offset on Linear. See [`018`](../../../practice/fanuc/018-pallet-grid/) `code/solution.ls` and [`doc/guide.md`](../../../practice/fanuc/018-pallet-grid/doc/guide.md).
+## Path / origin
+
+Study sketch. Pitch **dx dy** is taught on the cell — do not copy millimetres from this repo.
+
+Visit a **grid**. Each cell is the same nest pose shifted by row/col. Not twenty copied P[].
+
+```mermaid
+flowchart TB
+  a["r0 c0"] --- b["r0 c1"]
+  c["r1 c0"] --- d["r1 c1"]
+  a --- c
+  b --- d
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  class a,b,c,d proc
+```
+
+Write X/Y into a **PR** then OFFSET CONDITION. See [`018`](../../../practice/fanuc/018-pallet-grid/).
 
 ## System
 
 ```mermaid
 flowchart TB
-  row[R_row]
-  col[R_col]
-  off[OFFSET_or_PR]
-  place[Place_motion]
-  row --> col --> off --> place
+  init["R row col pitch"]
+  math["X Y into PR"]
+  place["L Offset"]
+  more{"more cells?"}
+  init ==> math
+  math ==> place
+  place ==> more
+  more -->|yes| math
+  more -.->|no| home(["J home"])
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef dec fill:#FFF2CC,stroke:#D6B656
+  classDef term fill:#F5F5F5,stroke:#666666
+  class init,math,place proc
+  class more dec
+  class home term
 ```
 
 ## Worked example

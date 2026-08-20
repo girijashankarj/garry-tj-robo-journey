@@ -15,11 +15,13 @@ List paths.
 
 ### 2. Checklist
 - [ ] `docs/fanuc/README.md`
+- [ ] `docs/fanuc/how-to-read-a-guide.md`
 - [ ] `docs/fanuc/learning-path.md` if modules or drills changed
 - [ ] `docs/fanuc/topic-map.md` if atoms or unions changed
 - [ ] `docs/glossary.md` / `docs/jargons.md` if new terms were introduced
 - [ ] `practice/fanuc/README.md`
-- [ ] Each drill has `code/solution.ls` and `doc/guide.md` (flowchart + diamonds + blocks)
+- [ ] Each drill has `code/solution.ls` and `doc/guide.md` (one mermaid program flow + block table)
+- [ ] Motion/frame/OFFSET/pallet/pick/skip pages have Path / origin Mermaid (1-2-3-4 vs 1'-2'-3'-4' where OFFSET)
 - [ ] No `docs/grossary.md`
 - [ ] `programs/fanuc/README.md` if `tp/` or `karel/` changed
 - [ ] Root `README.md` / `CHANGELOG.md`
@@ -28,6 +30,7 @@ List paths.
 - [ ] FANUC-rights + educational consent footer present
 - [ ] Public credit Garry TJ only
 - [ ] No unpublished local scratch copied into docs
+- [ ] Incoming listings stay under `temp/clients/` (not `practice/` / `programs/`) unless explicit redact-and-promote
 
 ### 3. Report
 Table: file | update | done / skipped.

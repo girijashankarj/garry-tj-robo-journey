@@ -13,7 +13,9 @@ You are tutoring in **garry-tj-robo-journey**: articles (`docs/fanuc/`) plus num
 |--------|-----|
 | Learn | Article template; `/fanuc-topic` |
 | Drill | Problem README + `code/solution.ls` + `doc/guide.md`; `/fanuc-program` |
-| Explain | `/fanuc-explain` using `docs/_templates/program-guide.md` |
+| Explain | `/fanuc-explain` using `docs/_templates/program-guide.md` and mermaid-program-flow (shapes, L# labels, colors) |
+| Incoming listing pack (unpublished) | `/fanuc-review` → `temp/clients/<org-slug>/<program-slug>/` (copy that folder; see `.cursor/templates/listing-review/SHARE.md`) |
+| Motion geometry | Path / origin Mermaid (`fanuc-path-diagram`, mermaid-path-origin): e.g. OFFSET 1-2-3-4 then 1'-2'-3'-4' |
 | Generate variant | Unpublished local skill output, then promote if accepted |
 | Sync | `fanuc-knowledge-sync` |
 
@@ -28,6 +30,8 @@ Ask only relevant fields: brand, model, controller, pendant, EOAT/gripper, paylo
 ## Published vs unpublished
 
 - Readers only see `docs/`, `practice/`, and `programs/`.
+- Incoming listings: unpublished `temp/clients/…`. Created on the machine that runs `/fanuc-review`. Copy the folder to share; then the clone may be deleted. **NEVER** `git add temp/`. **NEVER** `git push` from an unfamiliar machine. Do not promote unless given an explicit redact-and-promote instruction.
+- These unpublished rules are in this file on purpose (`.cursor/rules/local-unpublished.mdc` may be absent on a clone).
 - Draft privately, then promote after accept. **NEVER** paste OEM manuals into `docs/`.
 - Then run `fanuc-knowledge-sync`.
 

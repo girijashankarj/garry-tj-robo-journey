@@ -19,9 +19,10 @@ See `docs/personas.md`.
 
 | Intent | Use |
 |--------|-----|
-| Learn | `/fanuc-topic`, `@fanuc-docs-agent` |
+| Learn | `/fanuc-topic`, `@fanuc-docs-agent` (`fanuc-path-diagram` for OFFSET 1-2-3-4 / 1'-2'-3'-4') |
 | Drill / generate | `/fanuc-program`, `@fanuc-programmer-agent` |
 | Explain code | `/fanuc-explain`, `@fanuc-explainer-agent` |
+| Incoming listing pack (unpublished) | `/fanuc-review`, `@fanuc-review-agent` — pack is local `temp/clients/…`; copy folder per `.cursor/templates/listing-review/SHARE.md` |
 | Sync indexes | `@fanuc-knowledge-sync` |
 
 Promote accepted work into `docs/`, `practice/`, or `programs/`.
@@ -46,7 +47,7 @@ Before generating or explaining programs, ask **only relevant** fields: model, c
 
 ## Cursor harness (keep small)
 
-Fanuc tutors: `@fanuc-docs-agent`, `@fanuc-programmer-agent`, `@fanuc-explainer-agent`, `@fanuc-knowledge-sync`.
+Fanuc tutors: `@fanuc-docs-agent`, `@fanuc-programmer-agent`, `@fanuc-explainer-agent`, `@fanuc-review-agent`, `@fanuc-knowledge-sync`.
 Also useful: `@diagram-agent`, `@docs-agent` / `@doc-sync-agent`, `@git-agent`, `@guardrail-agent`, `@security-audit-agent`.
 
 ## After accepted updates

@@ -12,8 +12,9 @@ New FANUC code, or a variant of `practice/fanuc/00N-*/`.
 1. Clarification (relevant fields only).
 2. Draft unpublished `.ls`/`.kl` plus assumptions. Match study-guide tone.
 3. User accept.
-4. Promote: `practice/fanuc/00N-slug/` with `README.md`, `code/solution.ls`, and `doc/guide.md` (see `docs/_templates/program-guide.md`), **or** the same `code/` + `doc/` under `programs/fanuc/tp/<name>/`.
-5. `fanuc-knowledge-sync`.
+4. If this is an implementation pass on an unpublished review pack: write `temp/clients/<org-slug>/<program-slug>/code/proposed.ls` only when asked; never overwrite `as-received.ls`; never copy as-received into `practice/` unless explicit redact-and-promote.
+5. Otherwise promote to `practice/fanuc/00N-slug/` (`README.md`, `code/solution.ls`, `doc/guide.md`) or `programs/fanuc/tp/<name>/`. If the TCP moves, include Path / origin Mermaid (`fanuc-path-diagram`).
+6. `fanuc-knowledge-sync` after promote to published trees.
 
 ## Rules
 - **NEVER** invent measured plant I/O.

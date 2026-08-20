@@ -14,10 +14,12 @@ Do not paste OEM manuals. Official-reference sections should name **what to look
 
 ## Add a drill
 
+Guides use [`docs/fanuc/how-to-read-a-guide.md`](docs/fanuc/how-to-read-a-guide.md) for GitHub readers. Authors: [mermaid-program-flow](.cursor/rules/documentation/mermaid-program-flow.mdc) and, for TCP geometry, [mermaid-path-origin](.cursor/rules/documentation/mermaid-path-origin.mdc) (`fanuc-path-diagram`).
+
 1. Next id under `practice/fanuc/00N-slug/` with:
    - `README.md` (statement)
    - `code/solution.ls`
-   - `doc/guide.md` from [`docs/_templates/program-guide.md`](docs/_templates/program-guide.md) (flowchart, diamond decisions, block-by-block)
+   - `doc/guide.md` from [`docs/_templates/program-guide.md`](docs/_templates/program-guide.md) (path/origin sketch if the TCP moves; one mermaid program flow with shapes/L#/colors — [mermaid-program-flow](.cursor/rules/documentation/mermaid-program-flow.mdc); block-by-block)
 2. Placeholder I/O, frames, and poses only.
 3. Index row in [`practice/fanuc/README.md`](practice/fanuc/README.md).
 4. ATTR size fields may stay zero — these are study listings, not backups.

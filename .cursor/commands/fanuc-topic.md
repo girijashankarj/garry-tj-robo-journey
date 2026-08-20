@@ -13,7 +13,7 @@ Follow `@fanuc-docs-agent` and `docs/_templates/topic.md`. Curriculum voice; edu
 
 ## Action
 1. Clarification gate (relevant fields only).
-2. Matching `fanuc-*` skill.
+2. Matching `fanuc-*` skill (`fanuc-topic-writer`, `fanuc-path-diagram` when the TCP moves).
 3. After accept, `fanuc-knowledge-sync`.
 
 ## Rights

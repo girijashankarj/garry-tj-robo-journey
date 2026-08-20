@@ -10,7 +10,7 @@ Each promoted TP program:
 ```text
 programs/fanuc/tp/<name>/
   code/     # .ls
-  doc/      # guide.md (flowchart, diamonds, block-by-block)
+  doc/      # guide.md (same as practice: how-to-read-a-guide.md)
 ```
 
 Study drills live only under [`practice/fanuc/`](../../practice/fanuc/). Do not duplicate drill `.ls` files here.

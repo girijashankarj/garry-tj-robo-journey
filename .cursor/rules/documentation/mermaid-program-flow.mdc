@@ -1,0 +1,59 @@
+---
+description: Mermaid program flow — shapes, colors, line numbers for TP/Karel explanation
+globs: "**/doc/guide.md,docs/fanuc/**/*.md"
+alwaysApply: false
+---
+
+# Mermaid program flowcharts
+
+When explaining Teach Pendant / Karel, use **one** Mermaid `flowchart` — not a rectangle chain plus a stub diamond chart.
+
+GitHub-safe classic syntax only. Do **not** use `@{ shape: diamond }` (many Markdown hosts miss it).
+
+## Shapes
+
+| Kind | Shape | Syntax |
+|------|--------|--------|
+| Start / END | Stadium | `id(["L9 END"])` |
+| Motion / assign / JMP | Rectangle | `id["L4 J PR1"]` |
+| IF, WAIT timeout, SKIP | Diamond (rhombus) | `id{"L3 WAIT RI?"}` |
+| DI/DO/RI/RO | Parallelogram | `id[/"L2 RO[1]=ON"/]` |
+| CALL | Subroutine | `id[["L5 CALL SUB100"]]` |
+| Remark / skipped | Rounded | `id("L0 remarks")` |
+
+## Edges
+
+| Edge | Use |
+|------|-----|
+| `==>` | Happy / main path |
+| `-->` | Normal next instruction |
+| `-.->` | Remark, optional, skipped, TIMEOUT / fault |
+| ` -->|yes| ` ` -->|TIMEOUT| ` | Diamond branches |
+
+## Line numbers
+
+**ALWAYS** prefix executable nodes with `L` + `/MN` number from `code/solution.ls` (e.g. `L3 WAIT RI`). Ranges OK: `L4-6 CALL loop`. Collapse LEGAL remarks to one `note` node.
+
+## Colors (copy into every diagram)
+
+```text
+classDef proc fill:#DAE8FC,stroke:#6C8EBF
+classDef dec fill:#FFF2CC,stroke:#D6B656
+classDef io fill:#D5E8D4,stroke:#82B366
+classDef call fill:#E1D5E7,stroke:#9673A6
+classDef fault fill:#F8CECC,stroke:#B85450
+classDef term fill:#F5F5F5,stroke:#666666
+classDef note fill:#FFFFFF,stroke:#999999,stroke-dasharray: 5 5
+```
+
+Then `class nodeId proc` (or `dec`, `io`, `call`, `fault`, `term`, `note`).
+
+## NEVER
+
+- One rectangle per remark line
+- Two near-identical diagrams (Flowchart + empty Decisions)
+- Fake diamonds on a straight program
+- Plant I/O maps; placeholders only
+- OEM manual paste in node labels
+
+Template: `docs/_templates/program-guide.md`.

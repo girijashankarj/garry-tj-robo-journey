@@ -12,7 +12,11 @@
 
 ## Statement
 
-Move the arm to a taught home (safe) pose at low joint speed and stop FINE. Optional: signal AtHome (placeholder DO).
+Move the robot to a **safe pose you taught** (home). Go there in **Joint**, slowly, and **stop completely** (FINE). Optional: turn on a placeholder “at home” output.
+
+You must teach `PR[1:Home]` on **your** arm. Numbers in the listing are not a real cell.
+
+How to read the solution: [`how-to-read-a-guide.md`](../../../docs/fanuc/how-to-read-a-guide.md).
 
 ## Constraints
 

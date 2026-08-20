@@ -5,42 +5,66 @@
 
 ## Purpose
 
-**Atom:** programmed **OVERRIDE** (placeholder 50%), then Joint home. Confirm the instruction name on your software. Not a safety device.
+In plain English: cap **program speed** (study 50%), then Joint home. This is **not** a safety device.
 
-## Flowchart
+On the pendant: **OVERRIDE=50%**, then **J** home. Confirm the instruction on your software. Atom: [override](../../../../docs/fanuc/programming-tp/override.md).
+
+## Program flow
 
 ```mermaid
 flowchart TB
-  frames[UFRAME_UTOOL]
-  ov[OVERRIDE]
-  home[J_home]
-  frames --> ov --> home --> endn[END]
+  start(["start"])
+  rem("L0-1 not a safety device")
+  fr["L2-3 UFRAME UTOOL"]
+  ov["L4 OVERRIDE 50pct"]
+  j["L5 J home 100pct"]
+  endn(["L6 END"])
+  start -.-> rem
+  rem --> fr
+  fr ==> ov
+  ov ==> j
+  j ==> endn
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef dec fill:#FFF2CC,stroke:#D6B656
+  classDef io fill:#D5E8D4,stroke:#82B366
+  classDef call fill:#E1D5E7,stroke:#9673A6
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef term fill:#F5F5F5,stroke:#666666
+  classDef note fill:#FFFFFF,stroke:#999999,stroke-dasharray: 5 5
+  class start,endn term
+  class rem note
+  class fr,ov,j proc
 ```
 
-## Decisions (diamond)
+## Listing (`/MN`)
 
-No IF / WAIT / SKIP / UALM.
+`L#` on the chart is the number before `:` here. Full file: [`code/solution.ls`](../code/solution.ls).
 
-```mermaid
-flowchart TD
-  run[Override_then_Joint]
-  done[END]
-  run --> done
+```
+   0:  ! FANUC retains all rights in its marks/software/manuals. Educational only. Use at your own consent and risk. See LEGAL.md ;
+   1:  ! Atom: OVERRIDE instruction. Confirm name on your software. Not a safety device. ;
+   2:  UFRAME_NUM=1 ;
+   3:  UTOOL_NUM=1 ;
+   4:  OVERRIDE=50% ;
+   5:  J PR[1:Home] 100% FINE    ;
+   6:  END ;
 ```
 
 ## Block-by-block
 
+How to read this chart: [`how-to-read-a-guide.md`](../../../../docs/fanuc/how-to-read-a-guide.md). Atoms (J, L, WAIT, …): [`glossary.md`](../../../../docs/glossary.md).
+
 | Lines | What | Atom |
 |-------|------|------|
-| 0–1 | LEGAL + not-safety remark | Remark |
-| 2–3 | Frame select | Frame |
-| 4 | `OVERRIDE=50%` | OVERRIDE |
-| 5 | Joint home at programmed 100% (scaled by override) | J |
-| 6 | END | END |
+| 0–1 | LEGAL + not-safety remark | [Remark](../../../../docs/fanuc/programming-tp/remark.md) |
+| 2–3 | Frame select | [Frame](../../../../docs/fanuc/io-frames-tools/frames.md) |
+| 4 | OVERRIDE=50% | [OVERRIDE](../../../../docs/fanuc/programming-tp/override.md) |
+| 5 | Joint home (scaled by override) | [J](../../../../docs/fanuc/programming-tp/motion-j.md) |
+| 6 | END | [END](../../../../docs/glossary.md) |
 
 ## Safety
 
-Pendant override and this instruction both scale speed. Prove in T1. Site SOP and OEM manuals override this page.
+Prove in T1, then T2 step, then Auto. Placeholders only. Site SOP and OEM manuals override this page.
 
 ## Rights
 

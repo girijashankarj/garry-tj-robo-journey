@@ -31,12 +31,18 @@ Message / remark do not replace a label. CALL leaves this program; JMP stays in 
 
 ```mermaid
 flowchart TB
-  a[LineA]
-  jmp[JMP_LBL]
-  b[Skipped]
-  c[LBL]
-  a --> jmp --> c
-  a --> b --> c
+  a["line A"]
+  jmp["JMP LBL n"]
+  skip("skipped block")
+  c["LBL n"]
+  a ==> jmp
+  jmp ==> c
+  jmp -.-> skip
+  skip -.-> c
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef note fill:#FFFFFF,stroke:#999999,stroke-dasharray: 5 5
+  class a,jmp,c proc
+  class skip note
 ```
 
 ## Worked example

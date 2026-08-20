@@ -42,6 +42,31 @@ Direct numeric entry is for known CAD offsets, not a substitute for a recorded f
 
 **OFFSET vs INC:** OFFSET shifts a taught path in a frame. INC treats the recorded pose as a delta. Do not stack both on the same geometry until you can draw it.
 
+## Path / origin
+
+Study sketch in **UFRAME**. Not millimetres. Teach on the cell.
+
+**World** origin stays on the robot. **User** origin sits on the fixture. Cartesian **L** / **C** / OFFSET are relative to the **user** origin you taught (plus UTOOL).
+
+```mermaid
+flowchart LR
+  w(["World origin"])
+  u(["UFRAME origin"])
+  p1["1"]
+  p2["2"]
+  p3["3"]
+  p4["4"]
+  w -.-> u
+  u ==> p1
+  p1 --> p2 --> p3 --> p4 --> p1
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  class w,u origin
+  class p1,p2,p3,p4 proc
+```
+
+OFFSET of that square: [`offset-and-incremental.md`](../programming-tp/offset-and-incremental.md) (1-2-3-4 then 1'-2'-3'-4').
+
 ## System
 
 ```mermaid

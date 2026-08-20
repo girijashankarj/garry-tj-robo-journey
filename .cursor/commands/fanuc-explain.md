@@ -9,11 +9,11 @@ description: Fanuc Explain — study guide tutor.
 `/fanuc-explain`
 
 ## Description
-Follow `@fanuc-explainer-agent` and `docs/_templates/program-guide.md` (flowchart, diamonds, block-by-block). Prefer `practice/fanuc/*/doc/guide.md` and `code/solution.ls`.
+Follow `@fanuc-explainer-agent`, `docs/_templates/program-guide.md`, mermaid-program-flow, and mermaid-path-origin when the TCP moves.
 
 ## Action
 1. Clarification gate (relevant fields only).
-2. Matching `fanuc-*` skill.
+2. Matching `fanuc-*` skill. If the listing is not a drill or `programs/fanuc/` file, use `fanuc-listing-review` (unpublished pack).
 3. After accept, `fanuc-knowledge-sync`.
 
 ## Rights

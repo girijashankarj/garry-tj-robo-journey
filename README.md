@@ -8,7 +8,7 @@ Educational material only. See [`LEGAL.md`](LEGAL.md) for FANUC rights and use a
 
 1. Pick a **mode**: operator, programmer, integrator, or learner — [`docs/personas.md`](docs/personas.md)
 2. Read articles in [`docs/fanuc/`](docs/fanuc/) (order: [`learning-path.md`](docs/fanuc/learning-path.md)). Terms: [`docs/glossary.md`](docs/glossary.md), shop talk: [`docs/jargons.md`](docs/jargons.md)
-3. Solve drills in [`practice/fanuc/`](practice/fanuc/) (statement → [`code/solution.ls`](practice/fanuc/001-home-safe/code/solution.ls) + [`doc/guide.md`](practice/fanuc/001-home-safe/doc/guide.md); new guides use [`docs/_templates/program-guide.md`](docs/_templates/program-guide.md))
+3. Solve drills in [`practice/fanuc/`](practice/fanuc/). Start at [`001-home-safe`](practice/fanuc/001-home-safe/) after [how to read a program guide](docs/fanuc/how-to-read-a-guide.md).
 4. Use Cursor for the case you are in (table below)
 
 ## Cursor cases
@@ -27,6 +27,7 @@ Agents ask only the **cell fields that matter** (model, controller, pendant, EOA
 | Path | Role |
 |------|------|
 | [`docs/fanuc/`](docs/fanuc/) | Topic articles |
+| [`docs/fanuc/how-to-read-a-guide.md`](docs/fanuc/how-to-read-a-guide.md) | Chart legend for drill guides |
 | [`docs/fanuc/topic-map.md`](docs/fanuc/topic-map.md) | Atom vs union map |
 | [`docs/glossary.md`](docs/glossary.md) | Term definitions |
 | [`docs/jargons.md`](docs/jargons.md) | Shop-floor slang vs pendant meaning |

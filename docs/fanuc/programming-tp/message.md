@@ -24,9 +24,13 @@ Study shape (confirm on controller): a MESSAGE line, then motion. If the menu wo
 
 ```mermaid
 flowchart LR
-  msg[MESSAGE]
-  mot[Motion_continues]
-  msg --> mot
+  msg[/"MESSAGE"/]
+  mot["motion continues"]
+  msg ==> mot
+  classDef io fill:#D5E8D4,stroke:#82B366
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  class msg io
+  class mot proc
 ```
 
 ## Worked example

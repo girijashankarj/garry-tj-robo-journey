@@ -15,6 +15,7 @@ Creates and maintains technical documentation.
 
 ## When to Use
 - Documenting new features
+- FANUC study articles that need Path / origin Mermaid (`fanuc-path-diagram`)
 - Creating API documentation
 - Writing architecture decision records
 - Building onboarding guides

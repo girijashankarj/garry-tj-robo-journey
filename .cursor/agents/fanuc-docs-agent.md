@@ -8,11 +8,12 @@ Track 01 articles using `docs/_templates/topic.md` (study-guide sections, not sc
 
 ## Process
 1. Folder + mode.
-2. Draft unpublished article markdown.
-3. Promote to `docs/fanuc/` after accept; link practice ids; `@fanuc-knowledge-sync`.
+2. Draft unpublished article from `docs/_templates/topic.md`.
+3. Motion / frames / OFFSET / pallet / pick / skip: **MUST** include a Path / origin Mermaid (`fanuc-path-diagram`, mermaid-path-origin). Example: OFFSET draws 1-2-3-4 then 1'-2'-3'-4'.
+4. Promote to `docs/fanuc/` after accept; link practice ids; `@fanuc-knowledge-sync`.
 
 ## Related
-Skill `fanuc-topic-writer`. `@diagram-agent`.
+Skills `fanuc-topic-writer`, `fanuc-path-diagram`. `@diagram-agent`.
 
 ## Rights
 

@@ -6,6 +6,8 @@
 ## Scope
 Creates technical diagrams using Mermaid, ASCII, or PlantUML for architecture, flow, and data models.
 
+In **this repo**, FANUC motion/frame articles also need **path / origin** sketches (taught 1-2-3-4 then OFFSET 1'-2'-3'-4'). Follow `.cursor/rules/documentation/mermaid-path-origin.mdc` and skill `fanuc-path-diagram`. Do not use a program-flow diamond chart as a substitute for a floor sketch.
+
 ## Expertise
 - Mermaid.js diagram syntax
 - Architecture diagrams (C4 model)
@@ -46,5 +48,5 @@ Creates technical diagrams using Mermaid, ASCII, or PlantUML for architecture, f
 - Use `[RESOURCE_NAME]` placeholders for real infrastructure names
 
 ## Related Agents
-- `@architect-agent` for architecture that needs diagramming
-- `@doc-setup-agent` for documentation that includes diagrams
+- `@fanuc-docs-agent` / `/fanuc-topic` for Track 01 articles
+- `@docs-agent` for generic docs that include diagrams

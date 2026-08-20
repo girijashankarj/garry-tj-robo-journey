@@ -23,16 +23,23 @@ Placeholder `UALM[1]` in this repo. Map n and the message string on the cell. Pa
 ## System
 
 ```mermaid
-flowchart LR
-  cond[Timeout_or_IF]
-  ualm[UALM]
-  stop[ABORT_or_home]
-  cond --> ualm --> stop
+flowchart TB
+  cond{"timeout or IF?"}
+  ualm["UALM n"]
+  stop(["ABORT or home"])
+  cond -.->|fault| ualm
+  ualm --> stop
+  classDef dec fill:#FFF2CC,stroke:#D6B656
+  classDef fault fill:#F8CECC,stroke:#B85450
+  classDef term fill:#F5F5F5,stroke:#666666
+  class cond dec
+  class ualm fault
+  class stop term
 ```
 
 ## Worked example
 
-Atom: [`020-user-alarm`](../../../practice/fanuc/020-user-alarm/). Union: [`007-wait-gripper`](../../../practice/fanuc/007-wait-gripper/) (`doc/guide.md` diamonds).
+Atom: [`020-user-alarm`](../../../practice/fanuc/020-user-alarm/). Union: [`007-wait-gripper`](../../../practice/fanuc/007-wait-gripper/) (`doc/guide.md` program flow).
 
 ## Practice
 

@@ -21,6 +21,22 @@
 
 `J PR[n] 20% FINE` — Joint to a position register, 20 percent, stop FINE. Union with Linear: [`002-square-path`](../../../practice/fanuc/002-square-path/).
 
+## Path / origin
+
+Study sketch. **J** sweeps **joints** (the TCP path is not a straight line). **L** is the straight TCP line between the same two taught poses.
+
+```mermaid
+flowchart LR
+  a["P1"]
+  b["P2"]
+  a -.->|J joint sweep| b
+  a ==>|L straight TCP| b
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef shiftc fill:#E1D5E7,stroke:#9673A6
+  class a proc
+  class b shiftc
+```
+
 ## System
 
 ```mermaid

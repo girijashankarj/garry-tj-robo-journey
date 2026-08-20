@@ -23,15 +23,46 @@ Two different unions that both use **Linear**:
 
 Skip uses a **placeholder DI**. After skip, the TCP is where the skip fired. A plot listing is just sequential `L P[n]`.
 
-## System
+## Path / origin
+
+Study sketch. **Skip:** Linear toward dest; leave early. **Plot:** polyline **1-2-3-4** (not Circular).
 
 ```mermaid
 flowchart LR
-  skip[SKIP_plus_L]
-  plot[L_P1_to_Pn]
-  home[J_home]
-  skip --> home
-  plot --> home
+  subgraph sk["Skip"]
+    direction LR
+    a["start"] ==> x["skip fires"]
+    x -.-> z["dest not reached"]
+  end
+  subgraph pl["Plot"]
+    direction TB
+    n1["1"] --> n2["2"]
+    n2 --> n3["3"]
+    n3 --> n4["4"]
+  end
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef origin fill:#FFF2CC,stroke:#D6B656
+  classDef shiftc fill:#E1D5E7,stroke:#9673A6
+  class a,n1,n2,n3,n4 proc
+  class x origin
+  class z shiftc
+```
+
+## System
+
+```mermaid
+flowchart TB
+  skip{"Skip on L?"}
+  plot["L polyline"]
+  home(["J home"])
+  skip -->|leave path| home
+  plot ==> home
+  classDef dec fill:#FFF2CC,stroke:#D6B656
+  classDef proc fill:#DAE8FC,stroke:#6C8EBF
+  classDef term fill:#F5F5F5,stroke:#666666
+  class skip dec
+  class plot proc
+  class home term
 ```
 
 ## Worked example
