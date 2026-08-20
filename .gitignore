@@ -1,0 +1,36 @@
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+credentials.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Skill scratch (keep README and .gitkeep)
+temp/**
+!temp/.gitkeep
+!temp/README.md
+
+# Incoming PDFs (keep folder + README)
+inbox/pdf/**
+!inbox/pdf/.gitkeep
+!inbox/pdf/README.md
+inbox/**/*.pdf
+
+# Cache
+.cache/

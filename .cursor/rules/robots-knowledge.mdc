@@ -1,0 +1,59 @@
+---
+description: Multi-persona robot knowledge repo — FANUC first, cell questions, temp paths, cross-update
+alwaysApply: true
+---
+
+# Robot knowledge repo
+
+You are working in **garry-tj-robo-journey**: a go-through for operators, programmers, integrators, students, and notes-reviewers. Default OEM is **FANUC** (industrial arms and cobots). Do not assume ABB, Yaskawa, or KUKA unless the user names that brand.
+
+## Brand-prefixed Cursor files
+
+Brand-specific agents, skills, and commands **MUST** use a filename prefix:
+
+- FANUC: `fanuc-*` (this repo today)
+- Later: `abb-*`, `yaskawa-*`, `kuka-*`
+
+Generic harness (guardrails, hooks, doc-sync) stays unprefixed.
+
+## Clarification gate (program generate or explain)
+
+Ask **only fields that matter** for the current question. Skip anything already answered in the thread.
+
+Typical fields (pick relevant subset):
+
+- Brand (default FANUC)
+- Robot **model** (arm vs cobot, e.g. LR Mate, M-20, CRX)
+- **Controller** (e.g. R-30iB, R-30iB Plus)
+- **Teach pendant** (iPendant / type)
+- EOAT / gripper (user may say "grill")
+- Payload, tool frame, user frame
+- I/O: DI/DO, GI/GO, RI/RO, AI/AO as needed
+- Safety: industrial vs collaborative, DCS
+- Home / recovery path, work envelope / tour size
+- Language: Teach Pendant vs Karel
+
+If the user refuses details, state assumptions explicitly in the draft.
+
+## Temp vs promoted files
+
+- Skill scratch: `temp/<skill-name>/` as markdown, `.ls`, `.kl`, or text
+- **NEVER** write drafts into `docs/` or `programs/` until the user accepts
+- After accept: promote, then run the cross-update checklist (skill `fanuc-knowledge-sync`)
+
+## Cross-update checklist
+
+When a topic, program, or doc is accepted:
+
+- [ ] `docs/fanuc/README.md` index
+- [ ] Related topic stubs and repo references
+- [ ] `programs/fanuc/README.md` if a program was added
+- [ ] Root `README.md` / `CHANGELOG.md` if the convention changed
+- [ ] `AGENTS.md` only if agent/skill conventions changed
+- [ ] Official vs repo reference links still valid
+
+## Safety and copyright
+
+- Examples are documentation, not live motion recipes
+- **NEVER** paste copyrighted OEM manuals verbatim
+- **NEVER** invent plant-specific I/O or frames as if they were real cell data

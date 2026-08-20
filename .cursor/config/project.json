@@ -1,0 +1,132 @@
+{
+  "$schema": "./project-schema.json",
+  "project": {
+    "name": "garry-tj-robo-journey",
+    "description": "Multi-persona FANUC-first robot knowledge repo (industrial arms and cobots); later ABB, Yaskawa, KUKA",
+    "version": "1.0.0",
+    "repository": "https://github.com/girijashankarj/garry-tj-robo-journey"
+  },
+  "cursor": {
+    "include": {
+      "patterns": ["docs/**", "programs/**", ".cursor/**"],
+      "priorityFiles": ["README.md", "AGENTS.md", "docs/personas.md", "docs/fanuc/README.md"]
+    },
+    "exclude": {
+      "patterns": ["temp/**", "inbox/**", ".git/**", "node_modules/**", "dist/**", "build/**", "coverage/**"],
+      "largeFiles": ["*.lock", "*.map", "*.min.js", "*.min.css", "*.pdf"],
+      "secrets": [".env", ".env.*", "*.pem", "*.key", "credentials.*"]
+    },
+    "tokenOptimization": {
+      "maxRuleLines": 300,
+      "maxSkillLines": 200,
+      "maxAgentLines": 150,
+      "contextLayers": {
+        "immediate": 2000,
+        "relevant": 5000,
+        "extended": 10000,
+        "reference": 20000
+      }
+    },
+    "models": {
+      "default": "claude-4-opus",
+      "complex": "claude-4-opus",
+      "simple": "claude-4-sonnet",
+      "fast": "claude-4-sonnet"
+    }
+  },
+  "paths": {
+    "source": "programs/",
+    "apiPath": "n/a",
+    "handlerBasePath": "n/a",
+    "commonPath": "docs/",
+    "eventsPath": "n/a",
+    "configPath": ".cursor/config/"
+  },
+  "domain": {
+    "entities": ["Robot", "Controller", "TeachPendant", "Program", "Topic", "Cell"],
+    "lifecycles": {
+      "Program": "draft,reviewed,accepted,synced",
+      "Topic": "draft,reviewed,accepted,synced"
+    },
+    "businessRules": [
+      "FANUC first; other OEMs later",
+      "Brand-specific Cursor files use fanuc- prefix (later abb-, yaskawa-, kuka-)",
+      "Ask relevant cell questions before generating or explaining programs",
+      "Do not copy copyrighted OEM manuals verbatim"
+    ]
+  },
+  "patterns": {
+    "handlerFlowSteps": 7,
+    "handlerFlow": [
+      "Validate Request",
+      "Validate Business",
+      "Pre-Processing",
+      "Operation",
+      "Post-Operation",
+      "Response",
+      "Exit"
+    ],
+    "errorHandling": "centralized",
+    "logging": "structured"
+  },
+  "techStack": {
+    "language": "markdown / Teach Pendant / Karel",
+    "runtime": "FANUC controller (R-30iB Plus / iRVision as applicable)",
+    "framework": "none",
+    "cloud": "none",
+    "database": "none",
+    "orm": "none",
+    "testing": "none",
+    "linter": "none",
+    "formatter": "none",
+    "packageManager": "none",
+    "containerization": "none",
+    "cicd": "none"
+  },
+  "testing": {
+    "coverageMinimum": 0,
+    "testCommand": "echo skipped",
+    "typeCheckCommand": "echo skipped",
+    "lintCommand": "echo skipped",
+    "coverageCommand": "echo skipped"
+  },
+  "database": {
+    "softDeleteField": "n/a",
+    "timestampFields": {
+      "created": "n/a",
+      "updated": "n/a"
+    },
+    "naming": "snake_case"
+  },
+  "packages": {
+    "internalPrefix": "n/a",
+    "registryUrl": "n/a"
+  },
+  "fileNames": {
+    "handlerEntry": "n/a",
+    "requestSchema": "n/a",
+    "responseSchema": "n/a"
+  },
+  "folderNames": {
+    "logic": "n/a",
+    "schemas": "n/a",
+    "common": "docs",
+    "services": "n/a",
+    "types": "n/a",
+    "utils": "n/a",
+    "middleware": "n/a",
+    "models": "n/a",
+    "controllers": "n/a",
+    "routes": "n/a"
+  },
+  "conventions": {
+    "branchPrefix": {
+      "feature": "feature/",
+      "bugfix": "fix/",
+      "hotfix": "hotfix/",
+      "release": "release/"
+    },
+    "commitFormat": "conventional",
+    "prTemplate": true
+  }
+}
