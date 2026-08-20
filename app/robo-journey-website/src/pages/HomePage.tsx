@@ -1,9 +1,15 @@
 import { Link } from "react-router";
-import { BookA, Boxes, ClipboardCheck, GraduationCap, ListChecks, Waypoints } from "lucide-react";
+import { BookA, Bot, Boxes, ClipboardCheck, GraduationCap, ListChecks, Waypoints } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { drills, topics } from "../content/load";
 
 const cards: Array<{ to: string; icon: LucideIcon; title: string; body: string }> = [
+  {
+    to: "/chatbot",
+    icon: Bot,
+    title: "Robotics AI",
+    body: "Ask robotics questions across FANUC, ABB, KUKA, Yaskawa and other robot platforms.",
+  },
   {
     to: "/topic/how-to-read-a-guide",
     icon: GraduationCap,
@@ -54,11 +60,7 @@ export function HomePage() {
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         {cards.map((c) => (
-          <Link
-            key={c.to}
-            to={c.to}
-            className="rounded-xl border border-app-border bg-app-surface p-5 shadow-sm transition hover:border-app-accent"
-          >
+          <Link key={c.to} to={c.to} className="rounded-xl border border-app-border bg-app-surface p-5 shadow-sm transition hover:border-app-accent">
             <h2 className="flex items-center gap-2 text-base font-semibold text-app-fg">
               <c.icon className="h-4 w-4 text-app-accent" /> {c.title}
             </h2>
@@ -66,9 +68,7 @@ export function HomePage() {
           </Link>
         ))}
       </div>
-      <p className="text-sm text-app-faint">
-        {topics.length} topics · {drills.length} drills · ⌘K search
-      </p>
+      <p className="text-sm text-app-faint">{topics.length} topics · {drills.length} drills · ⌘K search</p>
     </div>
   );
 }
