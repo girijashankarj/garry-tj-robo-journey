@@ -1,0 +1,72 @@
+name: Robotics SLM CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'app/robotics-slm/**'
+      - 'app/robotics-chatbot/**'
+      - '.github/workflows/robotics-slm-ci.yml'
+
+jobs:
+  python-quality:
+    name: Python validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Python tools
+        run: python -m compileall app/robotics-slm
+      - name: Validate JSON and JSONL
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for p in Path('app/robotics-slm').rglob('*'):
+              if p.suffix == '.json':
+                  json.loads(p.read_text())
+              elif p.suffix == '.jsonl':
+                  for n, line in enumerate(p.read_text().splitlines(), 1):
+                      if line.strip(): json.loads(line)
+          print('JSON/JSONL validation passed')
+          PY
+
+  chatbot-quality:
+    name: Chatbot TypeScript build and tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/robotics-chatbot
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app/robotics-chatbot/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: npm test -- --passWithNoTests
+
+  dataset-safety:
+    name: Dataset safety gates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure pending records are not training eligible
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for p in Path('app/robotics-slm/datasets').rglob('*.jsonl'):
+              for n, line in enumerate(p.read_text().splitlines(), 1):
+                  if not line.strip(): continue
+                  row = json.loads(line)
+                  status = (row.get('validation') or row.get('review') or {}).get('status')
+                  if status in {'pending', 'needs_revision', 'rejected'} and row.get('training_eligible') is True:
+                      raise SystemExit(f'Unsafe dataset state: {p}:{n} is {status} but training_eligible=true')
+          print('Dataset safety gate passed')
+          PY
