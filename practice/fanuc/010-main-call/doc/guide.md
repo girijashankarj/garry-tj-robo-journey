@@ -1,58 +1,47 @@
-# Main Call: CALL home then process then home — guide
+# Main CALL — guide
 
 > Drill: `010-main-call`  
 > Code: [`code/solution.ls`](../code/solution.ls)
 
 ## Purpose
 
-Study listing for **Main Call: CALL home then process then home**. Confirm frames, poses, and I/O on your cell.
+A **main** that only **CALL**s: home, process, home. Callee names (`HOME_SAFE`, `SQUARE`) must exist on the **controller**, not only in this Git repo.
 
 ## Flowchart
 
 ```mermaid
 flowchart TB
-  n0["! FANUC retains all rights in its m"]
-  n1["! Study listing. Callee names must "]
-  n2["CALL HOME_SAFE ;"]
-  n3["CALL SQUARE ;"]
-  n4["CALL HOME_SAFE ;"]
-  n5["END ;"]
-  n0 --> n1
-  n1 --> n2
-  n2 --> n3
-  n3 --> n4
-  n4 --> n5
+  h1[CALL_HOME_SAFE]
+  work[CALL_SQUARE]
+  h2[CALL_HOME_SAFE]
+  h1 --> work --> h2 --> endn[END]
 ```
 
 ## Decisions (diamond)
 
-No IF / WAIT / SKIP / UALM branch. Straight sequence.
+No IF / WAIT / SKIP / UALM. Straight CALL sequence.
 
 ```mermaid
 flowchart TD
-  go[Run_lines]
-  endn[END]
-  go --> endn
+  run[Three_CALLs]
+  done[END]
+  run --> done
 ```
 
 ## Block-by-block
 
-| Line | What | Atom |
-|------|------|------|
-| 0 | `! FANUC retains all rights in its marks/software/manuals. Educational only. Use ` | Remark |
-| 1 | `! Study listing. Callee names must exist on the controller. ;` | Remark |
-| 2 | `CALL HOME_SAFE ;` | CALL |
-| 3 | `CALL SQUARE ;` | CALL |
-| 4 | `CALL HOME_SAFE ;` | CALL |
-| 5 | `END ;` | END |
+| Lines | What | Atom |
+|-------|------|------|
+| 0–1 | LEGAL + names-must-exist remark | Remark |
+| 2 | Home | CALL |
+| 3 | Process (placeholder name) | CALL |
+| 4 | Home | CALL |
+| 5 | END | END |
 
 ## Safety
 
-Prove in T1, then T2 step, then Auto. Placeholders only. Site SOP and OEM manuals override this page.
+Prove each callee in T1 before chaining. Site SOP and OEM manuals override this page.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
-
+See [`LEGAL.md`](../../../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

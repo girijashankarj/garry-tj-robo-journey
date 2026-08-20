@@ -20,6 +20,8 @@ Remarks do not execute. EDCMD Remark on the pendant is the same idea.
 
 All `P[]` / `PR[]` / I/O numbers are **placeholders**. Teach them on your cell.
 
+This `.ls` is study ASCII, not a backup: `/ATTR` `PROG_SIZE` / `LINE_COUNT` may be **zero**.
+
 ## Approach
 
 Atom for remark: one LEGAL line plus **stacked** remarks (multi-line notes). No `/* */`. Then Joint.
@@ -33,9 +35,7 @@ Atom for remark: one LEGAL line plus **stacked** remarks (multi-line notes). No 
 
 Prove in T1, then T2 step, then Auto. Study drill, not a commissioned cell.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.
 

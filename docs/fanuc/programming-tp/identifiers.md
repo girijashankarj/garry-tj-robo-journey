@@ -79,8 +79,6 @@ On manuals **licensed to your site**: program create / name rules, register and 
 - [`../io-frames-tools/pr-vs-r.md`](../io-frames-tools/pr-vs-r.md)
 - [`../topic-map.md`](../topic-map.md)
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

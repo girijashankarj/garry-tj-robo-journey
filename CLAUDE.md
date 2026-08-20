@@ -18,8 +18,6 @@ Learn `/fanuc-topic` · Drill `/fanuc-program` · Explain `/fanuc-explain`
 
 Modes: `docs/personas.md`. Practice set: `practice/fanuc/`.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

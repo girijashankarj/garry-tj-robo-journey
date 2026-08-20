@@ -14,7 +14,9 @@ All notable changes to this project are documented in this file.
 - TP lexicon: `identifiers.md` and `keywords.md` (study set, not a full OEM list)
 - Conceptual `doc/guide.md` for drills `002`–`005` and `008` (intent flowcharts, not line-dumps)
 - `programs/fanuc/tp/README.md`: empty until a real cell program is promoted (do not copy drills here)
-- Pendant-confirm note on core articles (T1/T2, frames, J, L, JMP/LBL)
+- Inner pages use a short LEGAL pointer; full notice stays on `LEGAL.md` and the root README
+- Remaining auto-traced `doc/guide.md` files rewritten to intent flowcharts (`006`, `009`–`012`, `015`, `016`, `019`)
+- Drill READMEs and `.ls` ATTR COMMENT label study ASCII (size fields may be zero)
 
 ### Changed
 
@@ -53,6 +55,6 @@ Commit `10cf4e3` — first published study-guide snapshot.
 
 Commit `3c14f33` — repository skeleton and FANUC-prefixed Cursor harness.
 
-## Rights, education, and consent
+## Rights
 
 See [`LEGAL.md`](LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

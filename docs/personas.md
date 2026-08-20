@@ -18,8 +18,6 @@ This study guide is published by **Garry TJ**. Pick a mode (or say it in the pro
 | Explain existing `.ls` | `/fanuc-explain` |
 | Refresh indexes | `@fanuc-knowledge-sync` |
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

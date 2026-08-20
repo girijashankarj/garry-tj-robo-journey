@@ -69,8 +69,6 @@ On manuals **licensed to your site**: OFFSET CONDITION, registers. Do not paste 
 - [`pick-and-place.md`](pick-and-place.md)
 - [`../topic-map.md`](../topic-map.md)
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

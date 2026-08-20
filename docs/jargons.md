@@ -59,8 +59,6 @@ These are study hints, not official FANUC definitions. Confirm on your cell.
 
 On manuals **licensed to your site**: operator / HandlingTool naming for keys, modes, and I/O. Do not paste OEM pages here.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

@@ -32,8 +32,6 @@ Atom vs union map: [`../../docs/fanuc/topic-map.md`](../../docs/fanuc/topic-map.
 
 Points and I/O are placeholders. `programs/fanuc/tp/` is for programs you promote from a real cell.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

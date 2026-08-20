@@ -1,7 +1,7 @@
 /PROG OVRD_J
 /ATTR
 OWNER		= MNEDITOR;
-COMMENT		= "Study drill. FANUC rights. Educational; own risk.";
+COMMENT		= "Study listing not a backup. ATTR sizes may be 0. Educational; own risk.";
 PROG_SIZE	= 0;
 CREATE		= DATE 26-08-20  TIME 21:00:00;
 MODIFIED	= DATE 26-08-20  TIME 21:00:00;

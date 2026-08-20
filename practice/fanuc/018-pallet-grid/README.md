@@ -20,6 +20,8 @@ Pitch in PR is taught on the cell. Do not copy mm from this file. Avoid infinite
 
 All `P[]` / `PR[]` / I/O numbers are **placeholders**. Teach them on your cell.
 
+This `.ls` is study ASCII, not a backup: `/ATTR` `PROG_SIZE` / `LINE_COUNT` may be **zero**.
+
 ## Approach
 
 Union of R[], JMP, OFFSET displacement. Simpler OFFSET: 005.
@@ -33,9 +35,7 @@ Union of R[], JMP, OFFSET displacement. Simpler OFFSET: 005.
 
 Prove in T1, then T2 step, then Auto. Study drill, not a commissioned cell.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.
 

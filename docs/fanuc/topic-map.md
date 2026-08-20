@@ -65,8 +65,6 @@ Order to study: [learning-path.md](learning-path.md). Words: [`../glossary.md`](
 
 On manuals **licensed to your site**: instruction list for your HandlingTool version. Do not paste OEM pages here.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

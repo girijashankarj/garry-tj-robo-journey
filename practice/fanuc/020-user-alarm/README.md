@@ -20,6 +20,8 @@ UALM[1] message string is **not** in this file. Some cells ABORT after UALM inst
 
 All numbers are **placeholders**.
 
+This `.ls` is study ASCII, not a backup: `/ATTR` `PROG_SIZE` / `LINE_COUNT` may be **zero**.
+
 ## Approach
 
 Atom for UALM. Union: 007 wait timeout.
@@ -33,8 +35,6 @@ Atom for UALM. Union: 007 wait timeout.
 
 Prove in T1. Study drill, not a commissioned cell.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

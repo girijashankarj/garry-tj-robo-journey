@@ -20,6 +20,8 @@ Teach P[1]–P[5] in World. UFRAME_NUM=1, UTOOL_NUM=1 until the cell is mapped.
 
 All `P[]` / `PR[]` / I/O numbers are **placeholders**. Teach them on your cell.
 
+This `.ls` is study ASCII, not a backup: `/ATTR` `PROG_SIZE` / `LINE_COUNT` may be **zero**.
+
 ## Approach
 
 J for fly-over, L for the work square so TCP stays straight. FINE at corners for the first drill; CNT is a follow-up variant.
@@ -33,8 +35,6 @@ J for fly-over, L for the work square so TCP stays straight. FINE at corners for
 
 Prove in T1, then T2 step, then Auto. This is a study drill, not a commissioned cell.
 
-## Rights, education, and consent
+## Rights
 
-FANUC retains **all rights** in its trademarks, software, and manuals. See [`LEGAL.md`](../../../LEGAL.md).
-
-This page and any linked programs are **educational and study-aid only**. Use at **your own consent and risk**. Garry TJ / this repo are not FANUC and offer no warranty.
+See [`LEGAL.md`](../../../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.
