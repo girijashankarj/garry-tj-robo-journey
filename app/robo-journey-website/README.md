@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173`. Light theme is the default. In Cursor: **Run and Debug → App: Chrome**.
+Open `http://localhost:5173`. Light theme is the default. In Cursor: **Run and Debug → Garry TJ Robo Journey**.
 
 ## What it shows
 

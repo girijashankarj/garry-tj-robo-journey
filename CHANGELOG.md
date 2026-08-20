@@ -29,6 +29,7 @@ All notable changes to this project are documented in this file.
 ### Changed
 
 - Root README: `/fanuc-review` row; path/origin sketches; local `app/robo-journey-website/` UI and in-app links
+- VS Code launch config name: Garry TJ Robo Journey (was App: Chrome)
 - Drill guides: plain-English Purpose, `/MN` listing next to the chart, Atom column links to articles; 018/016/017 say not to start there
 - Drill guides: how-to-read + glossary under Block-by-block; 001 Purpose in plain English first
 - Practice index: ATTR size fields called out as study ASCII, not backups
