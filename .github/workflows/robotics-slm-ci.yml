@@ -26,8 +26,7 @@ jobs:
           import json
           from pathlib import Path
           for p in Path('app/robotics-slm').rglob('*'):
-              if p.suffix == '.json':
-                  json.loads(p.read_text())
+              if p.suffix == '.json': json.loads(p.read_text())
               elif p.suffix == '.jsonl':
                   for n, line in enumerate(p.read_text().splitlines(), 1):
                       if line.strip(): json.loads(line)
@@ -70,3 +69,19 @@ jobs:
                       raise SystemExit(f'Unsafe dataset state: {p}:{n} is {status} but training_eligible=true')
           print('Dataset safety gate passed')
           PY
+
+  benchmark-regression:
+    name: Robotics benchmark regression
+    runs-on: ubuntu-latest
+    needs: python-quality
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run deterministic benchmark gate
+        run: |
+          python app/robotics-slm/evaluation/regression.py \
+            --benchmark app/robotics-slm/evaluation/benchmark.jsonl \
+            --predictions app/robotics-slm/evaluation/baseline-predictions.jsonl \
+            --min-percent 80
