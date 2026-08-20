@@ -6,7 +6,7 @@ This is an educational HandlingTool study guide. Prefer small, reviewable additi
 
 1. Copy [`docs/_templates/topic.md`](docs/_templates/topic.md).
 2. Put it under `docs/fanuc/<area>/`.
-3. Link it from [`docs/fanuc/README.md`](docs/fanuc/README.md) and [`docs/fanuc/learning-path.md`](docs/fanuc/learning-path.md).
+3. Link it from [`docs/fanuc/README.md`](docs/fanuc/README.md) and [`docs/fanuc/learning-path.md`](docs/fanuc/learning-path.md). Use relative `.md` paths (the local UI rewrites them to in-app routes).
 4. Link at least one `practice/fanuc/` drill when the topic is programmable.
 5. Use `/fanuc-topic` or `@fanuc-docs-agent`, then `@fanuc-knowledge-sync`.
 

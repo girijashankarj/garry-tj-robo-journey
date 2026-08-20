@@ -9,7 +9,10 @@ credentials.*
 
 # IDE
 .idea/
-.vscode/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
 *.swp
 *.swo
 *~
@@ -33,3 +36,9 @@ inbox/**/*.pdf
 
 # Cache
 .cache/
+
+# Classroom apps
+app/*/node_modules/
+app/*/dist/
+teach/
+

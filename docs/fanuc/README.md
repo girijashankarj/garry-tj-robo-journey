@@ -34,7 +34,7 @@ flowchart TB
 
 ## Practice
 
-[`practice/fanuc/`](../../practice/fanuc/) — problems `001`–`021` (`code/` + `doc/guide.md`).
+[`practice/fanuc/`](../../practice/fanuc/) — problems `001`–`021` (`code/` + `doc/guide.md`). Browse locally: [`../../app/robo-journey-website/`](../../app/robo-journey-website/).
 
 ## Sources
 

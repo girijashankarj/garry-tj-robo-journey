@@ -6,7 +6,7 @@ All notable changes to this project are documented in this file.
 
 ### Added
 
-- Incoming listing review pack (`/fanuc-review`): unpublished `temp/clients/…`; copy folder (`SHARE.md`); cell surroundings + asked-not-provided; regenerate when answers arrive
+- Local classroom UI in [`app/robo-journey-website/`](app/robo-journey-website/) (Garry TJ Robo Journey; light/dark; path board; in-app markdown links; `npm run dev`)
 - Path / origin Mermaid: OFFSET 1-2-3-4 then 1'-2'-3'-4', INC, frames, pallet, pick/place, skip; skill `fanuc-path-diagram`; rule mermaid-path-origin
 - [`docs/fanuc/how-to-read-a-guide.md`](docs/fanuc/how-to-read-a-guide.md): chart legend for GitHub readers (no `.cursor` required)
 - Mermaid program-flow rule: shapes (diamond, parallelogram, stadium, CALL), `L#` labels, `classDef` colors; one flowchart per guide
@@ -22,9 +22,13 @@ All notable changes to this project are documented in this file.
 - Remaining auto-traced `doc/guide.md` files rewritten to intent flowcharts (`006`, `009`–`012`, `015`, `016`, `019`)
 - Drill READMEs and `.ls` ATTR COMMENT label study ASCII (size fields may be zero)
 
+### Fixed
+
+- Classroom UI: relative markdown links (topics, drills, glossary, jargons, practice index) resolve from each file’s folder so hops work in the SPA
+
 ### Changed
 
-- Root README: learner path starts at 001 after how-to-read; template is for authors
+- Root README: `/fanuc-review` row; path/origin sketches; local `app/robo-journey-website/` UI and in-app links
 - Drill guides: plain-English Purpose, `/MN` listing next to the chart, Atom column links to articles; 018/016/017 say not to start there
 - Drill guides: how-to-read + glossary under Block-by-block; 001 Purpose in plain English first
 - Practice index: ATTR size fields called out as study ASCII, not backups

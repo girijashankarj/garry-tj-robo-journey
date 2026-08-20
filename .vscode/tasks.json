@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "app-dev",
+      "type": "npm",
+      "script": "dev",
+      "path": "app/robo-journey-website/",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".",
+          "endsPattern": "Local:.+http://localhost:5173"
+        }
+      }
+    }
+  ]
+}

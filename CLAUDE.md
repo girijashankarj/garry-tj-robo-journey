@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-**garry-tj-robo-journey** — FANUC-first robot **study guide** with Cursor as tutor, by **Garry TJ**. Markdown + Teach Pendant / Karel. Not a Node app. Not an official FANUC course.
+**garry-tj-robo-journey** — FANUC-first robot **study guide** with Cursor as tutor, by **Garry TJ**. Markdown + Teach Pendant / Karel. Optional local UI: `app/robo-journey-website/`. Not an official FANUC course.
 
 ## Critical
 

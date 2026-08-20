@@ -15,6 +15,8 @@
 
 Practice set: [`../practice/fanuc/`](../practice/fanuc/). New articles: `/fanuc-topic`.
 
+Optional local classroom UI: [`../app/robo-journey-website/`](../app/robo-journey-website/) (`npm run dev`). Relative links between these pages open in the UI.
+
 ## Rights
 
 See [`LEGAL.md`](../LEGAL.md): FANUC retains all rights. Educational use; own consent and risk.

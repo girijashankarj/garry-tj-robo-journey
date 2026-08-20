@@ -9,6 +9,7 @@ Config: `.cursor/config/project.json`. Handbook files may still use `{{CONFIG.se
 - **Learn:** `docs/fanuc/`
 - **Practice:** `practice/fanuc/` (`code/` + `doc/guide.md`)
 - **Promote:** `programs/fanuc/tp/` or `karel/` after the user accepts a real-cell program
+- **Local UI (optional):** `app/robo-journey-website/` (`npm run dev`) — relative doc links should keep working in the SPA
 - Public credit: **Garry TJ** only
 
 ## Study modes
@@ -43,6 +44,7 @@ Before generating or explaining programs, ask **only relevant** fields: model, c
 | `docs/` | Study articles (`topic-map.md` = atom vs union) |
 | `practice/` | Numbered drills |
 | `programs/` | Promoted cell programs |
+| `app/robo-journey-website/` | Local classroom UI |
 | `.cursor/` | Harness |
 
 ## Cursor harness (keep small)
