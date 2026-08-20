@@ -50,8 +50,8 @@ export function StepRunner({ listing }: { listing: string }) {
         <span className={`rounded px-2 py-0.5 text-xs font-medium uppercase tracking-wide ${statusChip[s.status]}`}>{s.status}</span>
         {s.waitingOn ? <span className="text-sm text-app-muted">waiting on {s.waitingOn.text}</span> : null}
         {s.alarm ? <span className="text-sm text-red-600 dark:text-red-400">{s.alarm}</span> : null}
-        <span className="ml-auto text-xs text-app-faint">
-          UF {s.uframe ?? "—"} · UT {s.utool ?? "—"} · OVR {s.override}% · {s.steps} steps
+        <span className="ml-auto font-mono text-xs text-app-faint">
+          UF {s.uframe ?? "—"} · UT {s.utool ?? "—"} · OVR {s.override}% · TCP ({Math.round(s.pos.x)}, {Math.round(s.pos.y)}) · {s.steps} steps
         </span>
       </div>
 
@@ -145,6 +145,16 @@ export function StepRunner({ listing }: { listing: string }) {
                   PR[{i}] = ({Math.round(s.PR[i].x)}, {Math.round(s.PR[i].y)})
                 </p>
               ))}
+              {machine.layout.size > 0 ? (
+                <>
+                  <p className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-app-faint">Positions (study plane)</p>
+                  {[...machine.layout.values()].map((p) => (
+                    <p key={posLabel(p.ref)} className="font-mono text-xs text-app-muted">
+                      {posLabel(p.ref)} = ({p.x}, {p.y})
+                    </p>
+                  ))}
+                </>
+              ) : null}
             </div>
           </div>
         </div>

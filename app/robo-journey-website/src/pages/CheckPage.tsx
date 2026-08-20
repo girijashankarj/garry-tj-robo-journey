@@ -4,8 +4,6 @@ import { PendantCheck } from "../components/PendantCheck";
 import { StepRunner } from "../components/StepRunner";
 import { parseProgram } from "../tp/parse";
 
-const EXAMPLE_SLUG = "017-pick-place";
-
 export function CheckPage() {
   const [source, setSource] = useState("");
   const trimmed = source.trim();
@@ -23,18 +21,30 @@ export function CheckPage() {
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <button
-          type="button"
-          onClick={() => setSource(drills.find((d) => d.slug === EXAMPLE_SLUG)?.listing ?? "")}
-          className="rounded-lg border border-app-border px-3 py-1.5 text-sm text-app-muted hover:text-app-fg"
+        <select
+          value=""
+          onChange={(e) => {
+            const d = drills.find((x) => x.slug === e.target.value);
+            if (d) setSource(d.listing);
+          }}
+          className="rounded-lg border border-app-border bg-app-surface px-3 py-1.5 text-sm text-app-muted focus:border-app-accent focus:outline-none"
+          aria-label="Load a drill listing"
         >
-          Load example (017 pick &amp; place)
-        </button>
+          <option value="" disabled>
+            Load a drill listing…
+          </option>
+          {drills.map((d) => (
+            <option key={d.slug} value={d.slug}>
+              {d.id} · {d.title}
+            </option>
+          ))}
+        </select>
         {trimmed ? (
           <button type="button" onClick={() => setSource("")} className="rounded-lg border border-app-border px-3 py-1.5 text-sm text-app-muted hover:text-app-fg">
             Clear
           </button>
         ) : null}
+        <span className="text-xs text-app-faint">Loaded listings stay editable — change lines and the findings update live.</span>
       </div>
 
       <textarea

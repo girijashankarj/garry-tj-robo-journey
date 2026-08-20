@@ -13,6 +13,7 @@ All notable changes to this project are documented in this file.
 - Pendant check page in the study UI: paste a TP listing for findings and a T2-style step-through (browser-only); sidebar and home cards reorganized with consistent icons
 - Path / origin sketches added to the nine motion drills that lacked them (001, 009, 011–015, 020, 021); every drill guide points at the Run tab
 - Step-runner: registers are editable (like DATA → Registers) and outputs can be forced (like I/O Force); panels list every R[] and signal the listing references
+- Drill dropdowns: the Pendant check page and the Path board can load any drill listing (still fully editable after loading); step-runner shows live TCP and auto-placed position coordinates; path-board points get numeric X/Y editing
 
 - Local classroom UI in [`app/robo-journey-website/`](app/robo-journey-website/) (Garry TJ Robo Journey; light/dark; path board; in-app markdown links; `npm run dev`)
 - Path / origin Mermaid: OFFSET 1-2-3-4 then 1'-2'-3'-4', INC, frames, pallet, pick/place, skip; skill `fanuc-path-diagram`; rule mermaid-path-origin

@@ -6,8 +6,69 @@ import { studyListing } from "./listing";
 import { PRESETS, defaultBoard } from "./presets";
 import { useTheme } from "../../theme";
 import { CodeBlock } from "../CodeBlock";
+import { drills } from "../../content/load";
+import { parseProgram } from "../../tp/parse";
 
 const VB = { w: 640, h: 420 };
+
+/** Convert a drill listing into editable board waypoints (study geometry only).
+ *  Unique motion targets are placed around a circle; the sequence of motion
+ *  instructions becomes the point order, so repeats revisit the same spot. */
+function listingToBoard(listing: string): BoardState {
+  const prog = parseProgram(listing);
+  const keys: string[] = [];
+  const seen = new Set<string>();
+  for (const ins of prog.instrs) {
+    if (ins.op === "motion" || ins.op === "cvia" || ins.op === "cdest") {
+      const k = `${ins.target.kind}[${ins.target.index}]`;
+      if (!seen.has(k)) {
+        seen.add(k);
+        keys.push(k);
+      }
+    }
+  }
+  const coord = new Map<string, { x: number; y: number }>();
+  keys.forEach((k, i) => {
+    const a = -Math.PI / 2 + (i * 2 * Math.PI) / Math.max(keys.length, 3);
+    coord.set(k, { x: snap(Math.cos(a) * 90), y: snap(Math.sin(a) * -70) });
+  });
+  const points: Waypoint[] = [];
+  let pendingVia: { x: number; y: number } | null = null;
+  for (const ins of prog.instrs) {
+    if (ins.op === "cvia") {
+      pendingVia = coord.get(`${ins.target.kind}[${ins.target.index}]`) ?? null;
+      continue;
+    }
+    if (ins.op === "motion" || ins.op === "cdest") {
+      const c = coord.get(`${ins.target.kind}[${ins.target.index}]`);
+      if (!c) continue;
+      const wp: Waypoint = {
+        id: uid(),
+        x: c.x,
+        y: c.y,
+        into: ins.op === "cdest" ? "C" : ins.motion,
+        term: ins.term.startsWith("CNT") ? "CNT" : "FINE",
+      };
+      if (ins.op === "cdest" && pendingVia) {
+        wp.midX = pendingVia.x;
+        wp.midY = pendingVia.y;
+        pendingVia = null;
+      }
+      points.push(wp);
+    }
+  }
+  const homeKey = keys.find((k) => k.startsWith("PR["));
+  const base = JSON.parse(JSON.stringify(defaultBoard)) as BoardState;
+  return {
+    ...base,
+    points,
+    showHome: homeKey !== undefined,
+    home: homeKey ? coord.get(homeKey)! : base.home,
+    offsetOn: false,
+    showPallet: false,
+    showInc: false,
+  };
+}
 
 function toScreen(x: number, y: number, panX: number, panY: number, zoom: number) {
   return {
@@ -238,7 +299,7 @@ export function PathBoard() {
             Delete
           </button>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {PRESETS.map((p) => (
             <button
               key={p.id}
@@ -252,6 +313,28 @@ export function PathBoard() {
               {p.label}
             </button>
           ))}
+          <select
+            value=""
+            onChange={(e) => {
+              const d = drills.find((x) => x.slug === e.target.value);
+              if (d) {
+                push(listingToBoard(d.listing));
+                setT(0);
+                setSelected(null);
+              }
+            }}
+            className="rounded-lg border border-app-border bg-app-surface px-3 py-1.5 text-sm text-app-muted focus:border-app-accent focus:outline-none"
+            aria-label="Load a drill listing onto the board"
+          >
+            <option value="" disabled>
+              Load drill…
+            </option>
+            {drills.map((d) => (
+              <option key={d.slug} value={d.slug}>
+                {d.id} · {d.title}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="overflow-hidden rounded-xl border border-app-border bg-app-surface">
           <svg
@@ -352,6 +435,9 @@ export function PathBoard() {
             ) : null}
           </svg>
         </div>
+        <p className="font-mono text-xs text-app-faint">
+          Tool dot at ({Math.round(toolPos.x)}, {Math.round(toolPos.y)}) study mm
+        </p>
         <p className="text-xs text-app-faint">Shift-drag or empty-drag to pan. Wheel zoom. Snap {SNAP} mm study units. J is dashed (not joint space).</p>
       </div>
       <aside className="space-y-4">
@@ -367,6 +453,32 @@ export function PathBoard() {
             ))}
           </ul>
         </div>
+        {(() => {
+          const i = state.points.findIndex((p) => p.id === selected);
+          const p = state.points[i];
+          if (!p) return null;
+          return (
+            <div className="rounded-lg border border-app-border p-2">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-app-faint">
+                Point {i + 1} · {p.into} {p.term}
+              </p>
+              <div className="flex gap-2">
+                {(["x", "y"] as const).map((axis) => (
+                  <label key={axis} className="flex items-center gap-1 font-mono text-xs text-app-muted">
+                    {axis.toUpperCase()}
+                    <input
+                      type="number"
+                      step={SNAP}
+                      value={p[axis]}
+                      onChange={(e) => updateSelected({ [axis]: snap(Number(e.target.value) || 0) })}
+                      className="w-20 rounded border border-app-border bg-app-surface px-1.5 py-0.5 text-xs"
+                    />
+                  </label>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
         <label className="block text-sm text-app-muted">
           Offset X (study mm)
           <input
